@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | ETTISAI — Our Orientation, Philosophy & Leadership</title>
+    <meta name="description"
+        content="Ettisai (எட்டிசை) means the eight directions. A cognitive institution where ancient wisdom meets artificial intelligence, where the Thirukkural converses with systems thinking.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+</head>
+
+<body>
+
+    <!-- Ambient Effects -->
+    <canvas id="noise-canvas"></canvas>
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <a href="index.html" class="logo-link">
+            <span class="logo-eng">ETTISAI</span>
+            <span class="logo-tamil">எத்திசை</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="label reveal" style="display: block; margin-bottom: 1rem;">Our Orientation</span>
+            <h1 class="text-gradient reveal delay-1">எட்டிசை</h1>
+            <h2 class="reveal delay-2"
+                style="font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1.5rem; font-weight: 400; color: var(--text-secondary);">
+                Ettisai means the eight directions.
+            </h2>
+            <p class="reveal delay-3" style="max-width: 700px;">
+                The word does not mean expansion. It means <strong style="color: var(--accent);">orientation</strong>.
+                Movement in all directions, anchored by a center that never moves.<br><br>
+                We are a cognitive institution—where ancient wisdom meets artificial intelligence, where the Thirukkural
+                converses with systems thinking, where philosophical clarity meets operational reality.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PHILOSOPHY ═══ -->
+    <section class="section section-dark section-border-top">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">01 // Foundation</span>
+                <h2>Our Philosophy</h2>
+            </div>
+
+            <div class="two-col">
+                <div class="reveal-left">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                        ETTISAI operates at the intersection of rational self-interest, unconditioned clarity, and
+                        constitutional responsibility.
+                    </p>
+                    <div class="divider"></div>
+                    <ul style="list-style: none;">
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="label" style="flex-shrink: 0; padding-top: 3px;">01</span>
+                            Rational self-interest
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="label" style="flex-shrink: 0; padding-top: 3px;">02</span>
+                            Unconditioned clarity
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="label" style="flex-shrink: 0; padding-top: 3px;">03</span>
+                            Constitutional responsibility — Article 51A(h), India
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="label" style="flex-shrink: 0; padding-top: 3px;">04</span>
+                            Scientific temper and skepticism
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; color: var(--text-primary); display: flex; align-items: flex-start; gap: 0.75rem;">
+                            <span class="label" style="flex-shrink: 0; padding-top: 3px;">05</span>
+                            Tamil ethical tradition rooted in reason and restraint
+                        </li>
+                    </ul>
+                </div>
+                <div class="reveal-right"
+                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 3rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem; color: var(--accent); opacity: 0.3;">⬡</div>
+                    <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 500; line-height: 1.6;">
+                        We reject borrowed dogma.<br>
+                        We accept only what survives<br>
+                        contact with reality.
+                    </p>
+                    <div class="divider" style="width: 60px;"></div>
+                    <p class="mono" style="color: var(--accent); font-size: 0.75rem;">
+                        Truth is not negotiated.<br>
+                        Competence is not optional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TAMIL ETHIC ═══ -->
+    <section class="section section-border-top">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">02 // The Tamil Ethic</span>
+                <h2>In Brief</h2>
+            </div>
+
+            <div class="ethics-grid">
+                <div class="ethic-card reveal delay-1">
+                    <div class="ethic-tamil">அறம்</div>
+                    <h4>Aram</h4>
+                    <p
+                        style="color: var(--accent); font-size: 0.8rem; margin-bottom: 0.5rem; font-family: var(--font-mono);">
+                        Righteousness in Action</p>
+                    <p>The hard right over the easy wrong.</p>
+                </div>
+                <div class="ethic-card reveal delay-2">
+                    <div class="ethic-tamil">பொருள்</div>
+                    <h4>Porul</h4>
+                    <p
+                        style="color: var(--accent); font-size: 0.8rem; margin-bottom: 0.5rem; font-family: var(--font-mono);">
+                        Wealth Through Right Means</p>
+                    <p>Profit without exploitation.</p>
+                </div>
+                <div class="ethic-card reveal delay-3">
+                    <div class="ethic-tamil">இன்பம்</div>
+                    <h4>Inbam</h4>
+                    <p
+                        style="color: var(--accent); font-size: 0.8rem; margin-bottom: 0.5rem; font-family: var(--font-mono);">
+                        Joy in Work</p>
+                    <p>Meaningful labor, not separation of "work" and "life."</p>
+                </div>
+                <div class="ethic-card reveal delay-4">
+                    <div class="ethic-tamil">வீரம்</div>
+                    <h4>Veeram</h4>
+                    <p
+                        style="color: var(--accent); font-size: 0.8rem; margin-bottom: 0.5rem; font-family: var(--font-mono);">
+                        Courage in Truth</p>
+                    <p>Speak truth even when silence is easier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ LEADERSHIP ═══ -->
+    <section class="section section-dark section-border-top">
+        <div class="container">
+            <div class="two-col">
+                <div class="reveal-left">
+                    <span class="label" style="display: block; margin-bottom: 1rem;">03 // Leadership</span>
+                    <h2 style="margin-bottom: 1.5rem;">Guganathan & Lingeshwaran</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                        The greatest founders are defined not by charisma, but by <strong
+                            style="color: var(--accent);">intellectual sovereignty</strong>.
+                    </p>
+                    <div class="divider"></div>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        Authority is earned through clarity. Trust is earned through consistency. Nothing else scales.
+                    </p>
+                </div>
+                <div class="reveal-right">
+                    <ul class="leadership-principles">
+                        <li>Think independently under uncertainty</li>
+                        <li>Act decisively without cruelty</li>
+                        <li>Accept dissent without insecurity</li>
+                        <li>Take responsibility without theatrics</li>
+                        <li>Measure success by durability, not applause</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-section section-border-top reveal">
+        <div class="container" style="position: relative; z-index: 2;">
+            <span class="label" style="display: block; margin-bottom: 1rem;">Begin</span>
+            <h2 style="margin-bottom: 1.5rem;">Orientation before action.</h2>
+            <p
+                style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                If you are building something that must endure, we are useful.
+            </p>
+            <a href="contact.html" class="btn-primary">
+                ⬡ Initiate Diagnostic
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <span class="logo-eng">ETTISAI</span>
+                <span class="logo-tamil">எத்திசை</span>
+                <p class="footer-desc">
+                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
+                    Critical Operations | Business Intelligence | Core Engineering
+                </p>
+                <p class="footer-address">
+                    #3/520, M.M.D.A, Mogappair East<br>
+                    Chennai - 600037, Tamil Nadu, India
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h5>Connect</h5>
+                <a href="mailto:info@ettisai.com">info@ettisai.com</a>
+                <p class="mono" style="margin-top: 0.75rem; font-size: 0.6rem;">CIN: U82199TN2025PTC185731</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
+            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
