@@ -35,11 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const idata = ctx.createImageData(w, h);
             const buffer32 = new Uint32Array(idata.data.buffer);
             const len = buffer32.length;
+
+            // Dense white dots — old TV static
             for (let i = 0; i < len; i++) {
-                if (Math.random() < 0.04) {
-                    buffer32[i] = 0xffffffff;
+                if (Math.random() < 0.15) {
+                    const brightness = Math.floor(Math.random() * 255);
+                    buffer32[i] = (255 << 24) | (brightness << 16) | (brightness << 8) | brightness;
                 }
             }
+
+            // Horizontal scanlines
+            for (let y = 0; y < h; y += 3) {
+                const rowStart = y * w;
+                for (let x = 0; x < w; x++) {
+                    const idx = rowStart + x;
+                    if (idx < len) {
+                        const existing = buffer32[idx];
+                        if (existing) {
+                            // Dim every 3rd row for scanline effect
+                            buffer32[idx] = (255 << 24) | (40 << 16) | (40 << 8) | 40;
+                        }
+                    }
+                }
+            }
+
             ctx.putImageData(idata, 0, 0);
             noiseFrame = requestAnimationFrame(renderNoise);
         };
