@@ -59,7 +59,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -533,6 +533,12 @@ a:hover {
     transition: background var(--transition-medium);
 }
 
+.site-header nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .site-header.scrolled {
     background: rgba(5, 7, 10, 0.95);
     border-bottom-color: var(--border-hover);
@@ -540,14 +546,14 @@ a:hover {
 
 .logo-link {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-decoration: none;
     gap: 2px;
 }
 
 .logo-eng {
     font-family: var(--font-body);
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: 0.15em;
     color: var(--text-bright);
@@ -555,7 +561,7 @@ a:hover {
 }
 
 .logo-tamil {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--text-muted);
     letter-spacing: 0.05em;
 }
@@ -1578,7 +1584,7 @@ a:hover {
 }
 
 .footer-brand .logo-eng {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.25rem;
 }
 
@@ -1589,7 +1595,7 @@ a:hover {
 
 .footer-brand .footer-desc {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -1598,14 +1604,14 @@ a:hover {
 }
 
 .footer-brand .footer-address {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
 .footer-col h5 {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -1614,9 +1620,9 @@ a:hover {
 
 .footer-col a {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
     transition: color var(--transition-fast);
 }
 
@@ -2556,4 +2562,1283 @@ a:hover {
         font-size: 0.7rem;
         padding: 0.85rem 1.5rem;
     }
+}
+
+
+/* ═════════════════════════════════════════
+   ABOUT PAGE — TAMIL TEMPLE WALL THEME
+   White + Red (Vermillion) symbolism
+   ═════════════════════════════════════════ */
+
+.about-page {
+    --temple-white: #FAF6F0;
+    --temple-cream: #F5EDE3;
+    --temple-red: #c51e1e;
+    --temple-red-deep: #8B1A1A;
+    --temple-red-light: #e74c3c;
+    --temple-border: #e8ddd0;
+    --temple-text: #1a1a1a;
+    --temple-text-secondary: #4a4040;
+    --temple-stripe: repeating-linear-gradient(0deg,
+            var(--temple-red) 0px,
+            var(--temple-red) 4px,
+            var(--temple-white) 4px,
+            var(--temple-white) 12px);
+}
+
+/* ── Base overrides ── */
+.about-page {
+    background-color: var(--temple-white);
+    color: var(--temple-text);
+}
+
+.about-page #noise-canvas,
+.about-page .bg-grid,
+.about-page .glow-orb {
+    display: none;
+}
+
+/* ── Header — dark strip on white page ── */
+.about-page .site-header {
+    background: rgba(26, 26, 26, 0.97);
+    border-bottom: 4px solid var(--temple-red);
+}
+
+.about-page .mobile-nav {
+    background: rgba(26, 26, 26, 0.98);
+    border-bottom: 4px solid var(--temple-red);
+}
+
+/* ── Page Hero — white ground, red accents ── */
+.about-page .page-hero {
+    background: var(--temple-white);
+    border-bottom: none;
+    position: relative;
+    padding-top: calc(var(--header-height) + 4rem);
+}
+
+.about-page .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--temple-stripe);
+    transform: rotate(90deg) translateX(-50%);
+    transform-origin: left;
+    display: none;
+}
+
+.about-page .page-hero h1 {
+    color: var(--temple-red);
+    -webkit-text-fill-color: var(--temple-red);
+    background: none;
+}
+
+.about-page .page-hero h2,
+.about-page .page-hero p {
+    color: var(--temple-text-secondary);
+}
+
+.about-page .page-hero .label {
+    color: var(--temple-red);
+}
+
+.about-page .page-hero strong {
+    color: var(--temple-red);
+}
+
+/* ── Temple stripe dividers ── */
+.about-page .section-border-top {
+    border-top: none;
+    position: relative;
+}
+
+.about-page .section-border-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+            var(--temple-red) 0px,
+            var(--temple-red) 20px,
+            var(--temple-white) 20px,
+            var(--temple-white) 28px);
+}
+
+/* ── Sections — alternating white / cream ── */
+.about-page .section {
+    background: var(--temple-white);
+    padding-top: 5rem;
+}
+
+.about-page .section.section-dark {
+    background: var(--temple-cream);
+}
+
+.about-page .section h2 {
+    color: var(--temple-text);
+}
+
+.about-page .section p {
+    color: var(--temple-text-secondary);
+}
+
+.about-page .section .label {
+    color: var(--temple-red);
+}
+
+.about-page .section strong {
+    color: var(--temple-red);
+}
+
+.about-page .section .divider {
+    background: var(--temple-red);
+}
+
+/* ── Ethic cards — red border left (temple pillar style) ── */
+.about-page .ethic-card {
+    background: var(--temple-white);
+    border: 1px solid var(--temple-border);
+    border-left: 5px solid var(--temple-red);
+}
+
+.about-page .ethic-card:hover {
+    border-color: var(--temple-red);
+    background: rgba(197, 30, 30, 0.04);
+}
+
+.about-page .ethic-tamil {
+    color: var(--temple-red);
+}
+
+.about-page .ethic-card h4 {
+    color: var(--temple-text);
+}
+
+.about-page .ethic-card p {
+    color: var(--temple-text-secondary);
+}
+
+.about-page .ethic-card p[style*="accent"] {
+    color: var(--temple-red) !important;
+}
+
+/* ── Philosophy section ── */
+.about-page .two-col {
+    border-color: var(--temple-border);
+}
+
+.about-page .two-col li {
+    color: var(--temple-text) !important;
+    border-bottom-color: var(--temple-border) !important;
+}
+
+.about-page .two-col .label {
+    color: var(--temple-red) !important;
+}
+
+.about-page .leadership-principles li {
+    color: var(--temple-text);
+    border-bottom-color: var(--temple-border);
+}
+
+.about-page .leadership-principles li::before {
+    color: var(--temple-red);
+}
+
+/* ── Conduct cards ── */
+.about-page .conduct-card {
+    background: var(--temple-white);
+    border: 1px solid var(--temple-border);
+    color: var(--temple-text-secondary);
+}
+
+.about-page .conduct-card:hover {
+    border-color: var(--temple-red);
+    background: rgba(197, 30, 30, 0.03);
+}
+
+.about-page .conduct-card strong {
+    color: var(--temple-text) !important;
+}
+
+/* ── Culture pills ── */
+.about-page .culture-pill {
+    background: rgba(197, 30, 30, 0.08);
+    color: var(--temple-red);
+    border: 1px solid rgba(197, 30, 30, 0.2);
+}
+
+.about-page .culture-pill:hover {
+    background: var(--temple-red);
+    color: #fff;
+}
+
+/* ── Heritage (Civilisational Confidence) — deep red slab ── */
+.about-page #heritage {
+    background: var(--temple-red-deep);
+    color: #FAF6F0;
+}
+
+.about-page #heritage::before {
+    background: repeating-linear-gradient(90deg,
+            #FAF6F0 0px,
+            #FAF6F0 20px,
+            var(--temple-red-deep) 20px,
+            var(--temple-red-deep) 28px);
+}
+
+.about-page #heritage h2 {
+    color: #FAF6F0;
+}
+
+.about-page #heritage .label {
+    color: #f0c040;
+}
+
+.about-page .heritage-tamil-large {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.about-page #heritage p {
+    color: rgba(250, 246, 240, 0.85);
+}
+
+.about-page .direction-quote {
+    color: #FAF6F0 !important;
+    border-left-color: #f0c040 !important;
+}
+
+/* ── Activities box ── */
+.about-page .activities-box {
+    background: var(--temple-cream);
+    border: 1px solid var(--temple-border);
+    border-left: 5px solid var(--temple-red);
+}
+
+.about-page .activities-box strong {
+    color: var(--temple-red) !important;
+}
+
+.about-page .activities-box p {
+    color: var(--temple-text-secondary);
+}
+
+/* ── CTA section ── */
+.about-page .cta-section {
+    background: var(--temple-text);
+    color: #FAF6F0;
+}
+
+.about-page .cta-section h2 {
+    color: #FAF6F0;
+}
+
+.about-page .cta-section p {
+    color: rgba(250, 246, 240, 0.7);
+}
+
+.about-page .cta-section .label {
+    color: var(--temple-red-light);
+}
+
+.about-page .cta-section .btn-primary {
+    background: var(--temple-red);
+    color: #fff;
+    border-color: var(--temple-red);
+}
+
+.about-page .cta-section .btn-primary:hover {
+    background: var(--temple-red-light);
+}
+
+/* ── Footer — dark with red accent ── */
+.about-page .site-footer {
+    background: #1a1a1a;
+    border-top: 4px solid var(--temple-red);
+}
+
+.about-page .site-footer .footer-desc,
+.about-page .site-footer .footer-address,
+.about-page .site-footer a {
+    color: rgba(250, 246, 240, 0.7);
+}
+
+.about-page .site-footer a:hover {
+    color: #FAF6F0;
+}
+
+
+/* ═════════════════════════════════════════
+   EXPORTS PAGE — INDIAN TRICOLOUR THEME
+   Matching reference HTM design
+   ═════════════════════════════════════════ */
+
+.exports-page {
+    --saffron: #FF9933;
+    --saffron-light: #ffefe0;
+    --tri-green: #138808;
+    --green-dark: #0e6606;
+    --navy: #000080;
+    --sand: #f5efe6;
+    --tamil-brown: #8b5a2b;
+    --exim-border: #e0d9cc;
+    --exim-bg: #faf9f7;
+    --exim-text: #1e2b2f;
+    --exim-text-sec: #3b4f5a;
+}
+
+.exports-page {
+    background: var(--exim-bg);
+    color: var(--exim-text);
+}
+
+.exports-page #noise-canvas,
+.exports-page .bg-grid,
+.exports-page .glow-orb {
+    display: none;
+}
+
+/* ── Header/Footer — dark with saffron accent ── */
+.exports-page .site-header {
+    background: rgba(0, 0, 20, 0.97);
+    border-bottom: none;
+    box-shadow: 0 2px 0 var(--saffron), 0 4px 0 #fff, 0 6px 0 var(--tri-green);
+}
+
+.exports-page .mobile-nav {
+    background: rgba(0, 0, 20, 0.98);
+}
+
+.exports-page .site-footer {
+    background: #0f1d24;
+    border-top: 5px solid var(--saffron);
+}
+
+/* ── EXIM Wrapper ── */
+.exim-wrapper {
+    max-width: 1440px;
+    margin: calc(var(--header-height) + 1.5rem) auto 2rem;
+    background: white;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.25);
+    border-radius: 32px 32px 24px 24px;
+    overflow: hidden;
+    border: 1px solid #dad1c2;
+}
+
+/* ── Tricolour Bars ── */
+.tricolor-border-top,
+.tricolor-border-bottom {
+    height: 6px;
+}
+
+.tricolor-border-top {
+    background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 33.33%, #fff 33.33%, #fff 66.66%, var(--tri-green) 66.66%, var(--tri-green) 100%);
+}
+
+.tricolor-border-bottom {
+    background: linear-gradient(90deg, var(--tri-green) 0%, var(--tri-green) 33.33%, #fff 33.33%, #fff 66.66%, var(--saffron) 66.66%, var(--saffron) 100%);
+}
+
+/* ── EXIM Brand Bar ── */
+.exim-brand-bar {
+    background: #fff;
+    padding: 1.5rem 2.5rem 1rem;
+    border-bottom: 2px solid var(--saffron);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand-tamil {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d3b4c;
+    letter-spacing: -0.5px;
+}
+
+.brand-tamil span {
+    color: var(--saffron);
+    font-weight: 800;
+}
+
+.brand-roman {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5c5348;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.allied-badge {
+    background: var(--navy);
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid #FFD700;
+    box-shadow: 0 2px 0 #a65c00;
+}
+
+/* ── EXIM Hero ── */
+.exim-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    background: #fcf9f5;
+    border-bottom: 1px solid var(--exim-border);
+}
+
+.exim-hero-content {
+    padding: 3rem 2.5rem 3rem 3rem;
+}
+
+.hero-tamil-tag {
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.1rem;
+    color: var(--tamil-brown);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tag-line {
+    display: inline-block;
+    background: var(--saffron);
+    width: 40px;
+    height: 2px;
+}
+
+.exim-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #10232b;
+    margin-bottom: 1.5rem;
+}
+
+.txt-saffron {
+    color: var(--saffron);
+}
+
+.txt-green {
+    color: var(--tri-green);
+}
+
+.txt-navy {
+    color: var(--navy);
+}
+
+.exim-hero-desc {
+    font-size: 1.1rem;
+    color: var(--exim-text-sec);
+    max-width: 90%;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.exim-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.exim-btn-primary {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid #ffb258;
+    box-shadow: 0 6px 0 #06113C;
+    transition: 0.15s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.exim-btn-primary:hover {
+    background: #010c6b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #06113C;
+}
+
+.exim-btn-outline {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--tri-green);
+    color: var(--green-dark);
+    font-weight: 700;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    transition: 0.15s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.exim-btn-outline:hover {
+    background: #e5f5e0;
+}
+
+.exim-hero-quote {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #645d52;
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 0.95rem;
+}
+
+/* ── Hero Illustration Grid ── */
+.exim-hero-illustration {
+    background: linear-gradient(120deg, #fff0df, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.ill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.ill-item {
+    background: white;
+    border-radius: 30px 10px 30px 10px;
+    box-shadow: 15px 15px 0 rgba(255, 153, 51, 0.2);
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    border: 1px solid #ffe0b5;
+    transition: transform 0.2s;
+}
+
+.ill-item:hover {
+    transform: translateY(-3px);
+}
+
+.ill-even {
+    box-shadow: 15px 15px 0 rgba(19, 136, 8, 0.15) !important;
+}
+
+.ill-navy {
+    box-shadow: 15px 15px 0 rgba(0, 0, 128, 0.1) !important;
+}
+
+.ill-item .emoji {
+    font-size: 2.8rem;
+    filter: drop-shadow(2px 4px 4px #ddd);
+}
+
+.ill-item p {
+    font-weight: 600;
+    margin-top: 0.3rem;
+    color: #244353;
+    font-size: 0.85rem;
+}
+
+/* ── Flag Stats Strip ── */
+.exim-flag-stats {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(2px);
+    padding: 1.8rem 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid #dacdbd;
+}
+
+.exim-flag-row {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.flag-icon-lg {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 4px 4px #cfcfcf);
+}
+
+.exim-stat-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.exim-stat-pill {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: #f1ebe4;
+    padding: 0.4rem 1.3rem;
+    border-radius: 60px;
+    border-left: 4px solid var(--tri-green);
+    color: var(--exim-text);
+}
+
+/* ── Section Common ── */
+.exim-section-tag {
+    font-family: 'Noto Serif Tamil', serif;
+    color: var(--tamil-brown);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.exim-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.exim-section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #10232b;
+    max-width: 600px;
+}
+
+.exim-mandate-badge {
+    background: var(--tri-green);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ── Services Section ── */
+.exim-services-section {
+    padding: 3rem 2.5rem;
+    background: #fff;
+}
+
+.exim-service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.8rem;
+}
+
+.exim-svc-card {
+    background: #fcfaf7;
+    border: 1px solid #e3dbcf;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 6px solid var(--saffron);
+}
+
+.exim-svc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.exim-svc-white {
+    border-top-color: #ccc;
+    border-left: 2px solid #ccc;
+}
+
+.exim-svc-green {
+    border-top-color: var(--tri-green);
+}
+
+.exim-svc-navy {
+    border-top-color: var(--navy);
+}
+
+.exim-svc-saffron {
+    border-top-color: var(--saffron);
+}
+
+.exim-svc-icon {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+
+.exim-svc-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #10232b;
+    margin-bottom: 0.5rem;
+}
+
+.exim-svc-card p {
+    color: var(--exim-text-sec);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ── Commodities Section ── */
+.exim-commodities-section {
+    padding: 3rem 2.5rem;
+    background: var(--sand);
+    border-top: 1px solid var(--exim-border);
+}
+
+.exim-commodity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+.exim-commodity-card {
+    background: #fff;
+    border: 1px solid var(--exim-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.exim-commodity-card:hover {
+    border-color: var(--saffron);
+    transform: translateY(-2px);
+}
+
+.exim-commodity-card .emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.exim-commodity-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--exim-text);
+    margin-bottom: 0.4rem;
+}
+
+.exim-commodity-card p {
+    font-size: 0.85rem;
+    color: var(--exim-text-sec);
+    line-height: 1.5;
+}
+
+.exim-hs {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    background: rgba(0, 0, 128, 0.06);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* ── Allied Note ── */
+.exim-allied-note {
+    background: var(--saffron-light);
+    border-radius: 60px;
+    padding: 1.5rem 2.5rem;
+    margin: 0 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px dashed var(--tri-green);
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-image:
+        radial-gradient(circle at 10px 10px, #f5e3d1 2px, transparent 2px),
+        radial-gradient(circle at 30px 30px, #fff1de 3px, transparent 3px);
+    background-size: 40px 40px;
+}
+
+.exim-allied-note p {
+    font-weight: 500;
+    color: #0a2f3c;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.exim-allied-note p strong {
+    color: var(--navy);
+}
+
+.exim-parent-pill {
+    background: white;
+    padding: 0.6rem 1.8rem;
+    border-radius: 60px;
+    font-weight: 700;
+    color: var(--green-dark);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* ── Why Tamil Export House ── */
+.exim-why-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+}
+
+.exim-why-tamil {
+    background: #1c3340;
+    padding: 2.5rem;
+    font-family: 'Noto Serif Tamil', serif;
+}
+
+.exim-why-tamil h4 {
+    color: var(--saffron);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.exim-why-tamil p {
+    color: #cbdbe6;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.exim-why-features {
+    padding: 2.5rem;
+    background: #0b1d26;
+}
+
+.exim-feature-item {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #2c4b5a;
+    padding-bottom: 1rem;
+    color: #cbdbe6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.exim-feature-item strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.exim-feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+/* ── Trade Lanes Flag Showcase ── */
+.exim-trade-lanes {
+    background: #f4efe8;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.exim-trade-lanes h5 {
+    font-size: 1.3rem;
+    color: #2a3d48;
+    margin-bottom: 1.5rem;
+}
+
+.exim-flags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+}
+
+.exim-flag-block {
+    font-size: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 60px;
+    border: 1px solid #d7cdbc;
+    box-shadow: 0 4px 0 #b3a18b;
+    transition: transform 0.15s;
+}
+
+.exim-flag-block:hover {
+    transform: translateY(-2px);
+}
+
+.exim-flag-block span:last-child {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2f454f;
+}
+
+/* ── Compliance Section ── */
+.exim-compliance-section {
+    padding: 3rem 2.5rem;
+    background: #fff;
+    border-top: 1px solid var(--exim-border);
+}
+
+.exim-compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.exim-compliance-col {
+    background: #fcfaf7;
+    border: 1px solid var(--exim-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.exim-compliance-col h4 {
+    font-size: 1.05rem;
+    color: var(--exim-text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--saffron);
+}
+
+.exim-compliance-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.exim-compliance-col li {
+    padding: 0.4rem 0;
+    padding-left: 1.3rem;
+    position: relative;
+    font-size: 0.85rem;
+    color: var(--exim-text-sec);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+.exim-compliance-col li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--tri-green);
+    font-weight: bold;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .exim-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .exim-why-section {
+        grid-template-columns: 1fr;
+    }
+
+    .exim-brand-bar {
+        padding: 1rem 1.5rem;
+    }
+
+    .brand-tamil {
+        font-size: 1.5rem;
+    }
+
+    .exim-allied-note {
+        border-radius: 20px;
+        margin: 0 1.5rem;
+    }
+
+    .exim-services-section,
+    .exim-commodities-section,
+    .exim-compliance-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .flag-icon-lg {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ═════════════════════════════════════════
+   PAY PAGE — AXIS BANK THEME
+   Axis Burgundy (#97144D)
+   ═════════════════════════════════════════ */
+
+.pay-page {
+    --axis-burgundy: #97144D;
+    --axis-burgundy-light: #b91d5e;
+    --axis-burgundy-dark: #6e0f39;
+    --axis-cream: #FDF6F0;
+    --axis-gold: #C9A94E;
+}
+
+/* Header accent — burgundy stripe */
+.pay-page .site-header {
+    box-shadow: 0 2px 0 var(--axis-burgundy), 0 3px 0 var(--axis-gold);
+}
+
+/* Hero with Axis Bank branding */
+.pay-hero {
+    border-bottom: 3px solid var(--axis-burgundy);
+}
+
+/* ── Axis Bank Brand Bar ── */
+.axis-brand-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(151, 20, 77, 0.08);
+    border: 1px solid rgba(151, 20, 77, 0.2);
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.axis-logo-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.axis-logo-icon {
+    font-size: 2.2rem;
+    color: var(--axis-burgundy);
+    background: rgba(151, 20, 77, 0.12);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--axis-burgundy);
+}
+
+.axis-bank-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--axis-burgundy);
+    letter-spacing: 0.5px;
+}
+
+.axis-bank-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.axis-secure-badge {
+    background: rgba(151, 20, 77, 0.15);
+    color: var(--axis-burgundy);
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(151, 20, 77, 0.3);
+}
+
+/* ── Axis Card Header ── */
+.axis-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.axis-bank-pill {
+    background: var(--axis-burgundy);
+    color: white;
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* ── Payment card with burgundy accent ── */
+.pay-page .payment-card-block {
+    border-left: 4px solid var(--axis-burgundy);
+}
+
+.pay-page .copy-btn {
+    background: var(--axis-burgundy);
+    border-color: var(--axis-burgundy-dark);
+}
+
+.pay-page .copy-btn:hover {
+    background: var(--axis-burgundy-light);
+}
+
+.pay-page .email-highlight {
+    background: rgba(151, 20, 77, 0.15);
+    border-color: var(--axis-burgundy);
+    color: #e8c0d0;
+}
+
+.pay-page .alert-warn {
+    border-left-color: var(--axis-burgundy);
+}
+
+/* ── QR section accent ── */
+.pay-page .qr-icon {
+    color: var(--axis-burgundy);
+}
+
+.pay-page .qr-tag {
+    border-color: rgba(151, 20, 77, 0.3);
+    color: rgba(151, 20, 77, 0.8);
+}
+
+/* ── Footer accent ── */
+.pay-page .site-footer {
+    border-top: 3px solid var(--axis-burgundy);
+}
+
+/* ── WHITE / LIGHT BACKGROUND ── */
+.pay-page {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.pay-page #noise-canvas,
+.pay-page .bg-grid,
+.pay-page .glow-orb {
+    display: none;
+}
+
+.pay-page .site-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.pay-page .site-header .logo-eng,
+.pay-page .site-header .logo-tamil {
+    color: #1a1a1a;
+}
+
+.pay-page .site-header .nav-links a {
+    color: #333;
+}
+
+.pay-page .site-header .nav-links a:hover {
+    color: var(--axis-burgundy);
+}
+
+.pay-page .site-header .hamburger span {
+    background: #333;
+}
+
+.pay-page .mobile-nav {
+    background: #fff;
+}
+
+.pay-page .mobile-nav a {
+    color: #1a1a1a;
+    border-bottom-color: #eee;
+}
+
+.pay-page .page-hero {
+    background: linear-gradient(160deg, #fff 0%, #fdf6f0 50%, #f9f0e8 100%);
+}
+
+.pay-page .page-hero h1 {
+    color: #1a1a1a;
+}
+
+.pay-page .page-hero .label {
+    color: var(--axis-burgundy);
+    border-color: var(--axis-burgundy);
+}
+
+.pay-page .page-hero .hero-sub {
+    color: #555;
+}
+
+.pay-page .section-dark {
+    background: #fafafa;
+}
+
+.pay-page .payment-card-block {
+    background: #fff;
+    border: 1px solid #e5ddd3;
+    border-left: 4px solid var(--axis-burgundy);
+}
+
+.pay-page .payment-card-block h3 {
+    color: #1a1a1a;
+}
+
+.pay-page .detail-label {
+    color: #888;
+}
+
+.pay-page .detail-value {
+    color: #1a1a1a;
+}
+
+.pay-page .detail-row {
+    border-bottom-color: #eee;
+}
+
+.pay-page .qr-notice {
+    background: #fafafa;
+    border-color: #e0e0e0;
+}
+
+.pay-page .qr-notice p {
+    color: #666 !important;
+}
+
+.pay-page .qr-tag {
+    background: #fff;
+}
+
+.pay-page .instruction-box {
+    background: #f9f4ef;
+    border-color: #e5ddd3;
+}
+
+.pay-page .instruction-box p {
+    color: #444 !important;
+}
+
+.pay-page .instruction-box strong {
+    color: #1a1a1a !important;
+}
+
+.pay-page .email-highlight {
+    background: rgba(151, 20, 77, 0.1);
+    border-color: var(--axis-burgundy);
+    color: var(--axis-burgundy);
+}
+
+.pay-page .alert-warn {
+    background: #fff7f0;
+    border-color: #e5ddd3;
+    border-left: 4px solid var(--axis-burgundy);
+}
+
+.pay-page .alert-warn p {
+    color: #444;
+}
+
+.pay-page .alert-warn strong {
+    color: #1a1a1a;
+}
+
+.pay-page .alert-warn .email-highlight {
+    color: var(--axis-burgundy);
+}
+
+.pay-page .site-footer {
+    background: #1a1a1a;
 }

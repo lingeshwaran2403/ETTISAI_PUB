@@ -4,21 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global EXIM | ETTISAI — Export & Import Services</title>
+    <title>Global IMPEX | ETTISAI — Export & Import Services</title>
     <meta name="description"
-        content="ETTISAI Global EXIM: Tamil-origin export house managing cross-border trade, sourcing, logistics, trade finance and customs across 30+ nations including Russia-CIS corridor.">
+        content="ETTISAI Global IMPEX: Tamil-origin export house managing cross-border trade, sourcing, logistics, trade finance and customs across 120+ nations.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
 </head>
 
-<body>
-
-    <!-- Ambient Effects -->
-    <canvas id="noise-canvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
+<body class="exports-page">
 
     <!-- ═══ HEADER ═══ -->
     <header class="site-header">
@@ -34,7 +32,7 @@
                     <a href="#">Services</a>
                     <div class="nav-dropdown-menu">
                         <a href="eduserv.html">EduServ</a>
-                        <a href="exports.html">Global EXIM</a>
+                        <a href="exports.html">Global IMPEX</a>
                     </div>
                 </li>
                 <li><a href="pay.html">Pay</a></li>
@@ -53,161 +51,309 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="eduserv.html">EduServ</a>
-        <a href="exports.html">Global EXIM</a>
+        <a href="exports.html">Global IMPEX</a>
         <a href="pay.html">Pay</a>
         <a href="contact.html">Contact</a>
     </div>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="tricolor-accent reveal"></div>
-            <span class="label reveal">ETTISAI Global EXIM</span>
-            <h1 class="reveal" style="animation-delay: 0.1s;">Cross-Border Trade<br>& Export House</h1>
-            <p class="export-hero-tamil reveal" style="animation-delay: 0.2s;">"யாதும் ஊரே யாவரும் கேளிர்" — Every land
-                is home, every person our kin.</p>
-            <p class="hero-sub reveal" style="animation-delay: 0.3s;">
-                Tamil-origin trade infrastructure managing sourcing, logistics, finance and customs across 30+ nations.
-            </p>
-        </div>
-    </section>
+    <!-- ═══ EXIM PAGE WRAPPER ═══ -->
+    <div class="exim-wrapper">
+        <div class="tricolor-border-top"></div>
 
-    <!-- ═══ CORE SERVICES ═══ -->
-    <section class="section section-dark section-border-top" id="services">
-        <div class="container">
-            <span class="label reveal">What We Handle</span>
-            <h2 class="reveal">End-to-End Export Infrastructure</h2>
-            <div class="export-service-grid" style="margin-top: 2rem;">
-                <div class="export-service-card reveal">
-                    <div class="card-icon">🔍</div>
-                    <h3>Sourcing & Procurement</h3>
-                    <p style="color: var(--text-secondary);">Deep supplier networks. Verified Indian manufacturers.
-                        Quality-audited sourcing from textiles to industrial goods.</p>
+        <!-- ─── EXIM HEADER / BRAND ─── -->
+        <div class="exim-brand-bar">
+            <div class="exim-brand-left">
+                <div class="brand-tamil"><span>எத்திசை</span> குளோபல் இம்பெக்ஸ்</div>
+                <div class="brand-roman">ETTISAI GLOBAL IMPEX · Allied business of ETTISAI ENTERPRISES</div>
+            </div>
+            <div class="allied-badge">⚡ ALLIED · EXPORTS</div>
+        </div>
+
+        <!-- ─── HERO ─── -->
+        <div class="exim-hero">
+            <div class="exim-hero-content">
+                <div class="hero-tamil-tag"><span class="tag-line"></span> பாரம்பரியம் · வணிகம் · நம்பிக்கை</div>
+                <h1>
+                    <span class="txt-saffron">bharat</span> <span class="txt-green">trade</span><br>
+                    <span class="txt-navy">beyond borders</span>
+                </h1>
+                <p class="exim-hero-desc">End-to-end export solutions rooted in Tamil mercantile heritage. 120+
+                    countries · 40+ commodities · institutional trust since 2025.</p>
+                <div class="exim-cta-group">
+                    <a href="#commodities" class="exim-btn-primary">📊 explore commodities</a>
+                    <a href="contact.html" class="exim-btn-outline">📞 talk to trade officer</a>
                 </div>
-                <div class="export-service-card reveal">
-                    <div class="card-icon">🚢</div>
-                    <h3>Logistics & Freight</h3>
-                    <p style="color: var(--text-secondary);">Sea freight, air cargo, multimodal transport. Port-to-port
-                        and door-to-door operations with real-time tracking.</p>
-                </div>
-                <div class="export-service-card reveal">
-                    <div class="card-icon">💰</div>
-                    <h3>Trade Finance</h3>
-                    <p style="color: var(--text-secondary);">Letters of Credit, Bank Guarantees, Export Packing Credit.
-                        Full documentation support for cross-border settlements.</p>
-                </div>
-                <div class="export-service-card reveal">
-                    <div class="card-icon">📋</div>
-                    <h3>Customs & Compliance</h3>
-                    <p style="color: var(--text-secondary);">IEC, RCMC, HS Code classification, GST refunds, DGFT
-                        licensing, anti-dumping duty advisory.</p>
-                </div>
-                <div class="export-service-card reveal">
-                    <div class="card-icon">🤝</div>
-                    <h3>Buyer Matching</h3>
-                    <p style="color: var(--text-secondary);">International buyer identification, trade fair
-                        coordination, B2B matchmaking for Indian exporters.</p>
-                </div>
-                <div class="export-service-card reveal">
-                    <div class="card-icon">📊</div>
-                    <h3>Market Intelligence</h3>
-                    <p style="color: var(--text-secondary);">Tariff analysis, competitor mapping, demand forecasting
-                        across target geographies.</p>
+                <div class="exim-hero-quote">
+                    "யாதும் ஊரே யாவரும் கேளிர்" — every place is ours, every one is kin.
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ═══ ACTIVE TRADE LANES ═══ -->
-    <section class="section section-border-top" id="trade-lanes">
-        <div class="container">
-            <span class="label reveal">Trade Lanes</span>
-            <h2 class="reveal">Active Corridors</h2>
-            <p class="reveal" style="color: var(--text-secondary); margin-bottom: 1rem; animation-delay: 0.1s;">Primary
-                trade routes currently serviced by ETTISAI EXIM division.</p>
-
-            <div class="allied-banner reveal" style="animation-delay: 0.15s;">
-                <p>🇷🇺 <strong>Russia & CIS Corridor</strong> — Specialized trade desk for Russia, Kazakhstan,
-                    Uzbekistan, and Kyrgyzstan.</p>
-            </div>
-
-            <div class="trade-flags reveal" style="animation-delay: 0.2s;">
-                <div class="trade-flag">🇷🇺<span>Russia</span></div>
-                <div class="trade-flag">🇰🇿<span>Kazakhstan</span></div>
-                <div class="trade-flag">🇺🇿<span>Uzbekistan</span></div>
-                <div class="trade-flag">🇰🇬<span>Kyrgyzstan</span></div>
-                <div class="trade-flag">🇦🇪<span>UAE</span></div>
-                <div class="trade-flag">🇸🇦<span>Saudi</span></div>
-                <div class="trade-flag">🇺🇸<span>USA</span></div>
-                <div class="trade-flag">🇬🇧<span>UK</span></div>
-                <div class="trade-flag">🇩🇪<span>Germany</span></div>
-                <div class="trade-flag">🇸🇬<span>Singapore</span></div>
-                <div class="trade-flag">🇲🇾<span>Malaysia</span></div>
-                <div class="trade-flag">🇿🇦<span>S. Africa</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ WHY TAMIL EXPORT HOUSE ═══ -->
-    <section class="section section-dark section-border-top" id="heritage">
-        <div class="container">
-            <span class="label reveal">Heritage</span>
-            <h2 class="reveal">Why a Tamil Export House?</h2>
-            <div class="heritage-split reveal" style="animation-delay: 0.1s;">
-                <div class="heritage-left">
-                    <h4>Civilisational Trade Legacy</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Tamil Nadu has been a maritime trade
-                        hub for over 2,000 years — from Poompuhar and Mamallapuram to modern Chennai Port. ETTISAI
-                        carries this DNA into the 21st century.</p>
-                    <div class="stat-row">
-                        <span class="stat-pill">2000+ years of trade</span>
-                        <span class="stat-pill">Top 5 Indian export state</span>
+            <div class="exim-hero-illustration">
+                <div class="ill-grid">
+                    <div class="ill-item">
+                        <div class="emoji">⚓</div>
+                        <p>port clearance</p>
                     </div>
-                </div>
-                <div class="heritage-right">
-                    <div class="feature-item-export">
-                        <span class="feature-icon">🏭</span>
-                        <div>
-                            <strong>Industrial Base</strong>
-                            <p style="color: var(--text-secondary);">Direct access to Tamil Nadu's manufacturing
-                                corridor — auto, textiles, leather, chemicals, and engineering goods.</p>
-                        </div>
+                    <div class="ill-item ill-even">
+                        <div class="emoji">🌾</div>
+                        <p>agri commodities</p>
                     </div>
-                    <div class="feature-item-export">
-                        <span class="feature-icon">🌊</span>
-                        <div>
-                            <strong>Port Proximity</strong>
-                            <p style="color: var(--text-secondary);">Chennai, Ennore, Tuticorin ports — strategic
-                                positioning for Indian Ocean and Pacific routes.</p>
-                        </div>
+                    <div class="ill-item ill-navy">
+                        <div class="emoji">🧾</div>
+                        <p>letter of credit</p>
                     </div>
-                    <div class="feature-item-export">
-                        <span class="feature-icon">🤲</span>
-                        <div>
-                            <strong>Diaspora Network</strong>
-                            <p style="color: var(--text-secondary);">70M+ Tamil diaspora worldwide. Cultural trust
-                                accelerates trade relationships across geographies.</p>
-                        </div>
+                    <div class="ill-item">
+                        <div class="emoji">🚢</div>
+                        <p>freight</p>
+                    </div>
+                    <div class="ill-item ill-even">
+                        <div class="emoji">🔬</div>
+                        <p>pre-shipment</p>
+                    </div>
+                    <div class="ill-item ill-navy">
+                        <div class="emoji">🏭</div>
+                        <p>manufacturing</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ═══ CTA ═══ -->
-    <section class="cta-section section-border-top reveal">
-        <div class="container" style="position: relative; z-index: 2;">
-            <span class="label" style="display: block; margin-bottom: 1rem;">Trade</span>
-            <h2 style="margin-bottom: 1.5rem;">Ready to Export?</h2>
-            <p
-                style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                We start with a trade feasibility assessment. No intermediaries. Direct institutional engagement.
-            </p>
-            <a href="contact.html" class="btn-primary">
-                ⬡ Secure Transmission
-            </a>
+        <!-- ─── FLAG STATS STRIP ─── -->
+        <div class="exim-flag-stats">
+            <div class="exim-flag-row">
+                <span class="flag-icon-lg">🇮🇳</span>
+                <span class="flag-icon-lg">🇷🇺</span>
+                <span class="flag-icon-lg">🇦🇪</span>
+                <span class="flag-icon-lg">🇸🇬</span>
+                <span class="flag-icon-lg">🇺🇿</span>
+                <span class="flag-icon-lg">🇧🇩</span>
+                <span class="flag-icon-lg">🇻🇳</span>
+                <span class="flag-icon-lg">🇲🇾</span>
+                <span class="flag-icon-lg">🇨🇳</span>
+                <span class="flag-icon-lg">🇧🇷</span>
+                <span class="flag-icon-lg">🇿🇦</span>
+                <span class="flag-icon-lg">🇺🇸</span>
+            </div>
+            <div class="exim-stat-badges">
+                <span class="exim-stat-pill">+120 markets</span>
+                <span class="exim-stat-pill">$100k · FY25</span>
+            </div>
         </div>
-    </section>
+
+        <!-- ─── CORE EXPORT SERVICES ─── -->
+        <div class="exim-services-section" id="services">
+            <div class="exim-section-tag">⚙️ end-to-end export enablement</div>
+            <div class="exim-section-header">
+                <h2>from factory floor to foreign docks — we own the chain</h2>
+                <span class="exim-mandate-badge">🛃 2026–27 mandate</span>
+            </div>
+            <div class="exim-service-grid">
+                <div class="exim-svc-card exim-svc-saffron">
+                    <div class="exim-svc-icon">📑</div>
+                    <h3>sourcing & aggregation</h3>
+                    <p>Tamil Nadu textile, leather, spices, granite — directly from producer clusters.</p>
+                </div>
+                <div class="exim-svc-card exim-svc-white">
+                    <div class="exim-svc-icon">⚖️</div>
+                    <h3>export licencing</h3>
+                    <p>IEC, RCMC, preferential tariffs, ROO certificate, FTA utilisation.</p>
+                </div>
+                <div class="exim-svc-card exim-svc-green">
+                    <div class="exim-svc-icon">📦</div>
+                    <h3>logistics · freight</h3>
+                    <p>FCL/LCL, air charter, multi-modal, Chennai/Kattupalli/Tuticorin port handling.</p>
+                </div>
+                <div class="exim-svc-card exim-svc-navy">
+                    <div class="exim-svc-icon">💹</div>
+                    <h3>trade finance</h3>
+                    <p>LC advising, bill discounting, ECGC cover, pre‑shipment credit.</p>
+                </div>
+                <div class="exim-svc-card exim-svc-saffron">
+                    <div class="exim-svc-icon">🔖</div>
+                    <h3>customs & documentation</h3>
+                    <p>Shipping bill, COO, legalisation, apostille, certificate of inspection.</p>
+                </div>
+                <div class="exim-svc-card exim-svc-green">
+                    <div class="exim-svc-icon">🤝</div>
+                    <h3>buyer representation</h3>
+                    <p>Counterparty due diligence, bilingual negotiation (Russian/Arabic/Tamil).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── COMMODITIES (expanded) ─── -->
+        <div class="exim-commodities-section" id="commodities">
+            <div class="exim-section-tag">🏷️ export-ready commodities</div>
+            <div class="exim-section-header">
+                <h2>40+ commodities from India's industrial heartland</h2>
+            </div>
+            <div class="exim-commodity-grid">
+                <div class="exim-commodity-card">
+                    <span class="emoji">🧵</span>
+                    <h4>Textiles & Garments</h4>
+                    <p>Cotton, silk, ready-made garments, home textiles, technical textiles</p>
+                    <span class="exim-hs">HS 50-63</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">⚙️</span>
+                    <h4>Engineering Goods</h4>
+                    <p>Auto components, iron & steel, machinery parts, castings, forgings</p>
+                    <span class="exim-hs">HS 72-85</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">🧪</span>
+                    <h4>Chemicals & Pharma</h4>
+                    <p>Bulk drugs, formulations, agrochemicals, dyes & intermediates</p>
+                    <span class="exim-hs">HS 28-38</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">👜</span>
+                    <h4>Leather & Footwear</h4>
+                    <p>Finished leather, footwear, leather goods. Chennai — India's leather capital</p>
+                    <span class="exim-hs">HS 41-43</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">🍚</span>
+                    <h4>Agri & Food Products</h4>
+                    <p>Basmati rice, spices, tea, coffee, marine products, cashew, processed foods</p>
+                    <span class="exim-hs">HS 01-24</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">💎</span>
+                    <h4>Gems & Jewellery</h4>
+                    <p>Cut & polished diamonds, gold jewellery, silver articles, synthetic stones</p>
+                    <span class="exim-hs">HS 71</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">🪨</span>
+                    <h4>Granite & Minerals</h4>
+                    <p>Polished granite, marble, sandstone, mica, iron ore, ilmenite</p>
+                    <span class="exim-hs">HS 25-26</span>
+                </div>
+                <div class="exim-commodity-card">
+                    <span class="emoji">🖥️</span>
+                    <h4>Electronics & IT</h4>
+                    <p>Semiconductors, PCBs, mobile components, telecom equipment</p>
+                    <span class="exim-hs">HS 84-85</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── ALLIED BUSINESS NOTE ─── -->
+        <div class="exim-allied-note">
+            <p>⚡ <strong>Allied business of ETTISAI ENTERPRISES</strong> — software parent (CIN: U82199TN2025PTC185731)
+                provides the digital backbone for this export vertical.</p>
+            <span class="exim-parent-pill">🏭 parent: ettisai.com</span>
+        </div>
+
+        <!-- ─── WHY TAMIL EXPORT HOUSE ─── -->
+        <div class="exim-why-section">
+            <div class="exim-why-tamil">
+                <h4>தமிழ் வணிக மரபு · தேசிய நம்பகம்</h4>
+                <p>Tamil merchant guilds (திசையாயிரத்து ஐந்நூற்றுவர்) traded with Rome, Kaveri delta to Malacca. We
+                    rebuild that network with modern compliance.</p>
+                <p style="margin-top:1.5rem;">🇮🇳 Indian tricolour integrity — every shipment audited, every rupee
+                    accounted.</p>
+            </div>
+            <div class="exim-why-features">
+                <div class="exim-feature-item">
+                    <span class="exim-feature-icon">🏛️</span>
+                    <div>
+                        <strong>institutional risk management</strong><br>
+                        Backed by software parent's 95% first-time right code.
+                    </div>
+                </div>
+                <div class="exim-feature-item">
+                    <span class="exim-feature-icon">🧾</span>
+                    <div>
+                        <strong>real‑time tracking</strong><br>
+                        Internal dashboards (built by ETTISAI CORE) for shipment visibility.
+                    </div>
+                </div>
+                <div class="exim-feature-item">
+                    <span class="exim-feature-icon">🇷🇺</span>
+                    <div>
+                        <strong>Russia · CIS desk</strong><br>
+                        Specialised documentation, VAT refunds, customs bond.
+                    </div>
+                </div>
+                <div class="exim-feature-item">
+                    <span class="exim-feature-icon">📊</span>
+                    <div>
+                        <strong>INCOTERMS 2020</strong><br>
+                        EXW, FOB, CIF, CFR, DDP, FCA — we advise and execute on the right term.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── TRADE LANES (EXTENDED FLAGS) ─── -->
+        <div class="exim-trade-lanes" id="trade-lanes">
+            <h5>🌍 active trade lanes · 2026</h5>
+            <div class="exim-flags-container">
+                <div class="exim-flag-block"><span>🇷🇺</span><span>Russia</span></div>
+                <div class="exim-flag-block"><span>🇦🇪</span><span>UAE</span></div>
+                <div class="exim-flag-block"><span>🇸🇦</span><span>Saudi</span></div>
+                <div class="exim-flag-block"><span>🇮🇩</span><span>Indonesia</span></div>
+                <div class="exim-flag-block"><span>🇲🇲</span><span>Myanmar</span></div>
+                <div class="exim-flag-block"><span>🇱🇰</span><span>Sri Lanka</span></div>
+                <div class="exim-flag-block"><span>🇪🇬</span><span>Egypt</span></div>
+                <div class="exim-flag-block"><span>🇰🇪</span><span>Kenya</span></div>
+                <div class="exim-flag-block"><span>🇧🇷</span><span>Brazil</span></div>
+                <div class="exim-flag-block"><span>🇺🇸</span><span>USA</span></div>
+                <div class="exim-flag-block"><span>🇬🇧</span><span>UK</span></div>
+                <div class="exim-flag-block"><span>🇩🇪</span><span>Germany</span></div>
+                <div class="exim-flag-block"><span>🇸🇬</span><span>Singapore</span></div>
+                <div class="exim-flag-block"><span>🇲🇾</span><span>Malaysia</span></div>
+                <div class="exim-flag-block"><span>🇰🇿</span><span>Kazakhstan</span></div>
+                <div class="exim-flag-block"><span>🇺🇿</span><span>Uzbekistan</span></div>
+                <div class="exim-flag-block"><span>🇳🇬</span><span>Nigeria</span></div>
+                <div class="exim-flag-block"><span>🇿🇦</span><span>S. Africa</span></div>
+            </div>
+        </div>
+
+        <!-- ─── COMPLIANCE & DOCS ─── -->
+        <div class="exim-compliance-section" id="compliance">
+            <div class="exim-section-tag">📋 compliance · documentation · certifications</div>
+            <div class="exim-compliance-grid">
+                <div class="exim-compliance-col">
+                    <h4>🏛️ Regulatory</h4>
+                    <ul>
+                        <li>IEC — Importer Exporter Code (DGFT)</li>
+                        <li>RCMC — Export Promotion Council</li>
+                        <li>AD Code — Authorized Dealer (Bank)</li>
+                        <li>FEMA — RBI Compliance</li>
+                        <li>ECGC — Export Credit Insurance</li>
+                        <li>BIS — Quality Certification</li>
+                    </ul>
+                </div>
+                <div class="exim-compliance-col">
+                    <h4>📄 Commercial</h4>
+                    <ul>
+                        <li>Proforma & Commercial Invoice</li>
+                        <li>Packing List</li>
+                        <li>Bill of Lading / Airway Bill</li>
+                        <li>Insurance Certificate</li>
+                        <li>Certificate of Origin (CoO)</li>
+                        <li>GSP / CEPA Certificate</li>
+                    </ul>
+                </div>
+                <div class="exim-compliance-col">
+                    <h4>🔬 Quality & Finance</h4>
+                    <ul>
+                        <li>Pre-Shipment Inspection</li>
+                        <li>Phytosanitary Certificate</li>
+                        <li>Fumigation Certificate</li>
+                        <li>Letter of Credit (LC)</li>
+                        <li>Bank Realisation Certificate</li>
+                        <li>FIRC / eBRC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tricolor-border-bottom"></div>
+    </div>
+    <!-- exim-wrapper end -->
 
     <!-- ═══ FOOTER ═══ -->
     <footer class="site-footer">
@@ -229,14 +375,15 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="eduserv.html">EduServ</a>
-                <a href="exports.html">Global EXIM</a>
+                <a href="exports.html">Global IMPEX</a>
                 <a href="pay.html">Pay</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-col">
                 <h5>Connect</h5>
                 <a href="mailto:info@ettisai.com">info@ettisai.com</a>
-                <p class="mono" style="margin-top: 0.75rem; font-size: 0.6rem;">CIN: U82199TN2025PTC185731</p>
+                <a href="tel:+919036023533">+91 90360 23533</a>
+                <p class="mono" style="margin-top: 0.75rem; font-size: 0.85rem;">CIN: U82199TN2025PTC185731</p>
             </div>
         </div>
         <div class="footer-bottom">
