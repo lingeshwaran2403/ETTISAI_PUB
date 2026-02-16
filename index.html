@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETTISAI | Critical Operations · Business Intelligence · Core Engineering</title>
+    <title>ETTISAI · institutional countermeasure</title>
     <meta name="description"
         content="ETTISAI builds the operational layer between decision and consequence. Military-grade intelligence. Institution-grade execution. Critical Operations, Business Intelligence, Core Engineering.">
     <link rel="stylesheet" href="styles.css">
@@ -16,9 +16,7 @@
 
     <!-- Ambient Effects -->
     <canvas id="noise-canvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
+    <div id="scanlines"></div>
 
     <!-- ═══ HEADER ═══ -->
     <header class="site-header">
@@ -41,6 +39,10 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="header-meta mono">
+            System Status: <span class="green">COUNTERMEASURE</span><br>
+            Chennai, IN · 2026
+        </div>
         <button class="hamburger" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -61,322 +63,172 @@
     <!-- ═══ HERO ═══ -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-label reveal">எத்தி சை — Institutional Countermeasure</div>
-            <h1 class="reveal delay-1 hero-pillars">
-                <span class="pillar-highlight">CRITICAL OPERATIONS</span>
-                <span class="pillar-highlight">BUSINESS INTELLIGENCE</span>
-                <span class="pillar-highlight">CORE <span class="text-gradient">ENGINEERING</span>.</span>
+            <div class="mono" style="margin-bottom: 1rem;">// brainchild of business systems</div>
+            <h1 class="hero-statement reveal-text">
+                CRITICAL OPERATIONS ///<br>
+                BUSINESS INTELLIGENCE ///<br>
+                CORE ENGINEERING ///
             </h1>
-            <p class="hero-subtitle reveal delay-2">
-                <span class="typewriter" data-text="When execution determines survival."></span>
+            <p class="reveal-text" style="color: var(--text-secondary); margin-bottom: 1rem;">
+                26,000+ software companies in India.<br>
+                Most build software.<br>
+                We engineer survivability.<br>
+                Decision systems designed for environments where failure has cost.
             </p>
-            <p class="hero-body reveal delay-3">
-                In critical environments, standard IT vendors are a liability. Their models assume second chances. Your
-                operations don't.<br><br>
-                ETTISAI builds the operational layer between decision and consequence. We are not a software agency. We
-                are an <strong style="color: var(--accent);">institutional countermeasure</strong>.
+
+            <!-- Institutional sarcasm quotes -->
+            <div class="hero-quote reveal-text">
+                <span class="green">"Intelligence seeks you,</span> but you appear to be a master at hiding your
+                business."<br>
+                <span class="red">"I admire how you never let evidence interfere with your business."</span><br>
+                <span class="mono" style="color: var(--text-secondary);">— institutional countermeasure</span>
+            </div>
+
+            <div class="hero-sub reveal-text">
+                <span class="green">Military-Grade Intelligence.</span> <span class="red">Institution-Grade
+                    Execution.</span>
+            </div>
+
+            <!-- Data strip with stats -->
+            <div class="data-strip reveal-text">
+                <div class="data-item"><span class="big red">26,139</span> software companies (IND)</div>
+                <div class="data-item"><span class="big green">73%</span> project failure rate</div>
+                <div class="data-item"><span class="big red">$5.47M</span> avg non‑compliance cost</div>
+                <div class="data-item"><span class="big green">60%</span> outages = human error</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 01 // ORIENTATION ═══ -->
+    <div class="grid-container">
+        <div class="grid-col">
+            <div class="section-label mono">01 // ORIENTATION</div>
+        </div>
+        <div class="grid-col content-block">
+            <p class="statement-text reveal-text" style="font-size: 2rem; margin-bottom: 1rem;">
+                ETTISAI exists for <span class="red">extreme environments</span> where errors compound, compliance has
+                teeth, and decisions cannot be reversed.
             </p>
-            <div class="hero-tagline reveal delay-4">
-                Military-Grade Intelligence. Institution-Grade Execution.
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ MARKET REALITY ═══ -->
-    <section class="section section-dark section-border-top" id="reality">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">01 // The Problem</span>
-                <h2>Market Reality</h2>
-                <p>India has <strong style="color: var(--text-bright);">26,139</strong> registered software companies.
-                    They generate $250+ billion in annual revenue. They produce polished decks, billable hours, and
-                    comfortable assurances.</p>
-            </div>
-
-            <div class="divider"></div>
-
-            <p class="mono reveal" style="margin-bottom: 2rem; color: var(--text-secondary);">And yet:</p>
-
-            <div class="stats-grid">
-                <div class="stat-card reveal delay-1">
-                    <div class="stat-number" data-count="73" data-suffix="%">0%</div>
-                    <div class="stat-label">Digital transformation<br>projects fail</div>
-                    <div class="stat-source">— McKinsey</div>
-                </div>
-                <div class="stat-card reveal delay-2">
-                    <div class="stat-number" data-count="60" data-suffix="%">0%</div>
-                    <div class="stat-label">System outages from<br>human error</div>
-                    <div class="stat-source">— Google SRE</div>
-                </div>
-                <div class="stat-card reveal delay-3">
-                    <div class="stat-number" data-count="5.47" data-prefix="$" data-suffix="M" data-decimals="2">$0M
-                    </div>
-                    <div class="stat-label">Avg. cost of regulatory<br>non-compliance</div>
-                    <div class="stat-source">— Deloitte</div>
-                </div>
-                <div class="stat-card reveal delay-4">
-                    <div class="stat-number" data-count="80" data-suffix="%">0%</div>
-                    <div class="stat-label">Back-office processes<br>undocumented</div>
-                    <div class="stat-source">— PwC</div>
-                </div>
-            </div>
-
-            <div class="stats-question reveal">
-                <h3 class="glitch">Why?</h3>
-                <p class="stats-answer">
-                    Because most organizations operate inside one domain—product, or compliance, or engineering. They
-                    optimize for visibility, not continuity.<br><br>
-                    But <strong>failure happens in the gaps between them.</strong><br><br>
-                    <span class="label" style="font-size: 0.8rem;">The gap is where we operate.</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ THE TRIAD ═══ -->
-    <section class="section section-border-top" id="triad">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">02 // The Reaction</span>
-                <h2>The Triad</h2>
-            </div>
-
-            <div class="triad-grid">
-                <div class="triad-card reveal delay-1">
-                    <span class="triad-code">C-OPS // Domain 01</span>
-                    <h3>Critical Operations</h3>
-                    <p class="triad-tagline">Operations where mistakes are terminal, not educational.</p>
-                    <ul>
-                        <li>Audit-survivable documentation</li>
-                        <li>Regulatory execution</li>
-                        <li>Ground-truth processes</li>
-                        <li>Continuous, testable controls</li>
-                    </ul>
-                    <p
-                        style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
-                        88% of compliance officers report missing continuous controls — KPMG
-                    </p>
-                </div>
-
-                <div class="triad-card reveal delay-2">
-                    <span class="triad-code">B-INT // Domain 02</span>
-                    <h3>Business Intelligence</h3>
-                    <p class="triad-tagline">Military-grade intelligence for business decisions.</p>
-                    <ul>
-                        <li>Signal before noise</li>
-                        <li>Pattern recognition before movement</li>
-                        <li>Due diligence before decisions</li>
-                        <li>Data filtration at scale</li>
-                    </ul>
-                    <p
-                        style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
-                        2.5 quintillion bytes generated daily — most companies drown in it.
-                    </p>
-                </div>
-
-                <div class="triad-card reveal delay-3">
-                    <span class="triad-code">C-ENG // Domain 03</span>
-                    <h3>Core Engineering</h3>
-                    <p class="triad-tagline">Engineering that must hold under stress.</p>
-                    <ul>
-                        <li>Infrastructure that survives reality</li>
-                        <li>Systems that scale consequence</li>
-                        <li>95% first-time right code</li>
-                        <li>Production-grade from day one</li>
-                    </ul>
-                    <p
-                        style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
-                        In production, debugging is a confession.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ COMPARISON TABLE ═══ -->
-    <section class="section section-dark section-border-top" id="comparison">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">03 // The Solution</span>
-                <h2>Why ETTISAI</h2>
-            </div>
-
-            <div class="reveal-scale">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Conventional Firms (26,139 of them)</th>
-                            <th>ETTISAI</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Assign a junior account manager</td>
-                            <td>Founder-led execution. Always.</td>
-                        </tr>
-                        <tr>
-                            <td>73% project failure rate</td>
-                            <td>95% first-time right code</td>
-                        </tr>
-                        <tr>
-                            <td>Disappear after deployment</td>
-                            <td>Build institutional readiness</td>
-                        </tr>
-                        <tr>
-                            <td>Optimize billable hours</td>
-                            <td>Optimize survivability</td>
-                        </tr>
-                        <tr>
-                            <td>Measure activity</td>
-                            <td>Measure consequence</td>
-                        </tr>
-                        <tr>
-                            <td>Document after the fact</td>
-                            <td>Build audit-ready from day one</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ SOCIAL PROOF ═══ -->
-    <section class="section section-border-top" id="proof">
-        <div class="container">
-            <div class="quote-block reveal">
-                <div class="quote-mark">"</div>
-                <p class="quote-text">You will never speak to a junior account manager.</p>
-                <p class="quote-attribution">— Guganathan & Lingeshwaran, Founders</p>
-                <p class="quote-context">
-                    100% founder engagement isn't a KPI. It's the minimum viable standard for trust.
-                    $5.47 million is the average cost of getting it wrong.
-                    We don't delegate decisions that carry that weight.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ THE FILTER ═══ -->
-    <section class="section section-dark section-border-top" id="filter">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">04 // The Reality</span>
-                <h2>The Filter</h2>
-            </div>
-
-            <div class="filter-grid">
-                <div class="filter-col filter-not reveal-left">
-                    <h4>ETTISAI is not for:</h4>
-                    <ul>
-                        <li>Speed without structure</li>
-                        <li>Experimentation without stakes</li>
-                        <li>Visibility without accountability</li>
-                        <li>The 73% who will fail anyway</li>
-                    </ul>
-                </div>
-                <div class="filter-col filter-yes reveal-right">
-                    <h4>ETTISAI is for:</h4>
-                    <ul>
-                        <li>Those who understand that law is the floor, but ethics are the ceiling</li>
-                        <li>Operations where errors compound and compliance has teeth</li>
-                        <li>Organizations building something that must endure</li>
-                        <li>Leaders who prefer institutions over personalities</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ PROCESS / PHASES ═══ -->
-    <section class="section section-border-top" id="process">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">05 // Process</span>
-                <h2>How Engagements Begin</h2>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item reveal delay-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-phase">Phase 0</div>
-                    <h4>Open Capabilities</h4>
-                    <p>Foundational access—not to sell, but to observe.</p>
-                </div>
-                <div class="timeline-item reveal delay-2">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-phase">Phase 1</div>
-                    <h4>Diagnostic Conference</h4>
-                    <p>A closed, structured session examining the business as it operates, the industry as it behaves,
-                        risks no one wants on record.</p>
-                </div>
-                <div class="timeline-item reveal delay-3">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-phase">Phase 2</div>
-                    <h4>Institutional Readiness</h4>
-                    <p>Financial entities. Regulatory structures. Ownership vehicles. Operational legitimacy.</p>
-                </div>
-                <div class="timeline-item reveal delay-4">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-phase">Phase 3</div>
-                    <h4>Assembly</h4>
-                    <p>Systems. People. Execution. Based on reality, not preference.</p>
-                </div>
-            </div>
-
-            <p class="mono reveal" style="text-align: center; margin-top: 3rem; color: var(--accent);">
-                There is no package. There is only execution.
+            <p class="mono reveal-text" style="color: var(--green);">
+                > We do not optimize comfort. We optimize survivability.<br>
+                > Failure happens in the gaps — we work in the gaps.
             </p>
         </div>
-    </section>
+        <div class="grid-col"></div>
+    </div>
 
-    <!-- ═══ CTA ═══ -->
-    <section class="cta-section section-border-top reveal">
-        <div class="container" style="position: relative; z-index: 2;">
-            <span class="label" style="display: block; margin-bottom: 1rem;">Initiate</span>
-            <h2 style="margin-bottom: 1.5rem;">Ready to begin?</h2>
-            <p
-                style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                We don't start with contracts. We start with orientation.
-            </p>
-            <a href="contact.html" class="btn-primary">
-                ⬡ Secure Transmission
-            </a>
+    <!-- ═══ 02 // MARKET REALITY ═══ -->
+    <div class="grid-container" style="border-bottom: 1px solid var(--grid-line);">
+        <div class="grid-col">
+            <div class="section-label mono">02 // MARKET REALITY</div>
         </div>
-    </section>
+        <div class="grid-col">
+            <div class="reality-grid reveal-text">
+                <div class="stat-card">
+                    <div class="stat-number red">73%</div>
+                    <div class="mono">of digital transformations fail to deliver intended value (McKinsey)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number green">5.47M</div>
+                    <div class="mono">USD – average cost of regulatory non‑compliance (Deloitte)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number red">60%</div>
+                    <div class="mono">of system outages caused by human error during change (Google SRE)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number green">80%</div>
+                    <div class="mono">of back‑office processes undocumented and audit‑vulnerable (PwC)</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-col"></div>
+    </div>
+
+    <!-- ═══ TRIAD ═══ -->
+    <div class="triad-wrapper">
+        <div class="triad-card">
+            <div class="mono red">DOMAIN 01</div>
+            <h3>Critical<br>Operations</h3>
+            <div class="mono">(C-OPS)</div>
+            <p>"Where 'we'll fix it later' becomes expensive."</p>
+            <ul class="list-clean">
+                <li>Regulatory Execution</li>
+                <li>Audit-Survivable Documentation</li>
+                <li>Back-Office Continuity</li>
+                <li>Ground-Truth Processes</li>
+            </ul>
+        </div>
+
+        <div class="triad-card">
+            <div class="mono green">DOMAIN 02</div>
+            <h3>Business<br>Intelligence</h3>
+            <div class="mono">(B-INT)</div>
+            <p>"Due diligence before the decision is visible."</p>
+            <ul class="list-clean">
+                <li>Signal vs Noise</li>
+                <li>Pattern vs Narrative</li>
+                <li>Capital Behavior Interpretation</li>
+                <li>Risk Invisible to Reports</li>
+            </ul>
+        </div>
+
+        <div class="triad-card">
+            <div class="mono red">DOMAIN 03</div>
+            <h3>Core<br>Engineering</h3>
+            <div class="mono">(C-ENG)</div>
+            <p>"Where theory is punished by reality."</p>
+            <ul class="list-clean">
+                <li>System Survivability</li>
+                <li>Process Engineering</li>
+                <li>Human-Machine Coordination</li>
+                <li>Consequence-First Scale</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ═══ 03 // FILTER ═══ -->
+    <div class="grid-container" style="border-bottom: none;">
+        <div class="grid-col">
+            <div class="section-label mono">03 // FILTER</div>
+        </div>
+        <div class="grid-col content-block">
+            <p class="statement-text reveal-text" style="font-size: 2rem;">
+                We are <span class="red">not a consulting firm</span>. We are not a pitch deck. We do not sell packages.
+            </p>
+            <div class="mono reveal-text" style="color: var(--green); font-size: 1.2rem; margin: 2rem 0;">
+                NO BUTTONS. NO CTAS. NO JUNIOR ACCOUNT MANAGERS.
+            </div>
+            <p class="reveal-text" style="color: var(--text-secondary);">
+                We provide foundational access — not to sell, but to observe.<br>
+                If you are looking for speed without structure, <span class="red">we are not useful.</span><br>
+                If you are building something that must endure, <span class="green">we are.</span>
+            </p>
+            <p class="mono red" style="margin-top: 2rem;">"I admire how you never let evidence interfere with your
+                business."</p>
+        </div>
+        <div class="grid-col"></div>
+    </div>
 
     <!-- ═══ FOOTER ═══ -->
-    <footer class="site-footer">
-        <div class="footer-main">
-            <div class="footer-brand">
-                <span class="logo-eng">ETTISAI</span>
-                <span class="logo-tamil">எத்திசை</span>
-                <p class="footer-desc">
-                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
-                    Critical Operations | Business Intelligence | Core Engineering
-                </p>
-                <p class="footer-address">
-                    #3/520, M.M.D.A, Mogappair East<br>
-                    Chennai - 600037, Tamil Nadu, India
-                </p>
-            </div>
-            <div class="footer-col">
-                <h5>Navigation</h5>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="eduserv.html">EduServ</a>
-                <a href="exports.html">Global EXIM</a>
-                <a href="pay.html">Pay</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h5>Connect</h5>
-                <a href="mailto:info@ettisai.com">info@ettisai.com</a>
-                <p class="mono" style="margin-top: 0.75rem; font-size: 0.6rem;">CIN: U82199TN2025PTC185731</p>
-            </div>
+    <footer class="home-footer">
+        <div class="logo-group">
+            <div class="mono" style="margin-bottom: 1rem;">INSTITUTIONAL IDENTITY</div>
+            <div class="footer-logo-large">ETTISAI</div>
+            <div class="logo-tamil" style="font-size: 1.8rem;">எத்திசை</div>
+            <p class="mono" style="margin-top: 1rem;">Movement in all directions without loss of center.</p>
         </div>
-        <div class="footer-bottom">
-            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
-            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
+
+        <div class="mono" style="text-align: right;">
+            © 2026 ETTISAI ENTERPRISES PVT LTD<br>
+            CIN: U82199TN2025PTC185731<br>
+            Registered Office: No.3/520 M.M.D.A, Mogappair East,<br>
+            Chennai, Tamil Nadu – 600037<br>
+            Email ID: info@ettisai.com<br>
+            <span class="green">Military-Grade Intelligence</span> · <span class="red">Institution-Grade
+                Execution</span><br>
+            <br>
+            // END TRANSMISSION
         </div>
     </footer>
 

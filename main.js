@@ -36,26 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const buffer32 = new Uint32Array(idata.data.buffer);
             const len = buffer32.length;
 
-            // Dense white dots — old TV static
+            // Old-TV flicker with green/red tinted dots
             for (let i = 0; i < len; i++) {
-                if (Math.random() < 0.15) {
-                    const brightness = Math.floor(Math.random() * 255);
-                    buffer32[i] = (255 << 24) | (brightness << 16) | (brightness << 8) | brightness;
-                }
-            }
-
-            // Horizontal scanlines
-            for (let y = 0; y < h; y += 3) {
-                const rowStart = y * w;
-                for (let x = 0; x < w; x++) {
-                    const idx = rowStart + x;
-                    if (idx < len) {
-                        const existing = buffer32[idx];
-                        if (existing) {
-                            // Dim every 3rd row for scanline effect
-                            buffer32[idx] = (255 << 24) | (40 << 16) | (40 << 8) | 40;
-                        }
-                    }
+                if (Math.random() < 0.08) {
+                    const r = Math.random();
+                    if (r < 0.05) buffer32[i] = 0xff4caf50;       // green dot
+                    else if (r < 0.1) buffer32[i] = 0xffdf514c;   // red dot
+                    else buffer32[i] = 0xffffffff;                 // white dot
                 }
             }
 
@@ -77,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ════════════════════════════════════════════
     // 2. SCROLL REVEAL ANIMATIONS
     // ════════════════════════════════════════════
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-text');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
