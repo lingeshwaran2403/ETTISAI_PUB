@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTISAI CONSULTANCY · overseas education</title>
+    <!-- font & basic styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Inter', sans-serif;
+            color: #13242e;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* main card / container */
+        .consultancy-card {
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 50px -20px rgba(0, 20, 40, 0.25);
+            overflow: hidden;
+            border: 1px solid #e0eaf2;
+        }
+
+        /* header with institutional style */
+        .top-bar {
+            background: #0f212e;
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid #b68b40;
+        }
+
+        .logo-area h1 {
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .logo-area h1 span {
+            font-weight: 300;
+            font-size: 1rem;
+            display: block;
+            color: #cbd5e0;
+            letter-spacing: 0.3px;
+        }
+
+        .intake-badge {
+            background: #b68b40;
+            color: #0f212e;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 0 #6d4f26;
+        }
+
+        .intake-badge small {
+            font-size: 0.7rem;
+            font-weight: 500;
+            display: block;
+            color: #1e2f3b;
+        }
+
+        /* flag strip */
+        .flag-strip {
+            background: #eef3f8;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid #cbd7e4;
+        }
+
+        .flag-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem 2rem;
+        }
+
+        .flag-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: #1b3b4f;
+        }
+
+        .flag-emoji {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.1));
+        }
+
+        /* headline */
+        .headline-section {
+            padding: 2.5rem 2.5rem 1rem 2.5rem;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 800px;
+            color: #0e2635;
+            border-left: 7px solid #b68b40;
+            padding-left: 1.8rem;
+        }
+
+        .sub-head {
+            font-size: 1.2rem;
+            color: #2d4d62;
+            margin-top: 0.8rem;
+            font-weight: 400;
+        }
+
+        /* service grid – full support */
+        .service-wrapper {
+            padding: 1rem 2.5rem 2rem 2.5rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: #0f212e;
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #b68b40;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .service-item {
+            background: #f5faff;
+            border-radius: 30px;
+            padding: 1rem 1.6rem;
+            font-weight: 500;
+            color: #132e3f;
+            border: 1px solid #caddf0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: 0.1s ease;
+            font-size: 1rem;
+        }
+
+        .service-item:hover {
+            background: #e4eefa;
+            border-color: #b68b40;
+        }
+
+        .service-icon {
+            font-size: 1.3rem;
+        }
+
+        .highlight-flight {
+            background: #e0d7c0;
+            border: 2px solid #b68b40;
+            font-weight: 700;
+            color: #0b262f;
+        }
+
+        /* extra detail row */
+        .inclusion-footer {
+            background: #eaf0f8;
+            margin: 2rem 2.5rem 0 2.5rem;
+            padding: 1.2rem 2rem;
+            border-radius: 100px 30px 30px 100px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #b1c8dd;
+        }
+
+        .pill {
+            background: white;
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px dashed #0f212e;
+            color: #1f384b;
+        }
+
+        .pill strong {
+            color: #b07c2e;
+            font-size: 1.2rem;
+            margin-right: 0.2rem;
+        }
+
+        .foot-note {
+            font-size: 0.9rem;
+            color: #2f4d64;
+        }
+
+        /* universities / partners brief */
+        .uni-row {
+            padding: 2rem 2.5rem 2rem 2.5rem;
+            border-top: 2px solid #deecf7;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .uni-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            font-weight: 600;
+            color: #345f78;
+            font-size: 1rem;
+        }
+
+        .uni-logos span {
+            background: #f0f6fe;
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            border: 1px solid #cbdae9;
+        }
+
+        .arrow-note {
+            color: #374f62;
+            font-weight: 500;
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid #b68b40;
+        }
+
+        /* final CTA + institutional footer */
+        .cta-section {
+            background: #0f212e;
+            padding: 2rem 2.5rem;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 5px solid #b68b40;
+        }
+
+        .cta-left h3 {
+            font-weight: 600;
+            font-size: 1.9rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-left p {
+            color: #b4cfec;
+            margin-top: 0.3rem;
+        }
+
+        .cta-button {
+            background: #b68b40;
+            border: none;
+            color: #0f212e;
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.1s ease;
+            box-shadow: 0 8px 0 #6d4f26;
+            border: 1px solid #e5b95c;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #c79f50;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 #6d4f26;
+        }
+
+        .company-footer {
+            background: #06131c;
+            padding: 1.2rem 2.5rem;
+            color: #879fb2;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-footer a {
+            color: #b9d0e6;
+            text-decoration: none;
+            border-bottom: 1px dotted #5f7f99;
+        }
+
+        .russian-flag-special {
+            background: #f2f0e0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="consultancy-card">
+
+        <!-- top header with company name & intake -->
+        <div class="top-bar">
+            <div class="logo-area">
+                <h1>ETTISAI CONSULTANCY<span>overseas education · admission services</span></h1>
+            </div>
+            <div class="intake-badge">
+                2026–2027 Intake <small>Full Support · Admission to Graduation</small>
+            </div>
+        </div>
+
+        <!-- country flags (including russia) -->
+        <div class="flag-strip">
+            <div class="flag-container">
+                <div class="flag-item"><span class="flag-emoji">🇬🇧</span> UK</div>
+                <div class="flag-item"><span class="flag-emoji">🇺🇸</span> USA</div>
+                <div class="flag-item"><span class="flag-emoji">🇨🇦</span> Canada</div>
+                <div class="flag-item"><span class="flag-emoji">🇦🇺</span> Australia</div>
+                <div class="flag-item"><span class="flag-emoji">🇩🇪</span> Germany</div>
+                <div class="flag-item"><span class="flag-emoji">🇫🇷</span> France</div>
+                <div class="flag-item"><span class="flag-emoji">🇮🇪</span> Ireland</div>
+                <div class="flag-item"><span class="flag-emoji">🇳🇱</span> Netherlands</div>
+                <div class="flag-item"><span class="flag-emoji">🇨🇭</span> Switzerland</div>
+                <div class="flag-item"><span class="flag-emoji">🇸🇪</span> Sweden</div>
+                <div class="flag-item"><span class="flag-emoji">🇮🇹</span> Italy</div>
+                <div class="flag-item"><span class="flag-emoji">🇪🇸</span> Spain</div>
+                <div class="flag-item"><span class="flag-emoji">🇯🇵</span> Japan</div>
+                <div class="flag-item"><span class="flag-emoji">🇨🇳</span> China</div>
+                <div class="flag-item"><span class="flag-emoji">🇷🇺</span> Russia</div>
+                <div class="flag-item"><span class="flag-emoji">🇳🇿</span> New Zealand</div>
+                <div class="flag-item"><span class="flag-emoji">🇸🇬</span> Singapore</div>
+                <div class="flag-item"><span class="flag-emoji">🇲🇾</span> Malaysia</div>
+            </div>
+            <!-- small russian flag emphasis (already above, but extra highlight) -->
+            <div style="text-align: right; margin-top: 0.5rem;">
+                <span class="russian-flag-special"><span style="font-size: 1.5rem;">🇷🇺</span> Russian Federation · full support</span>
+            </div>
+        </div>
+
+        <!-- headline -->
+        <div class="headline-section">
+            <div class="headline">Invitation letter to graduation — one seamless journey</div>
+            <div class="sub-head">🧾 Our all-inclusive service covers everything you need, abroad. no surprises, no hidden costs.</div>
+        </div>
+
+        <!-- main service grid -->
+        <div class="service-wrapper">
+            <div class="service-tag">✓ 360° coverage — 2026/27 intake</div>
+            <div class="service-grid">
+                <div class="service-item"><span class="service-icon">📩</span> Admission & Invitation Letter</div>
+                <div class="service-item"><span class="service-icon">🏘️</span> Hostel Placement</div>
+                <div class="service-item"><span class="service-icon">📜</span> Apostille & Legalisation</div>
+                <div class="service-item"><span class="service-icon">🛂</span> Visa Charges + Extension</div>
+                <div class="service-item"><span class="service-icon">🩺</span> Medical Check & Fingerprint</div>
+                <div class="service-item"><span class="service-icon">🛡️</span> Health & Accident Insurance</div>
+                <div class="service-item"><span class="service-icon">🔤</span> Translation & Notary</div>
+                <div class="service-item"><span class="service-icon">🛬</span> Airport Pickup</div>
+                <div class="service-item"><span class="service-icon">📱</span> Local SIM & Bank Account</div>
+                <div class="service-item"><span class="service-icon">🍛</span> 3-Day Food on Arrival</div>
+                <div class="service-item"><span class="service-icon">📚</span> Full Academic Support</div>
+                <div class="service-item highlight-flight"><span class="service-icon">✈️</span> Flight Tickets Included</div>
+            </div>
+        </div>
+
+        <!-- inclusion extra line (tickets / no hidden) -->
+        <div class="inclusion-footer">
+            <span class="pill"><strong>✈️</strong> flight tickets — already covered</span>
+            <span class="foot-note">✔️ everything listed: one package, one payment</span>
+        </div>
+
+        <!-- universities / countries quick mention -->
+        <div class="uni-row">
+            <div class="uni-logos">
+                <span>🏛️ 200+ partner universities</span>
+                <span>🇷🇺 Moscow State</span>
+                <span>🇬🇧 King's College</span>
+                <span>🇨🇦 UBC</span>
+                <span>🇦🇺 ANU</span>
+                <span>🇩🇪 LMU Munich</span>
+                <span>🇺🇸 NYU</span>
+            </div>
+            <div class="arrow-note">➡️ 2026–27 intake open</div>
+        </div>
+
+        <!-- strong call to action -->
+        <div class="cta-section">
+            <div class="cta-left">
+                <h3>start your admission today</h3>
+                <p>visa · accommodation · tickets — we handle everything</p>
+            </div>
+            <button class="cta-button">📞 Free Consultation</button>
+        </div>
+
+        <!-- footer with company info -->
+        <div class="company-footer">
+            <span>ETTISAI CONSULTANCY (a unit of ETTISAI ENTERPRISES Pvt Ltd)</span>
+            <span>CIN: U82199TN2025PTC185731 | <a href="#">info@ettisai.com</a></span>
+        </div>
+    </div>
+
+    <!-- tiny disclaimer: flight tickets included as per package terms -->
+    <div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: #47687e;">* flight tickets included in comprehensive package — conditions apply, subject to university offer & visa approval. all flags shown represent destination countries served.</div>
+</div>
+</body>
+</html>

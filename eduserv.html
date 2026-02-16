@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduServ | ETTISAI — Overseas Education Consultancy</title>
+    <meta name="description"
+        content="ETTISAI EduServ: 360° overseas education consultancy covering 18+ countries. University admissions, visa processing, pre-departure orientation, and flight-inclusive packages.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+</head>
+
+<body>
+
+    <!-- Ambient Effects -->
+    <canvas id="noise-canvas"></canvas>
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <a href="index.html" class="logo-link">
+            <span class="logo-eng">ETTISAI</span>
+            <span class="logo-tamil">எத்திசை</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Services</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="eduserv.html">EduServ</a>
+                        <a href="exports.html">Global EXIM</a>
+                    </div>
+                </li>
+                <li><a href="pay.html">Pay</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="eduserv.html">EduServ</a>
+        <a href="exports.html">Global EXIM</a>
+        <a href="pay.html">Pay</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="label reveal">ETTISAI EduServ</span>
+            <h1 class="reveal" style="animation-delay: 0.1s;">Overseas Education<br>Consultancy</h1>
+            <p class="hero-sub reveal" style="animation-delay: 0.2s;">
+                360° guidance from university selection to airport departure — across 18+ countries.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ FLAG STRIP ═══ -->
+    <section class="section section-dark section-border-top" id="destinations">
+        <div class="container">
+            <span class="label reveal">Destinations</span>
+            <h2 class="reveal">18+ Countries. One Consultancy.</h2>
+            <div class="flag-strip-container reveal" style="animation-delay: 0.1s;">
+                <div class="flag-item"><span class="flag-emoji">🇺🇸</span> USA</div>
+                <div class="flag-item"><span class="flag-emoji">🇬🇧</span> UK</div>
+                <div class="flag-item"><span class="flag-emoji">🇨🇦</span> Canada</div>
+                <div class="flag-item"><span class="flag-emoji">🇦🇺</span> Australia</div>
+                <div class="flag-item"><span class="flag-emoji">🇳🇿</span> New Zealand</div>
+                <div class="flag-item"><span class="flag-emoji">🇩🇪</span> Germany</div>
+                <div class="flag-item"><span class="flag-emoji">🇫🇷</span> France</div>
+                <div class="flag-item"><span class="flag-emoji">🇮🇪</span> Ireland</div>
+                <div class="flag-item"><span class="flag-emoji">🇸🇬</span> Singapore</div>
+                <div class="flag-item"><span class="flag-emoji">🇲🇾</span> Malaysia</div>
+                <div class="flag-item"><span class="flag-emoji">🇯🇵</span> Japan</div>
+                <div class="flag-item"><span class="flag-emoji">🇰🇷</span> South Korea</div>
+                <div class="flag-item"><span class="flag-emoji">🇮🇹</span> Italy</div>
+                <div class="flag-item"><span class="flag-emoji">🇪🇸</span> Spain</div>
+                <div class="flag-item"><span class="flag-emoji">🇳🇱</span> Netherlands</div>
+                <div class="flag-item"><span class="flag-emoji">🇸🇪</span> Sweden</div>
+                <div class="flag-item"><span class="flag-emoji">🇵🇱</span> Poland</div>
+                <div class="flag-item"><span class="flag-emoji">🇷🇺</span> Russia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 360° SERVICES ═══ -->
+    <section class="section section-border-top" id="services">
+        <div class="container">
+            <span class="label reveal">360° Coverage</span>
+            <h2 class="reveal">Full-Stack Education Services</h2>
+            <p class="reveal" style="animation-delay: 0.1s; color: var(--text-secondary); margin-bottom: 2rem;">
+                From counselling to campus arrival — every stage is engineered.
+            </p>
+            <div class="service-grid-edu">
+                <div class="service-item-edu reveal"><span class="service-icon">🎯</span> Career Counselling</div>
+                <div class="service-item-edu reveal"><span class="service-icon">🎓</span> University Shortlisting</div>
+                <div class="service-item-edu reveal"><span class="service-icon">📋</span> Application Processing</div>
+                <div class="service-item-edu reveal"><span class="service-icon">📝</span> SOP & Essay Guidance</div>
+                <div class="service-item-edu reveal"><span class="service-icon">📄</span> Visa Documentation</div>
+                <div class="service-item-edu reveal"><span class="service-icon">🏦</span> Education Loan Assistance
+                </div>
+                <div class="service-item-edu reveal"><span class="service-icon">✈️</span> Travel & Forex</div>
+                <div class="service-item-edu reveal"><span class="service-icon">🏠</span> Accommodation Support</div>
+                <div class="service-item-edu reveal"><span class="service-icon">🧭</span> Pre-Departure Briefing</div>
+                <div class="service-item-edu reveal"><span class="service-icon">📊</span> Scholarship Sourcing</div>
+                <div class="service-item-edu reveal"><span class="service-icon">📚</span> Test Prep (IELTS/TOEFL/GRE)
+                </div>
+                <div class="service-item-edu service-highlight reveal"><span class="service-icon">🛫</span>
+                    Flight-Inclusive Packages</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ UNIVERSITY PARTNERS ═══ -->
+    <section class="section section-dark section-border-top" id="partners">
+        <div class="container">
+            <span class="label reveal">Partner Network</span>
+            <h2 class="reveal">University & Institute Partners</h2>
+            <p class="reveal" style="animation-delay: 0.1s; color: var(--text-secondary); margin-bottom: 1rem;">
+                Tie-ups with accredited institutions across United Kingdom, Australia, Canada, Germany, and more.
+            </p>
+            <div class="uni-partners reveal" style="animation-delay: 0.2s;">
+                <span class="uni-chip">University of Greenwich</span>
+                <span class="uni-chip">Coventry University</span>
+                <span class="uni-chip">University of Hertfordshire</span>
+                <span class="uni-chip">Deakin University</span>
+                <span class="uni-chip">University of Wollongong</span>
+                <span class="uni-chip">Conestoga College</span>
+                <span class="uni-chip">Hochschule Furtwangen</span>
+                <span class="uni-chip">PSB Academy (Singapore)</span>
+            </div>
+            <div style="margin-top: 2rem;" class="reveal" style="animation-delay: 0.3s;">
+                <span class="intake-badge">Jan · May · Sep Intakes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-section section-border-top reveal">
+        <div class="container" style="position: relative; z-index: 2;">
+            <span class="label" style="display: block; margin-bottom: 1rem;">Begin</span>
+            <h2 style="margin-bottom: 1.5rem;">Start Your Education Journey</h2>
+            <p
+                style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                One consultation. Full clarity. No obligation.
+            </p>
+            <a href="contact.html" class="btn-primary">
+                ⬡ Book Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <span class="logo-eng">ETTISAI</span>
+                <span class="logo-tamil">எத்திசை</span>
+                <p class="footer-desc">
+                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
+                    Critical Operations | Business Intelligence | Core Engineering
+                </p>
+                <p class="footer-address">
+                    #3/520, M.M.D.A, Mogappair East<br>
+                    Chennai - 600037, Tamil Nadu, India
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="eduserv.html">EduServ</a>
+                <a href="exports.html">Global EXIM</a>
+                <a href="pay.html">Pay</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h5>Connect</h5>
+                <a href="mailto:info@ettisai.com">info@ettisai.com</a>
+                <p class="mono" style="margin-top: 0.75rem; font-size: 0.6rem;">CIN: U82199TN2025PTC185731</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
+            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

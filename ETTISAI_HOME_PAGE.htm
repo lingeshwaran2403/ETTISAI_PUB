@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTISAI · institutional countermeasure</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888888;
+            --red: #df514c;
+            --green: #4caf50;
+            --grid-line: rgba(255, 255, 255, 0.06);
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+            --noise-opacity: 0.15;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: crosshair;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            position: relative;
+        }
+
+        /* enhanced noise canvas (more pronounced, flickering) */
+        #noise-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.18;
+            mix-blend-mode: screen;
+        }
+
+        /* subtle scanline overlay for old-tv effect */
+        #scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 4px);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.25;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 {
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* color utilities */
+        .red {
+            color: var(--red);
+        }
+        .green {
+            color: var(--green);
+        }
+        .bg-red {
+            background-color: var(--red);
+            color: black;
+            padding: 0.2rem 0.5rem;
+        }
+        .bg-green {
+            background-color: var(--green);
+            color: black;
+            padding: 0.2rem 0.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 20% 1fr 20%;
+            border-bottom: 1px solid var(--grid-line);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .grid-col {
+            padding: 2rem;
+            border-right: 1px solid var(--grid-line);
+        }
+        
+        .grid-col:last-child {
+            border-right: none;
+        }
+
+        /* header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--grid-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-eng {
+            font-size: 1.4rem;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        .logo-tamil {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-family: sans-serif;
+        }
+
+        .header-meta {
+            text-align: right;
+        }
+
+        /* hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid var(--grid-line);
+            padding: 100px 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .hero-statement {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-quote {
+            border-left: 4px solid var(--red);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+
+        .hero-quote span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-sub {
+            font-family: var(--font-mono);
+            color: var(--text-secondary);
+            max-width: 500px;
+        }
+
+        /* data chips */
+        .data-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            border-top: 1px solid var(--grid-line);
+            border-bottom: 1px solid var(--grid-line);
+            padding: 1.5rem 0;
+        }
+
+        .data-item {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        .data-item .big {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* triad */
+        .triad-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid var(--grid-line);
+        }
+
+        .triad-card {
+            padding: 3rem 2rem;
+            border-right: 1px solid var(--grid-line);
+            transition: background 0.2s;
+        }
+
+        .triad-card:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .triad-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .triad-card .mono {
+            margin-bottom: 1.5rem;
+        }
+
+        .list-clean {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .list-clean li {
+            border-top: 1px solid var(--grid-line);
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* reality section */
+        .reality-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--grid-line);
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        /* footer */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--grid-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+
+        /* reveal animation */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero-statement { font-size: 2.5rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .grid-col:first-child, .grid-col:last-child { display: none; }
+            .triad-wrapper { grid-template-columns: 1fr; }
+            .triad-card { border-right: none; border-bottom: 1px solid var(--grid-line); }
+            .reality-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .footer-logo { font-size: 3rem; margin-top: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="noise-canvas"></canvas>
+    <div id="scanlines"></div>
+
+    <header>
+        <div class="logo-group">
+            <span class="logo-eng">ETTISAI</span>
+            <span class="logo-tamil">எத்திசை</span>
+        </div>
+        <div class="header-meta mono">
+            System Status: <span class="green">COUNTERMEASURE</span><br>
+            Chennai, IN · 2026
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="mono" style="margin-bottom: 1rem;">// brainchild of business systems</div>
+            <h1 class="hero-statement reveal-text">
+                CRITICAL OPERATIONS ///<br>
+                BUSINESS INTELLIGENCE ///<br>
+                CORE ENGINEERING ///
+            </h1>
+            26,000+ software companies in India.  
+Most build software.  
+We engineer survivability.  
+Decision systems designed for environments where failure has cost.
+</p>
+
+            
+            <!-- new quotes with red/green -->
+            <div class="hero-quote reveal-text">
+                <span class="green">“Intelligence seeks you,</span> but you appear to be a master at hiding your business.”<br>
+                <span class="red">“I admire how you never let evidence interfere with your business.”</span><br>
+                <span class="mono" style="color: var(--text-secondary);">— institutional countermeasure</span>
+            </div>
+
+            <div class="hero-sub reveal-text">
+                <span class="green">Military-Grade Intelligence.</span> <span class="red">Institution-Grade Execution.</span>
+            </div>
+
+            <!-- data strip with stats -->
+            <div class="data-strip reveal-text">
+                <div class="data-item"><span class="big red">26,139</span> software companies (IND)</div>
+                <div class="data-item"><span class="big green">73%</span> project failure rate</div>
+                <div class="data-item"><span class="big red">$5.47M</span> avg non‑compliance cost</div>
+                <div class="data-item"><span class="big green">60%</span> outages = human error</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- orientation section -->
+    <div class="grid-container">
+        <div class="grid-col">
+            <div class="section-label mono">01 // ORIENTATION</div>
+        </div>
+        <div class="grid-col content-block">
+            <p class="statement-text reveal-text" style="font-size: 2rem; margin-bottom: 1rem;">
+            ETTISAI exists for <span class="red">extreme environments</span> where errors compound, compliance has teeth, and decisions cannot be reversed.
+            </p>
+            <p class="mono reveal-text" style="color: var(--green);">
+                > We do not optimize comfort. We optimize survivability.<br>
+                > Failure happens in the gaps — we work in the gaps.
+            </p>
+        </div>
+        <div class="grid-col"></div>
+    </div>
+
+    <!-- market reality deep dive -->
+    <div class="grid-container" style="border-bottom: 1px solid var(--grid-line);">
+        <div class="grid-col">
+            <div class="section-label mono">02 // MARKET REALITY</div>
+        </div>
+        <div class="grid-col">
+            <div class="reality-grid reveal-text">
+                <div class="stat-card">
+                    <div class="stat-number red">73%</div>
+                    <div class="mono">of digital transformations fail to deliver intended value (McKinsey)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number green">5.47M</div>
+                    <div class="mono">USD – average cost of regulatory non‑compliance (Deloitte)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number red">60%</div>
+                    <div class="mono">of system outages caused by human error during change (Google SRE)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number green">80%</div>
+                    <div class="mono">of back‑office processes undocumented and audit‑vulnerable (PwC)</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-col"></div>
+    </div>
+
+    <!-- triad -->
+    <div class="triad-wrapper">
+        <div class="triad-card">
+            <div class="mono red">DOMAIN 01</div>
+            <h3>Critical<br>Operations</h3>
+            <div class="mono">(C-OPS)</div>
+            <p>“Where 'we'll fix it later' becomes expensive.”</p>
+            <ul class="list-clean">
+                <li>Regulatory Execution</li>
+                <li>Audit-Survivable Documentation</li>
+                <li>Back-Office Continuity</li>
+                <li>Ground-Truth Processes</li>
+            </ul>
+        </div>
+
+        <div class="triad-card">
+            <div class="mono green">DOMAIN 02</div>
+            <h3>Business<br>Intelligence</h3>
+            <div class="mono">(B-INT)</div>
+            <p>“Due diligence before the decision is visible.”</p>
+            <ul class="list-clean">
+                <li>Signal vs Noise</li>
+                <li>Pattern vs Narrative</li>
+                <li>Capital Behavior Interpretation</li>
+                <li>Risk Invisible to Reports</li>
+            </ul>
+        </div>
+
+        <div class="triad-card">
+            <div class="mono red">DOMAIN 03</div>
+            <h3>Core<br>Engineering</h3>
+            <div class="mono">(C-ENG)</div>
+            <p>“Where theory is punished by reality.”</p>
+            <ul class="list-clean">
+                <li>System Survivability</li>
+                <li>Process Engineering</li>
+                <li>Human-Machine Coordination</li>
+                <li>Consequence-First Scale</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- filter / no buttons -->
+    <div class="grid-container" style="border-bottom: none;">
+        <div class="grid-col">
+            <div class="section-label mono">03 // FILTER</div>
+        </div>
+        <div class="grid-col content-block">
+            <p class="statement-text reveal-text" style="font-size: 2rem;">
+                We are <span class="red">not a consulting firm</span>. We are not a pitch deck. We do not sell packages.
+            </p>
+            <div class="mono reveal-text" style="color: var(--green); font-size: 1.2rem; margin: 2rem 0;">
+                NO BUTTONS. NO CTAS. NO JUNIOR ACCOUNT MANAGERS.
+            </div>
+            <p class="reveal-text" style="color: var(--text-secondary);">
+                We provide foundational access — not to sell, but to observe.<br>
+                If you are looking for speed without structure, <span class="red">we are not useful.</span><br>
+                If you are building something that must endure, <span class="green">we are.</span>
+            </p>
+            <p class="mono red" style="margin-top: 2rem;">“I admire how you never let evidence interfere with your business.”</p>
+        </div>
+        <div class="grid-col"></div>
+    </div>
+
+    <footer>
+        <div class="logo-group">
+            <div class="mono" style="margin-bottom: 1rem;">INSTITUTIONAL IDENTITY</div>
+            <div class="footer-logo">ETTISAI</div>
+            <div class="logo-tamil" style="font-size: 1.8rem;">எத்திசை</div>
+            <p class="mono" style="margin-top: 1rem;">Movement in all directions without loss of center.</p>
+        </div>
+        
+        <div class="mono" style="text-align: right;">
+            © 2026 ETTISAI ENTERPRISES PVT LTD<br>
+            CIN: U82199TN2025PTC185731 
+Registered Office: No.3/520 M.M.D.A, Mogappair East,
+Chennai, Tamil Nadu – 600037 
+Email ID: info@ettisai.com
+<br>
+            <span class="green">Military-Grade Intelligence</span> · <span class="red">Institution-Grade Execution</span><br>
+            <br>
+            // END TRANSMISSION
+        </div>
+    </footer>
+
+    <script>
+        // enhanced noise with higher density (old tv flicker)
+        const canvas = document.getElementById('noise-canvas');
+        const ctx = canvas.getContext('2d');
+        let frame = 0;
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        function noise() {
+            const w = canvas.width;
+            const h = canvas.height;
+            const idata = ctx.createImageData(w, h);
+            const buffer32 = new Uint32Array(idata.data.buffer);
+            const len = buffer32.length;
+
+            for (let i = 0; i < len; i++) {
+                // higher probability for more flicker, and occasional green/red tinted dots
+                if (Math.random() < 0.08) {
+                    // mostly white, sometimes colored to reflect theme
+                    const r = Math.random();
+                    if (r < 0.05) buffer32[i] = 0xff4caf50; // green
+                    else if (r < 0.1) buffer32[i] = 0xffdf514c; // red
+                    else buffer32[i] = 0xffffffff; // white
+                }
+            }
+            ctx.putImageData(idata, 0, 0);
+            requestAnimationFrame(noise);
+        }
+        noise();
+
+        // reveal on scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal-text').forEach(el => observer.observe(el));
+
+        // system message
+        console.log("%c ETTISAI COUNTERMEASURE ACTIVE ", "background: #000; color: #df514c; padding: 5px; font-family: monospace; border: 1px solid #4caf50;");
+        console.log("Capabilities: C-OPS | B-INT | C-ENG");
+    </script>
+</body>
+</html>

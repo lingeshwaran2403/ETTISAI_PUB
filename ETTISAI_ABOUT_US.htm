@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTISAI · about (clean)</title>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+            color: #1e1e2a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -10px rgba(200, 50, 50, 0.15);
+            padding: 3rem 2.5rem;
+            border: 1px solid #f0e0e0;
+        }
+
+        /* red accents */
+        .red {
+            color: #b53b3b;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.1;
+            margin-bottom: 0.2rem;
+        }
+
+        .tamil-head {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 1.2rem;
+            color: #b53b3b;
+            margin-bottom: 1rem;
+        }
+
+        .subhead {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: #4a4a5a;
+            font-size: 0.95rem;
+            border-bottom: 2px solid #b53b3b;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .subhead i {
+            color: #b53b3b;
+            width: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1.2rem 0;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 5px solid #b53b3b;
+        }
+
+        .section-title i {
+            margin-right: 0.6rem;
+            color: #b53b3b;
+        }
+
+        .grid-2, .grid-3 {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2,1fr); }
+        .grid-3 { grid-template-columns: repeat(3,1fr); }
+
+        .card {
+            background: #fcf8f8;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid #f0d8d8;
+            transition: all 0.1s ease;
+        }
+
+        .card:hover {
+            border-color: #b53b3b;
+            box-shadow: 0 5px 15px rgba(180, 60, 60, 0.1);
+        }
+
+        .tamil-word {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #b53b3b;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            padding: 1.2rem 1.8rem;
+            background: #fef9f9;
+            border-radius: 30px;
+            border-left: 8px solid #b53b3b;
+            color: #2a2a35;
+            margin: 1.8rem 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #f0d8d8;
+            margin: 2.5rem 0;
+        }
+
+        .footer-address {
+            background: #b53b3b;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-address a {
+            color: #ffddcc;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .footer-address i {
+            margin-right: 0.4rem;
+        }
+
+        .small-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width:600px) {
+            .container { padding: 2rem 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- header -->
+    <hr>
+    <div style="text-align:center;">
+        <span class="tamil-word" style="font-size:5.0rem;">எத்திசை</span>
+        <p style="font-weight:750;">Movement in all directions, anchored by orientation.</p>
+    </div>
+    <hr>
+    </div>
+
+    <!-- subhead / cin address -->
+    <div class="subhead">
+       
+    </div>
+
+    <!-- Ettisai – A Name, Not a Claim -->
+    <p style="font-size:1.2rem; font-weight:400; margin-bottom:0.5rem;">“Ettisai means all directions. It appears in the Tamil Thai Vaazhthu not as ambition, but as civilizational confidence.”</p>
+    <div style="height:3px; width:80px; background:#b53b3b; margin:1.5rem 0;"></div>
+
+    <!-- highest aim -->
+    <p style="font-size:1.6rem; font-weight:300;">The highest aim of enterprise is <span class="red"><b>human flourishing</b></span>.</p>
+    <p class="quote">of those who build it, of those who rely on it, and of the society that enables it. This belief is not moral ornamentation. It is operational realism.</p>
+
+    <!-- philosophy intersection -->
+    <h2 class="section-title"><i class="fas fa-intersection"></i> The ETTISAI Philosophy</h2>
+    <p>ETTISAI operates at the intersection of:</p>
+    <div class="grid-3">
+        <div class="card"><span class="tamil-word">Ayn Rand</span> Rational self‑interest</div>
+        <div class="card"><span class="tamil-word">U.G.</span> Unconditioned clarity</div>
+        <div class="card"><span class="tamil-word">Article 51A(h)</span> Constitutional responsibility</div>
+        <div class="card"><span class="tamil-word">Scientific temper</span> Skepticism</div>
+        <div class="card"><span class="tamil-word">Tamil ethic</span> Reason, restraint, dignity</div>
+        <div class="card"><span class="tamil-word">Reality</span> No borrowed dogma</div>
+    </div>
+    <p style="margin-top:0.5rem;"><span class="red">Truth is not negotiated. Competence is not optional. Responsibility is not outsourced.</span></p>
+
+    <!-- leadership -->
+    <h2 class="section-title"><i class="fas fa-crown"></i> intellectual sovereignty</h2>
+    <p>The greatest founders share something rarer: <strong>intellectual sovereignty</strong>.</p>
+    <div class="grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+            <span class="tamil-word">அறம் (Aram)</span>
+            <ul style="list-style-type:'— '; padding-left:1.2rem; margin-top:1rem;">
+                <li>Think independently under uncertainty</li>
+                <li>Act decisively without cruelty</li>
+                <li>Accept dissent without insecurity</li>
+                <li>Take responsibility without theatrics</li>
+                <li>Measure success by durability, not applause</li>
+            </ul>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+            <i class="fas fa-feather" style="font-size:2.5rem; color:#b53b3b; margin-bottom:1rem;"></i>
+            <p>Authority is earned through clarity. Trust is earned through consistency. Nothing else scales.</p>
+        </div>
+    </div>
+
+    <!-- What we do - without exhibition -->
+    <h2 class="section-title"><i class="fas fa-bolt"></i> what we do · without exhibition</h2>
+    <p>ETTISAI is a serial entrepreneurial venture. Activities span: <span class="red">software systems, exports & global trade, financial & educational consultation, emerging sectors</span>.</p>
+    <p style="background:#fcf0f0; padding:1.2rem; border-radius:20px; margin:1.2rem 0;">These are expressions, not the essence. The essence: We build systems that are logically sound, ethically clean, and structurally durable. We do not chase trends, sell narratives, or confuse motion with progress. We enter domains only where intelligence compounds, value is real, and long‑term trust can be earned.</p>
+
+    <!-- civilizational confidence -->
+    <h2 class="section-title"><i class="fas fa-pagoda"></i> civilizational confidence</h2>
+    <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center;">
+        <div style="flex:1; min-width:150px;">
+            <span style="font-family:'Noto Serif Tamil'; font-size:3.5rem; color:#b53b3b;">தமிழ்</span>
+        </div>
+        <div style="flex:3;">
+            <p>Tamil civilization carries over five millennia of language, literature, trade, science, and ethical inquiry. Its global underrepresentation is not due to lack of depth – but lack of modern institutional expression.</p>
+            <p>ETTISAI is one such expression – born of <i>நேர்முக அறிதல்</i> (clear perception). It does not reject power; it insists on authority bound by reason. It does not deny memory; it treats tradition as foundation, not ornament.</p>
+        </div>
+    </div>
+    <div style="background:#b53b3b10; border-left:8px solid #b53b3b; padding:1.5rem; margin:2rem 0;">
+        <i class="fas fa-quote-left red"></i> As the Kural implies, action is justified only by consequence. Grounded in its origin, precise in its language, legible beyond borders – ETTISAI moves forward without disowning where it stands.
+    </div>
+    <p style="text-align:right;"><span class="tamil-word" style="display:inline-block;">அறம் · வீரம் · திறன்</span> — Aram, Veeram, Thiran (righteousness, valour, sovereign competence)</p>
+
+    <!-- Code of Conduct -->
+    <h2 class="section-title"><i class="fas fa-scroll"></i> code of conduct</h2>
+    <div class="grid-3">
+        <div class="card">Rational integrity over emotional convenience</div>
+        <div class="card">Transparency beyond minimum compliance</div>
+        <div class="card">Meritocracy without favouritism</div>
+        <div class="card">Accountability without scapegoating</div>
+        <div class="card">Innovation without recklessness</div>
+        <div class="card"><b>Law is the floor, ethics the ceiling.</b></div>
+    </div>
+
+    <!-- how we work with people -->
+    <h2 class="section-title"><i class="fas fa-handshake"></i> how we work with people</h2>
+    <p>We respect individuals as ends in themselves, not instruments. Inside ETTISAI:</p>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; margin:1.5rem 0;">
+        <span style="background:#b53b3b; color:white; padding:0.4rem 1.2rem; border-radius:40px;">Ideas > hierarchy</span>
+        <span style="background:#b53b3b; color:white; padding:0.4rem 1.2rem; border-radius:40px;">Responsibility with authority</span>
+        <span style="background:#b53b3b; color:white; padding:0.4rem 1.2rem; border-radius:40px;">Outcomes, not effort theatre</span>
+        <span style="background:#b53b3b; color:white; padding:0.4rem 1.2rem; border-radius:40px;">Learning is non‑negotiable</span>
+    </div>
+    <p>We expect seriousness, not servility. Independence, not arrogance.</p>
+
+    <!-- direction & closing -->
+    <h2 class="section-title"><i class="fas fa-compass"></i> our direction</h2>
+    <p style="font-size:1.4rem; font-weight:300;">“We are not in a hurry to become large. We are committed to becoming higher‑order in thought, conduct, and execution.”</p>
+    <p style="margin:1rem 0;">Growth that blurs judgment is decay masquerading as success.</p>
+    
+
+    <!-- closing statement -->
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; font-size:1.2rem; margin:2rem 0;">
+        <span><i class="fas fa-eye-slash red"></i> We are not interested in visibility.</span>
+        <span><i class="fas fa-check-circle red"></i> We are interested in getting it right.</span>
+    </div>
+    <p style="font-style:italic;">Thought, structure, conduct, consequence – either they work, or they don't.</p>
+
+    <!-- footer -->
+    <div class="footer-address">
+        <span><i class="fas fa-gopuram"></i> ETTISAI ENTERPRISES PRIVATE LIMITED</span>
+        <span><i class="fas fa-qrcode"></i> CIN U82199TN2025PTC185731</span>
+        <span><i class="fas fa-map-marker-alt"></i> #3/520, M.M.D.A, Mogappair East, Chennai - 600037</span>
+        <span><i class="fas fa-envelope"></i> <a href="mailto:info@ettisai.com">info@ettisai.com</a></span>
+    </div>
+    <div class="small-note">
+        <span class="red">—</span> grounded in origin, precise in language, legible beyond borders <span class="red">—</span>
+    </div>
+</div>
+</body>
+</html>

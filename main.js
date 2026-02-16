@@ -350,5 +350,45 @@ document.addEventListener('DOMContentLoaded', () => {
             randomEl.style.animation = 'glitchText 0.3s ease';
         }, 5000);
     }
+    // ════════════════════════════════════════════
+    // 13. COPY TO CLIPBOARD (Payment Page)
+    // ════════════════════════════════════════════
+    const copyBtns = document.querySelectorAll('.copy-btn[data-copy]');
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.getAttribute('data-copy');
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+
+    // ════════════════════════════════════════════
+    // 14. NAV DROPDOWN — prevent jump on Services link
+    // ════════════════════════════════════════════
+    document.querySelectorAll('.nav-dropdown > a[href="#"]').forEach(link => {
+        link.addEventListener('click', e => e.preventDefault());
+    });
 
 });

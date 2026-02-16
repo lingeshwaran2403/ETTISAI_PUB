@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTISAI GLOBAL EXIM · allied business</title>
+    <!-- Font & base styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf9f7;
+            font-family: 'Inter', sans-serif;
+            color: #1e2b2f;
+            line-height: 1.5;
+        }
+
+        /* Tricolor theme variables */
+        :root {
+            --saffron: #FF9933;
+            --saffron-light: #ffefe0;
+            --white: #FFFFFF;
+            --green: #138808;
+            --green-dark: #0e6606;
+            --navy-blue: #000080;  /* Ashoka Chakra colour */
+            --sand: #f5efe6;
+            --tamil-brown: #8b5a2b;
+            --border-light: #e0d9cc;
+        }
+
+        .tricolor-bg {
+            background: linear-gradient(145deg, var(--saffron-light) 0%, #fff 40%, #f1f7eb 100%);
+            position: relative;
+        }
+
+        .tricolor-border-top {
+            height: 6px;
+            background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--green) 66.66%, var(--green) 100%);
+        }
+
+        .tricolor-border-bottom {
+            height: 6px;
+            background: linear-gradient(90deg, var(--green) 0%, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--saffron) 66.66%, var(--saffron) 100%);
+        }
+
+        /* container */
+        .exim-page {
+            max-width: 1440px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25);
+            border-radius: 32px 32px 24px 24px;
+            overflow: hidden;
+            border: 1px solid #dad1c2;
+        }
+
+        /* header with Tamil + tricolor */
+        .header {
+            background: var(--white);
+            padding: 1.5rem 2.5rem 1rem 2.5rem;
+            border-bottom: 1px solid #f0e8da;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-tamil {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1d3b4c;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-tamil span {
+            color: var(--saffron);
+            font-weight: 800;
+        }
+
+        .brand-roman {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5c5348;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .allied-badge {
+            background: #000080;
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #FFD700;
+            box-shadow: 0 2px 0 #a65c00;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+            border-bottom: 2px solid var(--saffron);
+            padding-bottom: 0.6rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c3a42;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .main-nav a.active {
+            color: var(--navy-blue);
+            border-bottom: 3px solid var(--green);
+            padding-bottom: 0.6rem;
+        }
+
+        /* hero with tamil left and illustration */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            background: #fcf9f5;
+            border-bottom: 1px solid #e0d9cc;
+        }
+
+        .hero-content {
+            padding: 3rem 2.5rem 3rem 3rem;
+        }
+
+        .hero-tamil-tag {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 1.2rem;
+            color: var(--tamil-brown);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-tamil-tag span {
+            background: var(--saffron);
+            width: 40px;
+            height: 2px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #10232b;
+        }
+
+        .hero h1 .saffron {
+            color: var(--saffron);
+        }
+        .hero h1 .green {
+            color: var(--green);
+        }
+        .hero h1 .navy {
+            color: var(--navy-blue);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 2rem;
+            color: #3b4f5a;
+            max-width: 90%;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--navy-blue);
+            color: white;
+            border: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 1px solid #ffb258;
+            box-shadow: 0 6px 0 #06113C;
+            transition: 0.1s;
+        }
+
+        .btn-primary:hover {
+            background: #010c6b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #06113C;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--green);
+            color: var(--green-dark);
+            font-weight: 700;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .btn-outline:hover {
+            background: #e5f5e0;
+        }
+
+        .hero-illustration {
+            background: linear-gradient(120deg, #fff0df, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .illustration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .ill-item {
+            background: white;
+            border-radius: 30px 10px 30px 10px;
+            box-shadow: 15px 15px 0 rgba(255, 153, 51, 0.2);
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            border: 1px solid #ffe0b5;
+        }
+
+        .ill-item .emoji {
+            font-size: 2.8rem;
+            filter: drop-shadow(2px 4px 4px #ddd);
+        }
+
+        .ill-item p {
+            font-weight: 600;
+            margin-top: 0.3rem;
+            color: #244353;
+        }
+
+        .ill-item:nth-child(2) { box-shadow: 15px 15px 0 rgba(19, 136, 8, 0.15); }
+        .ill-item:nth-child(3) { box-shadow: 15px 15px 0 #0000801a; }
+
+        /* flag strip and stats */
+        .flag-stats {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 1.8rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #dacdbd;
+        }
+
+        .flag-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .flag-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 4px 4px #cfcfcf);
+        }
+
+        .stat-badge {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: #f1ebe4;
+            padding: 0.4rem 1.3rem;
+            border-radius: 60px;
+            border-left: 4px solid var(--green);
+        }
+
+        /* services grid - export focused */
+        .services-section {
+            padding: 3rem 2.5rem;
+            background: #ffffff;
+        }
+
+        .section-tag {
+            font-family: 'Noto Serif Tamil', serif;
+            color: var(--tamil-brown);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #10232b;
+            max-width: 500px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .service-card {
+            background: #fcfaf7;
+            border: 1px solid #e3dbcf;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            transition: 0.2s;
+            border-top: 6px solid var(--saffron);
+        }
+
+        .service-card:nth-child(2) { border-top-color: var(--white); border-left: 2px solid #ccc; }
+        .service-card:nth-child(3) { border-top-color: var(--green); }
+        .service-card:nth-child(4) { border-top-color: var(--navy-blue); }
+
+        .service-card .icon-large {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #2e4a5b;
+            font-size: 0.95rem;
+        }
+
+        /* allied business note */
+        .allied-note {
+            background: var(--saffron-light);
+            border-radius: 60px;
+            padding: 1.5rem 2.5rem;
+            margin: 0 2.5rem 2.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px dashed var(--green);
+            background-image: radial-gradient(circle at 10px 10px, #f5e3d1 2px, transparent 2px), radial-gradient(circle at 30px 30px, #fff1de 3px, transparent 3px);
+            background-size: 40px 40px;
+        }
+
+        .allied-note p {
+            font-weight: 500;
+            color: #0a2f3c;
+            font-size: 1.1rem;
+        }
+
+        .allied-note p strong {
+            color: var(--navy-blue);
+        }
+
+        .pill {
+            background: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        /* why choose exim */
+        .why-exim {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #11212b;
+            color: white;
+        }
+
+        .left-tamil {
+            background: #1c3340;
+            padding: 2.5rem;
+            font-family: 'Noto Serif Tamil', serif;
+        }
+
+        .left-tamil h4 {
+            color: var(--saffron);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .left-tamil p {
+            color: #cbdbe6;
+            font-size: 1.1rem;
+        }
+
+        .right-features {
+            padding: 2.5rem;
+            background: #0b1d26;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid #2c4b5a;
+            padding-bottom: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+        }
+
+        /* partner flags */
+        .partner-flags {
+            background: #f4efe8;
+            padding: 2rem 2.5rem;
+            text-align: center;
+        }
+
+        .partner-flags h5 {
+            font-size: 1.3rem;
+            color: #2a3d48;
+            margin-bottom: 1.5rem;
+        }
+
+        .flags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem 1.8rem;
+        }
+
+        .flag-block {
+            font-size: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 60px;
+            border: 1px solid #d7cdbc;
+            box-shadow: 0 4px 0 #b3a18b;
+        }
+
+        .flag-block span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #2f454f;
+        }
+
+        /* footer */
+        .footer {
+            background: #0f1d24;
+            padding: 2rem 2.5rem;
+            color: #b4cbd8;
+            border-top: 5px solid var(--saffron);
+        }
+
+        .footer .cin {
+            font-size: 0.9rem;
+            color: #b1ab9a;
+        }
+
+        .footer .main-software {
+            font-weight: 600;
+            color: var(--saffron);
+        }
+
+        .tricolor-end {
+            height: 4px;
+            background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 33.3%, var(--white) 33.3%, var(--white) 66.6%, var(--green) 66.6%, var(--green) 100%);
+        }
+
+        /* responsive tweaks */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .why-exim { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="exim-page tricolor-bg">
+    <!-- tricolor top border -->
+    <div class="tricolor-border-top"></div>
+
+    <!-- header -->
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <div class="brand-tamil"><span>எத்திசை</span> குளோபல் எக்சிம்</div>
+                <div class="brand-roman">ETTISAI GLOBAL EXIM · Allied business of ETTISAI ENTERPRISES</div>
+            </div>
+            <div class="allied-badge">⚡ ALLIED · EXPORTS</div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="active">home</a>
+            <a href="#">sourcing</a>
+            <a href="#">commodities</a>
+            <a href="#">trade lanes</a>
+            <a href="#">contact exim</a>
+        </nav>
+    </div>
+
+    <!-- HERO with tamil + tricolor and illustration -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-tamil-tag"><span></span> பாரம்பரியம் · வணிகம் · நம்பிக்கை</div>
+            <h1>
+                <span class="saffron">bharat</span> <span class="green">trade</span><br>
+                <span class="navy">beyond borders</span>
+            </h1>
+            <p class="hero-desc">End-to-end export solutions rooted in Tamil mercantile heritage. 120+ countries · 40+ commodities · institutional trust since 2025.</p>
+            <div class="cta-group">
+                <button class="btn-primary">📊 explore commodities</button>
+                <button class="btn-outline">📞 talk to trade officer</button>
+            </div>
+            <!-- small tamil quote -->
+            <div style="margin-top: 2rem; font-style: italic; color: #645d52; font-family: 'Noto Serif Tamil';">
+                "யாதும் ஊரே யாவரும் கேளிர்" — every place is ours, every one is kin.
+            </div>
+        </div>
+        <div class="hero-illustration">
+            <div class="illustration-grid">
+                <div class="ill-item"><div class="emoji">⚓</div><p>port clearance</p></div>
+                <div class="ill-item"><div class="emoji">🌾</div><p>agri commodities</p></div>
+                <div class="ill-item"><div class="emoji">🧾</div><p>letter of credit</p></div>
+                <div class="ill-item"><div class="emoji">🚢</div><p>freight</p></div>
+                <div class="ill-item"><div class="emoji">🔬</div><p>pre-shipment</p></div>
+                <div class="ill-item"><div class="emoji">🏭</div><p>manufacturing</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- international flags + stats (russia included) -->
+    <div class="flag-stats">
+        <div class="flag-row">
+            <span class="flag-icon">🇮🇳</span>
+            <span class="flag-icon">🇷🇺</span>
+            <span class="flag-icon">🇦🇪</span>
+            <span class="flag-icon">🇸🇬</span>
+            <span class="flag-icon">🇺🇿</span>
+            <span class="flag-icon">🇧🇩</span>
+            <span class="flag-icon">🇻🇳</span>
+            <span class="flag-icon">🇲🇾</span>
+            <span class="flag-icon">🇨🇳</span>
+            <span class="flag-icon">🇧🇷</span>
+            <span class="flag-icon">🇿🇦</span>
+            <span class="flag-icon">🇺🇸</span>
+        </div>
+        <div class="stat-badge">
+            <span class="stat-item">+120 markets</span>
+            <span class="stat-item">$100k · FY25</span>
+        </div>
+    </div>
+
+    <!-- core export services (full coverage) -->
+    <div class="services-section">
+        <div class="section-tag">⚙️ end-to-end export enablement</div>
+        <div class="section-header">
+            <h2>from factory floor to foreign docks — we own the chain</h2>
+            <span style="background: var(--green); color:white; padding:0.3rem 1rem; border-radius:30px;">🛃 2026–27 mandate</span>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card"><div class="icon-large">📑</div><h3>sourcing & aggregation</h3><p>tamil nadu textile, leather, spices, granite — directly from producer clusters.</p></div>
+            <div class="service-card"><div class="icon-large">⚖️</div><h3>export licencing</h3><p>IEC, RCMC, preferential tariffs, ROO certificate, FTA utilisation.</p></div>
+            <div class="service-card"><div class="icon-large">📦</div><h3>logistics · freight</h3><p>FCL/LCL, air charter, multi-modal, Chennai/Kattupalli/Tuticorin port handling.</p></div>
+            <div class="service-card"><div class="icon-large">💹</div><h3>trade finance</h3><p>LC advising, bill discounting, ECGC cover, pre‑shipment credit.</p></div>
+            <div class="service-card"><div class="icon-large">🔖</div><h3>customs & documentation</h3><p>shipping bill, COO, legalisation, apostille, certificate of inspection.</p></div>
+            <div class="service-card"><div class="icon-large">🤝</div><h3>buyer representation</h3><p>counterparty due diligence, bilingual negotiation (russian/arabic/tamil).</p></div>
+        </div>
+    </div>
+
+    <!-- allied business note linking back to main software co -->
+    <div class="allied-note">
+        <p>⚡ <strong>allied business of ETTISAI ENTERPRISES</strong> — software parent (CIN: U82199TN2025PTC185731) provides the digital backbone for this export vertical.</p>
+        <span class="pill">🏭 parent: ettisai.com</span>
+    </div>
+
+    <!-- why tamil export house (tamil + indian theme) -->
+    <div class="why-exim">
+        <div class="left-tamil">
+            <h4>தமிழ் வணிக மரபு · தேசிய நம்பகம்</h4>
+            <p>Tamil merchant guilds (திசையாயிரத்து ஐந்நூற்றுவர்) traded with Rome, Kaveri delta to Malacca. We rebuild that network with modern compliance.</p>
+            <p style="margin-top:1.5rem;">🇮🇳 indian tricolour integrity — every shipment audited, every rupee accounted.</p>
+        </div>
+        <div class="right-features">
+            <div class="feature-item"><span class="feature-icon">🏛️</span><div><strong>institutional risk management</strong><br> backed by software parent's 95% first-time right code.</div></div>
+            <div class="feature-item"><span class="feature-icon">🧾</span><div><strong>real‑time tracking</strong><br> internal dashboards (built by ETTISAI CORE) for shipment visibility.</div></div>
+            <div class="feature-item"><span class="feature-icon">🇷🇺</span><div><strong>russia · CIS desk</strong><br> specialised documentation, VAT refunds, customs bond.</div></div>
+        </div>
+    </div>
+
+    <!-- extended flag showcase (russia in focus) -->
+    <div class="partner-flags">
+        <h5>🌍 active trade lanes · 2026</h5>
+        <div class="flags-container">
+            <div class="flag-block"><span>🇷🇺</span><span>russia</span></div>
+            <div class="flag-block"><span>🇦🇪</span><span>uae</span></div>
+            <div class="flag-block"><span>🇸🇦</span><span>saudi</span></div>
+            <div class="flag-block"><span>🇮🇩</span><span>indonesia</span></div>
+            <div class="flag-block"><span>🇲🇲</span><span>myanmar</span></div>
+            <div class="flag-block"><span>🇱🇰</span><span>sri lanka</span></div>
+            <div class="flag-block"><span>🇪🇬</span><span>egypt</span></div>
+            <div class="flag-block"><span>🇰🇪</span><span>kenya</span></div>
+            <div class="flag-block"><span>🇧🇷</span><span>brazil</span></div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div>
+                <span class="main-software">ETTISAI GLOBAL IMPEX</span> (allied business of ETTISAI ENTERPRISES Pvt Ltd)<br>
+                CIN U82199TN2025PTC185731 · #3/520 M.M.D.A, Mogappair East, Chennai - 600037<br>
+                <span style="color: #c2b29f;">info@ettisai.com | +919686956310; 9344962456</span>
+            </div>
+            <div style="text-align: right;">
+                <span style="background: var(--saffron); color:#0a1c24; padding:0.3rem 1rem; border-radius:40px;">எத்திசை  இரும்புப் பிடி</span>
+            </div>
+        </div>
+        <div style="margin-top: 1rem; font-size:0.8rem; opacity:0.7;">military-grade intelligence · institution‑grade execution — extended to global trade</div>
+    </div>
+
+    <!-- tricolor bottom border (reverse) -->
+    <div class="tricolor-border-bottom"></div>
+</div>
+<!-- small caption: allied business page for ettisai.com -->
+<div style="max-width:1440px; margin:0.5rem auto 0; text-align:right; padding-right:1rem; color:#9e9489; font-size:0.8rem;">allied business · dynamic exports · tamil / indian tricolor theme</div>
+</body>
+</html>

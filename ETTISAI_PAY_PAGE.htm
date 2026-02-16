@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETTISAI · secure payment channel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f5f8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+            line-height: 1.5;
+            color: #1e1e2f;
+        }
+
+        .payment-card {
+            max-width: 640px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.15), 0 5px 12px -4px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem 2rem;
+            border: 1px solid #e9ecf0;
+            transition: all 0.2s ease;
+        }
+
+        .institution-header {
+            margin-bottom: 2.25rem;
+            border-bottom: 2px solid #1e1e2f;
+            padding-bottom: 1.25rem;
+        }
+
+        .institution-name {
+            font-weight: 600;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            color: #1e1e2f;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .institution-tag {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #5c5f7a;
+            margin-top: 0.3rem;
+            border-left: 3px solid #d4d8e2;
+            padding-left: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: #4e526b;
+            margin-bottom: 1rem;
+        }
+
+        .detail-grid {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e4e8f0;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #e0e4ed;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #3e405b;
+            min-width: 130px;
+        }
+
+        .detail-value {
+            font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0b0c1e;
+            background: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #d8dee9;
+            word-break: break-word;
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #cbd0dc;
+            border-radius: 30px;
+            padding: 0.45rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2a2c41;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .copy-btn:hover {
+            background: #1e1e2f;
+            border-color: #1e1e2f;
+            color: white;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.96);
+        }
+
+        .copy-btn.copied {
+            background: #1e7a5c;
+            border-color: #1e7a5c;
+            color: white;
+        }
+
+        .qr-placeholder {
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+            background: #f5f7fb;
+            border-radius: 24px;
+            padding: 1.8rem 1rem;
+            border: 1px dashed #a8b3cf;
+            color: #3f4360;
+        }
+
+        .qr-note {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .qr-note span {
+            background: #e0e6f0;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #1f2338;
+        }
+
+        .instruction-box {
+            background: #f0f3f9;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0 1.2rem;
+            border-left: 5px solid #1e1e2f;
+        }
+
+        .instruction-box p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: #262838;
+        }
+
+        .instruction-box .email {
+            font-weight: 600;
+            background: #ffffff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid #bfc9db;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #7d819b;
+            text-align: center;
+            border-top: 1px solid #dee3ed;
+            padding-top: 1.5rem;
+        }
+
+        .footer-note a {
+            color: #1e1e2f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #9fa6bc;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #1e1e2f;
+        }
+
+        .alert-warn {
+            background: #fef6e0;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            font-size: 0.85rem;
+            color: #5b4f2b;
+            border: 1px solid #eadbb0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+        }
+
+        .alert-warn strong {
+            font-weight: 600;
+            color: #3a2e0e;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-card">
+        <div class="institution-header">
+            <div class="institution-name">ETTISAI ENTERPRISES</div>
+            <div class="institution-tag">private limited · institutional countermeasure</div>
+        </div>
+
+        <!-- payment details -->
+        <div class="section-title">⚡ Quick Transfer | CURRENT ACCOUNT</div>
+
+        <div class="detail-grid">
+            <div class="detail-row">
+                <span class="detail-label">Beneficiary</span>
+                <span class="detail-value">Ettisai Enterprises Pvt Ltd</span>
+                <button class="copy-btn" data-copy="Ettisai Enterprises Pvt Ltd">📋 copy</button>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Bank</span>
+                <span class="detail-value">Axis Bank</span>
+                <button class="copy-btn" data-copy="Axis Bank">📋 copy</button>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Account No.</span>
+                <span class="detail-value">925020043039478</span>
+                <button class="copy-btn" data-copy="925020043039478">📋 copy</button>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">IFSC Code</span>
+                <span class="detail-value">UTIB0000345</span>
+                <button class="copy-btn" data-copy="UTIB0000345">📋 copy</button>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Account Type</span>
+                <span class="detail-value">Current Account</span>
+                <button class="copy-btn" data-copy="Current Account">📋 copy</button>
+            </div>
+        </div>
+
+        <!-- optional upi / qr hint (if needed) -->
+        <div class="qr-placeholder">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.6;">◧ ◨</div>
+            <div class="qr-note">
+                <span>UPI ID not active</span> 
+                <span>IMPS/NEFT enabled</span>
+            </div>
+            <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #5f6382;">bank transfer only · no QR code required</p>
+        </div>
+
+        <!-- important instruction -->
+        <div class="instruction-box">
+            <p style="font-weight: 600; margin-bottom: 0.6rem;">📌 settlement & confirmation</p>
+            <p>After initiating payment, please email the transaction reference to:</p>
+            <p><span class="email">info@ettisai.com</span>  <span style="margin-left: 0.5rem; font-size:0.85rem; color:#3b3f5c;">(founders review within 24h)</span></p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem;">Include your <strong>invoice number</strong> or <strong>project code</strong> if applicable.</p>
+        </div>
+
+        <!-- verification warning -->
+        <div class="alert-warn">
+            <span class="icon">⚠️</span>
+            <span><strong>verify before transfer</strong> — Ettisai Enterprises will never request changes to these details via phone or non‑official email. Always double‑check IFSC and account number.</span>
+        </div>
+
+        <!-- footer / corporate identity -->
+        <div class="footer-note">
+            <span>ETTISAI ENTERPRISES PRIVATE LIMITED</span> · 
+            <span>CIN U82199TN2025PTC185731</span> · 
+            <a href="#">#3/520, M.M.D.A, Mogappair East, Chennai - 600037</a><br>
+            <span style="display: inline-block; margin-top: 0.6rem;">⬤  Military-Grade Intelligence  ·  Institution-Grade Execution</span>
+        </div>
+    </div>
+
+    <!-- simple copy script -->
+    <script>
+        (function() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+
+            function fallbackCopy(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    alert('Press Ctrl+C to copy');
+                }
+                document.body.removeChild(textarea);
+            }
+
+            async function copyText(text, btnElement) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        return true;
+                    } catch (err) {
+                        fallbackCopy(text);
+                        return true;
+                    }
+                } else {
+                    fallbackCopy(text);
+                    return true;
+                }
+            }
+
+            copyButtons.forEach(btn => {
+                btn.addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    const textToCopy = this.getAttribute('data-copy') || this.innerText.replace('📋 copy', '').trim();
+                    const originalText = this.innerHTML;
+
+                    await copyText(textToCopy, this);
+
+                    // visual feedback
+                    this.classList.add('copied');
+                    this.innerHTML = '✅ copied';
+
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.innerHTML = originalText;
+                    }, 1500);
+                });
+            });
+
+            // optional: make entire detail-value copyable by clicking?
+            // but we already have buttons, good enough.
+        })();
+    </script>
+</body>
+</html>
