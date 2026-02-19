@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Ettisai Onsite | Global Workforce Placement — Chennai, India</title>
+  <meta name="description" content="Ettisai Onsite — Tamil Nadu's premier international workforce placement firm. Blue-collar, white-collar, gold-collar placements across Russia, UAE, Singapore, Qatar and beyond."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ══════════════════════════════════════════════
+       COLLAR COLOR BRAND SYSTEM + TOKENS
+    ══════════════════════════════════════════════ */
+    :root {
+      /* Primary brand */
+      --navy:       #0d1b2a;
+      --navy-mid:   #162436;
+      --navy-soft:  #1e3048;
+      --steel:      #2c4a6e;
+      --ice:        #e8f0f8;
+      --white:      #ffffff;
+      --off:        #f7f9fc;
+
+      /* COLLAR PALETTE — the brand differentiator */
+      --blue-collar:   #1565c0;
+      --blue-collar-l: #1e88e5;
+      --blue-collar-p: #e3f0fb;
+
+      --white-collar:  #374151;
+      --white-collar-l:#6b7280;
+      --white-collar-p:#f3f4f6;
+
+      --gold-collar:   #b8860b;
+      --gold-collar-l: #d4a017;
+      --gold-collar-p: #fdf8e8;
+
+      --red-collar:    #b91c1c;
+      --red-collar-l:  #dc2626;
+      --red-collar-p:  #fef2f2;
+
+      --pink-collar:   #9d174d;
+      --pink-collar-l: #be185d;
+      --pink-collar-p: #fdf2f8;
+
+      --black-collar:  #1c1917;
+      --black-collar-l:#292524;
+      --black-collar-p:#f5f5f4;
+
+      --silver-collar: #64748b;
+      --silver-collar-l:#94a3b8;
+      --silver-collar-p:#f1f5f9;
+
+      /* Typography */
+      --text:       #0d1b2a;
+      --text-mid:   #334155;
+      --text-soft:  #64748b;
+      --text-muted: #94a3b8;
+      --border:     #dde4ef;
+
+      /* Effects */
+      --sh-sm:  0 2px 12px rgba(13,27,42,.08);
+      --sh-md:  0 8px 32px rgba(13,27,42,.12);
+      --sh-lg:  0 24px 64px rgba(13,27,42,.16);
+      --sh-xl:  0 40px 100px rgba(13,27,42,.22);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ::selection { background: var(--blue-collar-p); color: var(--blue-collar); }
+
+    /* ══════════════════════════════════════════════
+       SCROLLBAR
+    ══════════════════════════════════════════════ */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-collar); border-radius: 3px; }
+
+    /* ══════════════════════════════════════════════
+       NAV
+    ══════════════════════════════════════════════ */
+    .topbar {
+      background: var(--navy);
+      padding: 0.45rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.7rem; color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+    }
+    .topbar-left { display: flex; gap: 2rem; }
+    .topbar-right { display: flex; gap: 1.5rem; align-items: center; }
+    .topbar a { color: rgba(255,255,255,0.5); transition: color .18s; }
+    .topbar a:hover { color: #fff; }
+    .topbar-live {
+      display: flex; align-items: center; gap: 0.4rem;
+      color: #4ade80; font-weight: 600;
+    }
+    .topbar-live span {
+      width: 6px; height: 6px; background: #4ade80;
+      border-radius: 50%; animation: ping 1.8s infinite;
+    }
+    @keyframes ping {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .4; transform: scale(1.5); }
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 66px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem;
+    }
+    nav::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--blue-collar), var(--gold-collar), var(--blue-collar));
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.8rem; }
+    .nav-icon {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .nav-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      letter-spacing: 0.05em; color: var(--navy);
+      line-height: 1.1;
+    }
+    .nav-name span { color: var(--blue-collar); }
+    .nav-sub {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-soft);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 0.45rem 0.85rem; border-radius: 6px;
+      color: var(--text-mid); transition: all .18s;
+    }
+    .nav-links a:hover { color: var(--blue-collar); background: var(--blue-collar-p); }
+    .nav-links a.active { color: var(--white); background: var(--blue-collar); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--blue-collar), var(--blue-collar-l));
+      color: var(--white); padding: 0.55rem 1.4rem; border-radius: 7px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      box-shadow: 0 4px 14px rgba(21,101,192,.3);
+      transition: all .2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(21,101,192,.45); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .2s; }
+
+    /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+    }
+
+    /* Industrial grid pattern */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Diagonal color stripe */
+    .hero-stripe {
+      position: absolute; top: 0; right: 0;
+      width: 42%; height: 100%;
+      background: linear-gradient(160deg, var(--navy-soft) 0%, var(--steel) 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+      overflow: hidden;
+    }
+    .hero-stripe::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 24px,
+        rgba(255,255,255,.02) 24px, rgba(255,255,255,.02) 25px
+      );
+    }
+
+    /* Radial glow */
+    .hero-glow {
+      position: absolute; left: -100px; top: 50%;
+      transform: translateY(-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(21,101,192,.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1280px; margin: 0 auto; width: 100%;
+      padding: 0 3rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(21,101,192,.2); border: 1px solid rgba(21,101,192,.4);
+      color: #93c5fd; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1.6rem;
+      animation: fadeUp .6s .1s both;
+    }
+    .hero-eyebrow .pulse { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: ping 2s infinite; }
+
+    .hero-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 900; line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.6rem;
+      letter-spacing: -0.01em;
+      animation: fadeUp .7s .2s both;
+    }
+    .hero-h1 .line-blue {
+      color: var(--blue-collar-l);
+      display: block;
+    }
+    .hero-h1 .line-outline {
+      -webkit-text-stroke: 2px rgba(255,255,255,.25);
+      color: transparent; display: block;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 400;
+      color: rgba(255,255,255,.6); line-height: 1.75;
+      max-width: 500px; margin-bottom: 2.2rem;
+      animation: fadeUp .7s .35s both;
+    }
+
+    .hero-flags {
+      display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s .45s both;
+    }
+    .hero-flags .fl-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+      margin-right: 0.4rem;
+    }
+    .flag-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      padding: 0.3rem 0.85rem; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,.75);
+      transition: all .2s;
+    }
+    .flag-pill:hover { background: rgba(255,255,255,.13); color: #fff; transform: translateY(-2px); }
+    .flag-pill .fi { font-size: 1.1rem; }
+
+    .hero-actions {
+      display: flex; gap: 0.8rem; flex-wrap: wrap;
+      animation: fadeUp .7s .5s both;
+    }
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--blue-collar), var(--blue-collar-l));
+      color: #fff; padding: 0.9rem 2.2rem; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.04em;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      box-shadow: 0 6px 24px rgba(21,101,192,.4);
+      transition: all .2s;
+    }
+    .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(21,101,192,.55); }
+    .btn-hero-ghost {
+      border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.75);
+      padding: 0.9rem 2.2rem; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all .2s;
+    }
+    .btn-hero-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; background: rgba(255,255,255,.06); }
+
+    /* Hero right — collar stack visual */
+    .hero-right {
+      display: flex; flex-direction: column; gap: 0.7rem;
+      animation: fadeUp .8s .3s both;
+    }
+    .collar-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1rem 1.4rem;
+      display: flex; align-items: center; gap: 1.1rem;
+      cursor: default; transition: all .22s;
+      position: relative; overflow: hidden;
+    }
+    .collar-card:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.18);
+      transform: translateX(6px);
+    }
+    .collar-card.featured {
+      border-color: rgba(21,101,192,.5);
+      background: rgba(21,101,192,.12);
+      box-shadow: 0 0 0 1px rgba(21,101,192,.3) inset;
+    }
+    .collar-card.featured:hover { background: rgba(21,101,192,.18); }
+    .collar-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .collar-card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #fff; flex: 1;
+    }
+    .collar-card-jobs {
+      font-size: 0.7rem; color: rgba(255,255,255,.4);
+    }
+    .collar-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; font-weight: 600;
+      padding: 0.18rem 0.5rem; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .c-blue  { background: var(--blue-collar-p);  color: var(--blue-collar);  }
+    .c-white { background: var(--white-collar-p); color: var(--white-collar); }
+    .c-gold  { background: var(--gold-collar-p);  color: var(--gold-collar);  }
+    .c-red   { background: var(--red-collar-p);   color: var(--red-collar);   }
+    .c-pink  { background: var(--pink-collar-p);  color: var(--pink-collar);  }
+    .c-black { background: var(--black-collar-p); color: var(--black-collar); }
+    .c-silver{ background: var(--silver-collar-p);color: var(--silver-collar);}
+
+    /* ══════════════════════════════════════════════
+       STATS BAND
+    ══════════════════════════════════════════════ */
+    .stats-band {
+      background: linear-gradient(90deg, var(--navy) 0%, var(--navy-soft) 100%);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 3px solid var(--blue-collar);
+    }
+    .stats-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(5, 1fr);
+    }
+    .stat-cell {
+      padding: 1.8rem 1.5rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.06);
+      transition: background .2s;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell:hover { background: rgba(255,255,255,.03); }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--blue-collar-l); display: block; line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+      margin-top: 0.35rem;
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTIONS
+    ══════════════════════════════════════════════ */
+    .section { padding: 5.5rem 3rem; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .sec-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--blue-collar);
+      margin-bottom: 0.8rem;
+    }
+    .sec-tag::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--blue-collar); border-radius: 2px; }
+    h2.sec-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; text-transform: uppercase;
+      line-height: 1.05; letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+    }
+    h2.sec-title em { font-style: italic; color: var(--blue-collar); }
+    .sec-desc { font-size: 0.95rem; color: var(--text-soft); line-height: 1.75; max-width: 580px; }
+
+    /* ══════════════════════════════════════════════
+       COLLAR SYSTEM — FULL SHOWCASE
+    ══════════════════════════════════════════════ */
+    .collar-section { background: var(--off); }
+    .collar-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .collar-full-card {
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--sh-sm);
+      transition: all .25s;
+      position: relative;
+    }
+    .collar-full-card:hover {
+      box-shadow: var(--sh-lg);
+      transform: translateY(-4px);
+    }
+    .cfc-header {
+      padding: 1.4rem 1.6rem 1.2rem;
+      position: relative;
+    }
+    .cfc-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 6px;
+      margin-bottom: 0.9rem;
+    }
+    .cfc-badge .badge-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .cfc-title {
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--text-mid); line-height: 1.5;
+    }
+    .cfc-desc {
+      font-size: 0.78rem; color: var(--text-soft);
+      line-height: 1.6; margin-top: 0.4rem;
+    }
+    .cfc-jobs {
+      padding: 1rem 1.6rem 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+    .cfc-jobs h5 {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.7rem;
+    }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .job-tag {
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      background: var(--off); border: 1px solid var(--border);
+      color: var(--text-mid);
+    }
+    /* priority badge on blue collar */
+    .collar-full-card.priority .cfc-header::after {
+      content: 'PRIMARY FOCUS';
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.12em;
+      background: var(--blue-collar); color: #fff;
+      padding: 0.2rem 0.5rem; border-radius: 4px;
+    }
+
+    /* ══════════════════════════════════════════════
+       DESTINATIONS
+    ══════════════════════════════════════════════ */
+    .destinations-section { background: var(--white); }
+    .dest-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem; margin-top: 2.5rem;
+    }
+    .dest-card {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--sh-sm);
+      transition: all .25s;
+      position: relative;
+    }
+    .dest-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+    .dest-header {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 100%);
+      padding: 2rem 1.8rem 1.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .dest-header::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.02) 16px,rgba(255,255,255,.02) 17px);
+    }
+    .dest-flag { font-size: 3.5rem; display: block; position: relative; z-index: 1; margin-bottom: 0.5rem; }
+    .dest-country {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: #fff; position: relative; z-index: 1;
+    }
+    .dest-region {
+      font-size: 0.68rem; color: rgba(255,255,255,.45);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      position: relative; z-index: 1; margin-top: 0.2rem;
+    }
+    .dest-demand {
+      position: absolute; top: 0.8rem; right: 0.8rem; z-index: 2;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em;
+      padding: 0.2rem 0.5rem; border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .demand-high { background: #16a34a; color: #fff; }
+    .demand-very-high { background: var(--blue-collar); color: #fff; }
+    .dest-body { padding: 1.4rem 1.6rem; }
+    .dest-body p { font-size: 0.8rem; color: var(--text-soft); line-height: 1.65; margin-bottom: 1.2rem; }
+    .dest-sectors { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+    .dest-sector {
+      font-size: 0.68rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      background: var(--blue-collar-p); color: var(--blue-collar);
+      border: 1px solid rgba(21,101,192,.15);
+    }
+    .dest-link {
+      font-size: 0.78rem; font-weight: 700; color: var(--blue-collar);
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: gap .18s;
+    }
+    .dest-link:hover { gap: 0.7rem; }
+
+    /* ══════════════════════════════════════════════
+       PROCESS
+    ══════════════════════════════════════════════ */
+    .process-section { background: var(--navy); }
+    .process-section .sec-tag { color: #93c5fd; }
+    .process-section .sec-tag::before { background: #93c5fd; }
+    .process-section h2.sec-title { color: #fff; }
+    .process-section h2.sec-title em { color: var(--blue-collar-l); }
+    .process-section .sec-desc { color: rgba(255,255,255,.5); }
+
+    .process-track {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 0; margin-top: 3rem; position: relative;
+    }
+    .process-track::before {
+      content: ''; position: absolute;
+      top: 28px; left: 8%; right: 8%; height: 2px;
+      background: linear-gradient(90deg, var(--blue-collar), var(--gold-collar), var(--blue-collar));
+    }
+    .pstep {
+      padding: 0 1rem; text-align: center;
+      position: relative; z-index: 1;
+    }
+    .pstep-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-collar), var(--blue-collar-l));
+      border: 3px solid var(--navy);
+      color: #fff; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 0 0 3px rgba(21,101,192,.3);
+    }
+    .pstep h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: #fff; margin-bottom: 0.5rem;
+    }
+    .pstep p { font-size: 0.72rem; color: rgba(255,255,255,.4); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════════
+       SECTORS / JOBS
+    ══════════════════════════════════════════════ */
+    .sectors-section { background: var(--off); }
+    .sectors-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .sector-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem 1.8rem;
+      transition: all .22s; position: relative; overflow: hidden;
+    }
+    .sector-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: var(--blue-collar);
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform .3s;
+    }
+    .sector-card:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+    .sector-card:hover::before { transform: scaleY(1); }
+    .sc-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--blue-collar-p);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 1rem;
+    }
+    .sector-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+    .sector-card p { font-size: 0.78rem; color: var(--text-soft); line-height: 1.6; margin-bottom: 0.9rem; }
+    .role-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .role-chip {
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      background: var(--blue-collar-p); color: var(--blue-collar);
+      border: 1px solid rgba(21,101,192,.15);
+    }
+    .open-badge {
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; font-weight: 700;
+      background: #dcfce7; color: #166534; border: 1px solid #bbf7d0;
+      padding: 0.2rem 0.5rem; border-radius: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ══════════════════════════════════════════════
+       WHY US
+    ══════════════════════════════════════════════ */
+    .why-section { background: var(--white); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .why-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .why-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--white); transition: all .22s;
+    }
+    .why-item:hover { border-color: var(--blue-collar-l); box-shadow: var(--sh-sm); transform: translateX(4px); }
+    .why-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue-collar-p), #c7dff7);
+      border: 1px solid rgba(21,101,192,.15);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .why-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .why-item p { font-size: 0.8rem; color: var(--text-soft); line-height: 1.65; }
+    .why-visual {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--steel) 100%);
+      border-radius: 20px; padding: 3rem 2.5rem;
+      position: relative; overflow: hidden; box-shadow: var(--sh-xl);
+    }
+    .why-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 21px);
+    }
+    .wv-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3.5rem; font-weight: 900;
+      text-transform: uppercase; color: rgba(255,255,255,.08);
+      line-height: 1; margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .wv-stat {
+      display: flex; flex-direction: column; gap: 1.2rem;
+      position: relative; z-index: 1;
+    }
+    .wv-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+    }
+    .wv-row:hover { background: rgba(255,255,255,.1); }
+    .wv-label { font-size: 0.78rem; color: rgba(255,255,255,.6); font-weight: 500; }
+    .wv-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: var(--blue-collar-l);
+    }
+
+    /* ══════════════════════════════════════════════
+       ENQUIRY / CTA
+    ══════════════════════════════════════════════ */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 50%, var(--steel) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+    .cta-left {}
+    .cta-left h2.sec-title { color: #fff; }
+    .cta-left h2.sec-title em { color: var(--blue-collar-l); }
+    .cta-left .sec-desc { color: rgba(255,255,255,.5); max-width: 420px; }
+    .cta-facts { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; }
+    .cta-fact {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.82rem; color: rgba(255,255,255,.65); font-weight: 500;
+    }
+    .cta-fact::before { content: '✓'; color: var(--blue-collar-l); font-weight: 800; }
+
+    /* Form */
+    .enquiry-card {
+      background: var(--white); border-radius: 18px;
+      padding: 2.5rem 2.2rem;
+      box-shadow: var(--sh-xl);
+    }
+    .enquiry-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .enquiry-card .card-sub { font-size: 0.78rem; color: var(--text-soft); margin-bottom: 1.8rem; }
+    .form-row { margin-bottom: 1.1rem; }
+    .form-row label {
+      display: block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-soft); margin-bottom: 0.4rem;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: 'Barlow', sans-serif; font-size: 0.88rem;
+      color: var(--text); background: var(--white);
+      outline: none; transition: all .2s; appearance: none;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      border-color: var(--blue-collar);
+      box-shadow: 0 0 0 4px rgba(21,101,192,.1);
+    }
+    .form-row textarea { min-height: 80px; resize: vertical; line-height: 1.6; }
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    .btn-enquire {
+      width: 100%; padding: 0.9rem;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      color: #fff; border: none; border-radius: 8px;
+      font-family: 'Barlow', sans-serif; font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.04em; cursor: pointer; transition: all .2s;
+      box-shadow: 0 4px 18px rgba(13,27,42,.3);
+      margin-top: 0.4rem;
+    }
+    .btn-enquire:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(13,27,42,.4); background: linear-gradient(135deg, var(--blue-collar), var(--blue-collar-l)); }
+
+    /* ══════════════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════════════ */
+    .testimonials-section { background: var(--off); }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+    .tcard {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.8rem 1.8rem 1.5rem;
+      position: relative; transition: all .22s;
+    }
+    .tcard:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+    .tcard-dest {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .tcard-dest .tflag { font-size: 1.3rem; }
+    .tcard-dest span { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    .tcard-stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .tcard-text { font-size: 0.83rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .tcard-person { display: flex; align-items: center; gap: 0.75rem; }
+    .tcard-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-collar-p), #c7dff7);
+      border: 2px solid var(--blue-collar);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; color: var(--blue-collar);
+    }
+    .tcard-name { font-size: 0.82rem; font-weight: 700; }
+    .tcard-role { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+    /* ══════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════ */
+    footer { background: var(--navy); padding: 4rem 3rem 2rem; }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .fb-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 900; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #fff; margin-bottom: 0.2rem;
+    }
+    .fb-name span { color: var(--blue-collar-l); }
+    .fb-sub { font-size: 0.65rem; color: rgba(255,255,255,.3); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.78rem; color: rgba(255,255,255,.4); line-height: 1.7; }
+    .footer-col h5 { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 1.1rem; }
+    .footer-col a { display: block; font-size: 0.8rem; color: rgba(255,255,255,.5); margin-bottom: 0.5rem; transition: color .18s; }
+    .footer-col a:hover { color: var(--blue-collar-l); }
+    .footer-bottom {
+      max-width: 1280px; margin: 1.5rem auto 0;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,.25); }
+    .footer-tagline { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; color: rgba(21,101,192,.5); }
+    .footer-collar-bar {
+      display: flex; gap: 0.4rem; margin-top: 1.2rem; flex-wrap: wrap;
+    }
+    .fcb-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ══════════════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.vis { opacity: 1; transform: translateY(0); }
+    .reveal-l { opacity: 0; transform: translateX(-20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal-l.vis { opacity: 1; transform: translateX(0); }
+    .reveal-r { opacity: 0; transform: translateX(20px); transition: opacity .6s .15s ease, transform .6s .15s ease; }
+    .reveal-r.vis { opacity: 1; transform: translateX(0); }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════ */
+    @media(max-width:1100px) {
+      .collar-grid { grid-template-columns: repeat(2,1fr); }
+      .dest-grid { grid-template-columns: repeat(2,1fr); }
+      .sectors-grid { grid-template-columns: repeat(2,1fr); }
+      .process-track { grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+      .process-track::before { display: none; }
+      .cta-grid, .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .stats-inner { grid-template-columns: repeat(3,1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:768px) {
+      .topbar { display: none; }
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .collar-grid, .dest-grid, .sectors-grid, .test-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .process-track { grid-template-columns: repeat(2,1fr); }
+      footer { padding: 2.5rem 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Mogappair East, Chennai — 600037</span>
+    <span>✉ onsite@ettisai.com</span>
+    <span>📞 +91 90360 23533</span>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-live"><span></span>Active Placements Open</div>
+    <a href="index.html">ETTISAI Enterprises</a>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav id="mainNav">
+  <div class="nav-brand">
+    <div class="nav-icon">🔧</div>
+    <div>
+      <div class="nav-name">ETTISAI <span>ONSITE</span></div>
+      <div class="nav-sub">Global Workforce Placement</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#collars">Collar System</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#sectors">Industries</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#enquiry" class="nav-cta">Register Now →</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="pulse"></span>International Workforce Placement — Est. 2025</div>
+      <h1 class="hero-h1">
+        Built by
+        <span class="line-blue">Hand &amp; Mind</span>
+        <span class="line-outline">Placed Globally</span>
+      </h1>
+      <p class="hero-sub">Ettisai Onsite connects skilled, qualified, and experienced Indian workforce professionals with verified international employers — across construction, manufacturing, healthcare, hospitality, and technology sectors.</p>
+      <div class="hero-flags">
+        <span class="fl-label">We Place Into</span>
+        <span class="flag-pill"><span class="fi">🇷🇺</span>Russia</span>
+        <span class="flag-pill"><span class="fi">🇦🇪</span>UAE</span>
+        <span class="flag-pill"><span class="fi">🇸🇬</span>Singapore</span>
+        <span class="flag-pill"><span class="fi">🇶🇦</span>Qatar</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#enquiry" class="btn-hero-primary">🔧 Register for Placement</a>
+        <a href="#collars"  class="btn-hero-ghost">Explore Collar Categories</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="collar-card featured">
+        <span class="collar-dot" style="background:var(--blue-collar)"></span>
+        <span class="collar-card-name">Blue-Collar Workforce</span>
+        <span class="collar-card-jobs">1,200+ roles</span>
+        <span class="collar-tag c-blue">PRIMARY</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:#111827"></span>
+        <span class="collar-card-name">Black-Collar Roles</span>
+        <span class="collar-card-jobs">Oil · Mining · Rigging</span>
+        <span class="collar-tag c-black">INDUSTRIAL</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:var(--pink-collar)"></span>
+        <span class="collar-card-name">Pink-Collar Roles</span>
+        <span class="collar-card-jobs">Nursing · Caregiving</span>
+        <span class="collar-tag c-pink">HEALTHCARE</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:var(--white-collar)"></span>
+        <span class="collar-card-name">White-Collar Roles</span>
+        <span class="collar-card-jobs">Finance · Management · Tech</span>
+        <span class="collar-tag c-white">OFFICE</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:var(--gold-collar)"></span>
+        <span class="collar-card-name">Gold-Collar Professionals</span>
+        <span class="collar-card-jobs">AI · Surgery · Law</span>
+        <span class="collar-tag c-gold">SPECIALIST</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:var(--silver-collar)"></span>
+        <span class="collar-card-name">Silver-Collar Experts</span>
+        <span class="collar-card-jobs">Advisors · Retired Pros</span>
+        <span class="collar-tag c-silver">ADVISORY</span>
+      </div>
+      <div class="collar-card">
+        <span class="collar-dot" style="background:var(--red-collar)"></span>
+        <span class="collar-card-name">Red-Collar Officials</span>
+        <span class="collar-card-jobs">Govt · Compliance · Reg.</span>
+        <span class="collar-tag c-red">GOVT SECTOR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-cell"><span class="stat-num">3,800+</span><span class="stat-lbl">Placements Completed</span></div>
+    <div class="stat-cell"><span class="stat-num">4</span><span class="stat-lbl">Priority Countries</span></div>
+    <div class="stat-cell"><span class="stat-num">18+</span><span class="stat-lbl">Industry Sectors</span></div>
+    <div class="stat-cell"><span class="stat-num">97%</span><span class="stat-lbl">Visa Clearance Rate</span></div>
+    <div class="stat-cell"><span class="stat-num">7</span><span class="stat-lbl">Collar Categories</span></div>
+  </div>
+</div>
+
+<!-- ══ COLLAR SYSTEM ══ -->
+<section class="section collar-section" id="collars">
+  <div class="section-inner">
+    <div class="sec-tag">The Collar Classification System</div>
+    <h2 class="sec-title">Every Skill Has a <em>Collar</em></h2>
+    <p class="sec-desc">Ettisai Onsite classifies every placement category through the globally recognised Collar System — ensuring precise role matching, accurate employer briefings, and dignified workforce representation for every professional we mobilise.</p>
+
+    <div class="collar-grid">
+
+      <!-- BLUE -->
+      <div class="collar-full-card priority">
+        <div class="cfc-header" style="background: linear-gradient(135deg,#e3f0fb,#c7dff7)">
+          <div class="cfc-badge" style="background:var(--blue-collar-p);color:var(--blue-collar)">
+            <span class="badge-dot" style="background:var(--blue-collar)"></span>
+            🔵 Blue-Collar
+          </div>
+          <div class="cfc-title">Manual labour, skilled trades & field operations</div>
+          <div class="cfc-desc">The backbone of international construction, infrastructure, and manufacturing. Ettisai Onsite's primary and highest-volume placement category — placing Tamil Nadu's finest hands-on workforce globally.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Electrician</span>
+            <span class="job-tag">Plumber</span>
+            <span class="job-tag">Mason</span>
+            <span class="job-tag">Welder</span>
+            <span class="job-tag">Carpenter</span>
+            <span class="job-tag">HVAC Technician</span>
+            <span class="job-tag">Factory Operator</span>
+            <span class="job-tag">Forklift Driver</span>
+            <span class="job-tag">Scaffolder</span>
+            <span class="job-tag">Steel Fixer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLACK -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#e7e5e4,#d6d3d1)">
+          <div class="cfc-badge" style="background:var(--black-collar-p);color:var(--black-collar)">
+            <span class="badge-dot" style="background:#1c1917"></span>
+            ⚫ Black-Collar
+          </div>
+          <div class="cfc-title">High-risk, high-reward industrial & extractive roles</div>
+          <div class="cfc-desc">Roles that operate under extreme conditions — oil rigs, deep mining, hazardous waste, and heavy industrial sites. Vetted for physical fitness, safety certification, and technical training.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Oil-Rig Roughneck</span>
+            <span class="job-tag">Pipeline Technician</span>
+            <span class="job-tag">Sanitation Engineer</span>
+            <span class="job-tag">Underground Miner</span>
+            <span class="job-tag">Hazmat Technician</span>
+            <span class="job-tag">Demolition Operative</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PINK -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#fdf2f8,#fce7f3)">
+          <div class="cfc-badge" style="background:var(--pink-collar-p);color:var(--pink-collar)">
+            <span class="badge-dot" style="background:var(--pink-collar)"></span>
+            🩷 Pink-Collar
+          </div>
+          <div class="cfc-title">Care-giving, health support & community services</div>
+          <div class="cfc-desc">High demand across Gulf and Southeast Asian markets — particularly in elder care, clinical support, and childcare. Ettisai Onsite provides pre-departure medical and language orientation for all pink-collar placements.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Staff Nurse</span>
+            <span class="job-tag">Ward Attendant</span>
+            <span class="job-tag">Home Caregiver</span>
+            <span class="job-tag">Physiotherapy Aide</span>
+            <span class="job-tag">Dental Assistant</span>
+            <span class="job-tag">Kindergarten Teacher</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHITE -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb)">
+          <div class="cfc-badge" style="background:var(--white-collar-p);color:var(--white-collar)">
+            <span class="badge-dot" style="background:#374151"></span>
+            ⚪ White-Collar
+          </div>
+          <div class="cfc-title">Office, finance, administration & management roles</div>
+          <div class="cfc-desc">Professional services and corporate roles for multinational employers in the UAE, Singapore, and Qatar — spanning financial services, HR, supply chain, and operations management.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Accountant</span>
+            <span class="job-tag">HR Executive</span>
+            <span class="job-tag">Project Coordinator</span>
+            <span class="job-tag">Logistics Manager</span>
+            <span class="job-tag">Procurement Officer</span>
+            <span class="job-tag">Office Administrator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOLD -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#fdf8e8,#fef3c7)">
+          <div class="cfc-badge" style="background:var(--gold-collar-p);color:var(--gold-collar)">
+            <span class="badge-dot" style="background:var(--gold-collar)"></span>
+            🟡 Gold-Collar
+          </div>
+          <div class="cfc-title">Highly specialised, high-autonomy knowledge professionals</div>
+          <div class="cfc-desc">Rare-skill professionals placed directly with research institutions, hospitals, and technology firms. Gold-collar placements carry premium compensation packages and require deep domain verification prior to mobilisation.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Surgeon</span>
+            <span class="job-tag">Data Scientist</span>
+            <span class="job-tag">AI/ML Engineer</span>
+            <span class="job-tag">Structural Engineer</span>
+            <span class="job-tag">Research Scientist</span>
+            <span class="job-tag">Cyber Security Lead</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SILVER -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#f1f5f9,#e2e8f0)">
+          <div class="cfc-badge" style="background:var(--silver-collar-p);color:var(--silver-collar)">
+            <span class="badge-dot" style="background:#64748b"></span>
+            🪙 Silver-Collar
+          </div>
+          <div class="cfc-title">Experienced post-career professionals & part-time specialists</div>
+          <div class="cfc-desc">Retired or semi-active professionals who continue working in advisory, training, or part-time specialist capacities. Highly valued by international firms for institutional knowledge and mentorship capabilities.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Technical Trainer</span>
+            <span class="job-tag">Industry Advisor</span>
+            <span class="job-tag">Part-Time Professor</span>
+            <span class="job-tag">Process Auditor</span>
+            <span class="job-tag">Safety Inspector</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RED -->
+      <div class="collar-full-card">
+        <div class="cfc-header" style="background:linear-gradient(135deg,#fef2f2,#fee2e2)">
+          <div class="cfc-badge" style="background:var(--red-collar-p);color:var(--red-collar)">
+            <span class="badge-dot" style="background:var(--red-collar)"></span>
+            🔴 Red-Collar
+          </div>
+          <div class="cfc-title">Government-sector, regulatory & public administration roles</div>
+          <div class="cfc-desc">Placements within government-affiliated bodies, regulatory authorities, and bilateral public sector projects. Red-collar engagements follow strict compliance and documentation protocols under international labour agreements.</div>
+        </div>
+        <div class="cfc-jobs">
+          <h5>Roles We Place</h5>
+          <div class="job-tags">
+            <span class="job-tag">Compliance Officer</span>
+            <span class="job-tag">Govt. Liaison</span>
+            <span class="job-tag">Public Works Supervisor</span>
+            <span class="job-tag">Municipal Engineer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMO CARD -->
+      <div class="collar-full-card" style="background:linear-gradient(160deg,var(--navy),var(--steel));border-color:rgba(255,255,255,.1)">
+        <div class="cfc-header" style="background:transparent">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:900;color:rgba(255,255,255,.12);line-height:1;margin-bottom:1rem;text-transform:uppercase">Every Collar. One Firm.</div>
+          <div style="font-size:0.88rem;color:rgba(255,255,255,.6);line-height:1.7">
+            Ettisai Onsite is the only placement firm in Tamil Nadu that formally recognises and operates across all seven globally defined workforce collar categories.
+          </div>
+          <a href="#enquiry" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;background:var(--blue-collar);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(21,101,192,.4);transition:all .2s">
+              Register Your Profile →
+            </a>
+        </div>
+        <div class="cfc-jobs" style="border-top:1px solid rgba(255,255,255,.07)">
+          <h5 style="color:rgba(255,255,255,.3)">All Categories Active</h5>
+          <div class="job-tags">
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(21,101,192,.3);color:#93c5fd;border:1px solid rgba(21,101,192,.4)">Blue ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(0,0,0,.3);color:#d4d4d4;border:1px solid rgba(255,255,255,.1)">Black ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(157,23,77,.2);color:#f9a8d4;border:1px solid rgba(157,23,77,.3)">Pink ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(55,65,81,.3);color:#d1d5db;border:1px solid rgba(255,255,255,.1)">White ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(184,134,11,.2);color:#fcd34d;border:1px solid rgba(184,134,11,.3)">Gold ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(100,116,139,.2);color:#cbd5e1;border:1px solid rgba(100,116,139,.3)">Silver ●</span>
+            <span style="font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;background:rgba(185,28,28,.2);color:#fca5a5;border:1px solid rgba(185,28,28,.3)">Red ●</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ DESTINATIONS ══ -->
+<section class="section destinations-section" id="destinations">
+  <div class="section-inner">
+    <div class="sec-tag">International Placement Markets</div>
+    <h2 class="sec-title reveal">Active Destination <em>Countries</em></h2>
+    <p class="sec-desc reveal">Ettisai Onsite maintains verified employer networks and regulatory compliance frameworks in four primary destination nations — each with active workforce demand across multiple industry verticals.</p>
+
+    <div class="dest-grid">
+
+      <!-- RUSSIA -->
+      <div class="dest-card reveal">
+        <div class="dest-header">
+          <span class="dest-demand demand-high">High Demand</span>
+          <span class="dest-flag">🇷🇺</span>
+          <div class="dest-country">Russia</div>
+          <div class="dest-region">Eastern Europe · Far East Russia</div>
+        </div>
+        <div class="dest-body">
+          <p>Russia's rapid industrial expansion in the Far East and Siberia has created sustained demand for skilled blue-collar and black-collar workforce — particularly in construction, energy extraction, and manufacturing. Ettisai Onsite holds direct employer linkages with Russian construction and industrial firms.</p>
+          <div class="dest-sectors">
+            <span class="dest-sector">🏗️ Construction</span>
+            <span class="dest-sector">⛽ Oil & Gas</span>
+            <span class="dest-sector">🏭 Manufacturing</span>
+            <span class="dest-sector">🔌 Electrical Works</span>
+          </div>
+          <a href="#enquiry" class="dest-link">Register for Russia <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- UAE -->
+      <div class="dest-card reveal">
+        <div class="dest-header">
+          <span class="dest-demand demand-very-high">Very High Demand</span>
+          <span class="dest-flag">🇦🇪</span>
+          <div class="dest-country">UAE</div>
+          <div class="dest-region">Dubai · Abu Dhabi · Sharjah</div>
+        </div>
+        <div class="dest-body">
+          <p>The UAE remains the largest employer of Indian skilled workforce globally — driven by massive infrastructure development, hospitality expansion, and a growing technology sector. Ettisai Onsite's UAE employer network spans 60+ registered companies in Dubai and Abu Dhabi.</p>
+          <div class="dest-sectors">
+            <span class="dest-sector">🏗️ Infrastructure</span>
+            <span class="dest-sector">🏨 Hospitality</span>
+            <span class="dest-sector">🏥 Healthcare</span>
+            <span class="dest-sector">💻 Technology</span>
+          </div>
+          <a href="#enquiry" class="dest-link">Register for UAE <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- SINGAPORE -->
+      <div class="dest-card reveal">
+        <div class="dest-header">
+          <span class="dest-demand demand-high">High Demand</span>
+          <span class="dest-flag">🇸🇬</span>
+          <div class="dest-country">Singapore</div>
+          <div class="dest-region">Southeast Asia Hub</div>
+        </div>
+        <div class="dest-body">
+          <p>Singapore's regulated Work Permit and S Pass system provides structured, protected employment pathways for skilled Indian workers — particularly in marine engineering, construction, food services, and precision manufacturing. Ettisai Onsite facilitates MOM-compliant placements exclusively.</p>
+          <div class="dest-sectors">
+            <span class="dest-sector">⚓ Marine Engineering</span>
+            <span class="dest-sector">🏗️ Construction</span>
+            <span class="dest-sector">🍽️ F&B Services</span>
+            <span class="dest-sector">⚙️ Precision Mfg.</span>
+          </div>
+          <a href="#enquiry" class="dest-link">Register for Singapore <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- QATAR -->
+      <div class="dest-card reveal">
+        <div class="dest-header">
+          <span class="dest-demand demand-very-high">Very High Demand</span>
+          <span class="dest-flag">🇶🇦</span>
+          <div class="dest-country">Qatar</div>
+          <div class="dest-region">Doha · Al Wakrah · Al Khor</div>
+        </div>
+        <div class="dest-body">
+          <p>Qatar's post-World Cup infrastructure legacy and National Vision 2030 economic diversification programme continue to drive massive workforce demand — spanning construction, logistics, facility management, and energy. All Qatar placements are facilitated under the Kafala-reformed system with full contract transparency.</p>
+          <div class="dest-sectors">
+            <span class="dest-sector">🏗️ Mega Projects</span>
+            <span class="dest-sector">⚡ Energy Sector</span>
+            <span class="dest-sector">🚛 Logistics</span>
+            <span class="dest-sector">🏢 Facility Mgmt.</span>
+          </div>
+          <a href="#enquiry" class="dest-link">Register for Qatar <span>→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTORS ══ -->
+<section class="section sectors-section" id="sectors">
+  <div class="section-inner">
+    <div class="sec-tag">Industry Verticals</div>
+    <h2 class="sec-title reveal">Active <em>Sectors</em> &amp; Roles</h2>
+    <p class="sec-desc reveal">Ettisai Onsite maintains active employer demand pipelines across 18+ industry verticals — with the highest volume demand concentrated in construction, energy, healthcare, and hospitality.</p>
+
+    <div class="sectors-grid">
+      <div class="sector-card reveal">
+        <span class="open-badge">HIRING NOW</span>
+        <div class="sc-icon">🏗️</div>
+        <h4>Construction &amp; Civil Works</h4>
+        <p>Structural, MEP, finishing, and civil engineering roles across large-scale infrastructure projects in the UAE, Qatar, and Russia.</p>
+        <div class="role-list">
+          <span class="role-chip">Mason</span><span class="role-chip">Shuttering Carpenter</span><span class="role-chip">Steel Fixer</span><span class="role-chip">Civil Supervisor</span><span class="role-chip">Quantity Surveyor</span>
+        </div>
+      </div>
+      <div class="sector-card reveal">
+        <span class="open-badge">HIRING NOW</span>
+        <div class="sc-icon">⚡</div>
+        <h4>Electrical &amp; Mechanical</h4>
+        <p>Licensed electricians, mechanical fitters, instrument technicians, and HVAC specialists for industrial and commercial projects across all four destination markets.</p>
+        <div class="role-list">
+          <span class="role-chip">Electrician (ITI)</span><span class="role-chip">HVAC Technician</span><span class="role-chip">Instrumentation Fitter</span><span class="role-chip">Maintenance Engineer</span>
+        </div>
+      </div>
+      <div class="sector-card reveal">
+        <span class="open-badge">HIRING NOW</span>
+        <div class="sc-icon">⛽</div>
+        <h4>Oil, Gas &amp; Energy</h4>
+        <p>Upstream and downstream roles for refineries, offshore platforms, and pipeline projects — primarily in Russia and Qatar. Safety certification (H2S, BOSIET) facilitated pre-departure.</p>
+        <div class="role-list">
+          <span class="role-chip">Pipeline Welder</span><span class="role-chip">Process Operator</span><span class="role-chip">Rig Hand</span><span class="role-chip">Safety Officer</span><span class="role-chip">Well Technician</span>
+        </div>
+      </div>
+      <div class="sector-card reveal">
+        <div class="sc-icon">🏥</div>
+        <h4>Healthcare &amp; Medical Support</h4>
+        <p>Clinical support, nursing, allied health, and caregiving roles for hospitals, clinics, and long-term care facilities across the UAE, Qatar, and Singapore.</p>
+        <div class="role-list">
+          <span class="role-chip">Staff Nurse (BSc)</span><span class="role-chip">Lab Technician</span><span class="role-chip">Radiographer</span><span class="role-chip">Ward Attendant</span>
+        </div>
+      </div>
+      <div class="sector-card reveal">
+        <div class="sc-icon">🏨</div>
+        <h4>Hospitality &amp; Food Services</h4>
+        <p>Front-of-house, kitchen brigade, housekeeping, and management roles for five-star hotel chains across the UAE and Singapore.</p>
+        <div class="role-list">
+          <span class="role-chip">Commis Chef</span><span class="role-chip">F&amp;B Steward</span><span class="role-chip">Housekeeping Supervisor</span><span class="role-chip">Front Desk Officer</span>
+        </div>
+      </div>
+      <div class="sector-card reveal">
+        <div class="sc-icon">🏭</div>
+        <h4>Manufacturing &amp; Production</h4>
+        <p>Assembly line operators, quality inspectors, CNC machinists, and production supervisors for factories and industrial zones in Russia and Singapore.</p>
+        <div class="role-list">
+          <span class="role-chip">CNC Operator</span><span class="role-chip">Quality Inspector</span><span class="role-chip">Lathe Machine Operator</span><span class="role-chip">Production Supervisor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="section process-section" id="process">
+  <div class="section-inner">
+    <div class="sec-tag">Placement Methodology</div>
+    <h2 class="sec-title">From Profile to <em>Deployment</em></h2>
+    <p class="sec-desc">A disciplined six-stage mobilisation process — designed to protect the worker, satisfy the employer, and comply fully with bilateral labour regulations.</p>
+    <div class="process-track">
+      <div class="pstep reveal">
+        <div class="pstep-num">01</div>
+        <h5>Profile Registration</h5>
+        <p>Free skill documentation, qualification verification, and biometric registration. No fees at this stage.</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">02</div>
+        <h5>Skill Screening</h5>
+        <p>Trade test, aptitude evaluation, and physical fitness assessment aligned to destination country standards.</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">03</div>
+        <h5>Employer Matching</h5>
+        <p>Profile presented to verified employer network. Demand letters secured. Interview coordination arranged.</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">04</div>
+        <h5>Documentation</h5>
+        <p>Visa documentation, attestation, medical examination, insurance, and emigration clearance — fully managed.</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">05</div>
+        <h5>Pre-Departure Orientation</h5>
+        <p>Cultural briefing, labour rights training, emergency contacts, and contract review in the candidate's language.</p>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">06</div>
+        <h5>Deployment &amp; Support</h5>
+        <p>Airport assistance, employer reception coordination, and post-arrival welfare follow-up through the first 90 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="section why-section">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="reveal-l">
+        <div class="sec-tag">Why Ettisai Onsite</div>
+        <h2 class="sec-title">Not a Gateway.<br>A <em>Ground Force.</em></h2>
+        <p class="sec-desc">Ettisai Onsite operates differently. We do not circulate profiles. We mobilise verified professionals — with full documentation, welfare protection, and post-deployment accountability.</p>
+        <div class="why-items" style="margin-top:2rem">
+          <div class="why-item">
+            <div class="why-icon">✅</div>
+            <div>
+              <h4>Zero Undisclosed Fees</h4>
+              <p>Full cost transparency at every stage. Workers are never charged placement fees beyond statutory permitted amounts under Emigration Act, 1983.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🛡️</div>
+            <div>
+              <h4>Contract Verification Before Departure</h4>
+              <p>Every employment contract is reviewed and translated into Tamil before the candidate signs — with a 48-hour reconsideration window guaranteed.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🌐</div>
+            <div>
+              <h4>Verified Employer Network Only</h4>
+              <p>All employers are screened against bilateral labour agreements, MEA databases, and GOPIO-registered entities before any demand letter is accepted.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">📞</div>
+            <div>
+              <h4>Post-Deployment Welfare Cell</h4>
+              <p>A dedicated welfare team maintains contact with every deployed worker for the first six months — monitoring welfare, resolving disputes, and escalating emergencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <div class="why-visual">
+          <div class="wv-tag">Onsite<br>Global</div>
+          <div class="wv-stat">
+            <div class="wv-row"><span class="wv-label">Active Employer Partners</span><span class="wv-value">120+</span></div>
+            <div class="wv-row"><span class="wv-label">Countries with Active Demand</span><span class="wv-value">4 Nations</span></div>
+            <div class="wv-row"><span class="wv-label">Collar Categories Covered</span><span class="wv-value">7 of 7</span></div>
+            <div class="wv-row"><span class="wv-label">Average Deployment Timeline</span><span class="wv-value">6–10 Weeks</span></div>
+            <div class="wv-row"><span class="wv-label">Visa Clearance Success Rate</span><span class="wv-value">97%</span></div>
+            <div class="wv-row"><span class="wv-label">Post-Arrival Welfare Monitoring</span><span class="wv-value">6 Months</span></div>
+            <div class="wv-row"><span class="wv-label">Workers from Tamil Nadu</span><span class="wv-value">3,800+</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="section testimonials-section">
+  <div class="section-inner">
+    <div class="sec-tag">Worker Voices</div>
+    <h2 class="sec-title reveal">From Chennai to the <em>World</em></h2>
+    <div class="test-grid">
+      <div class="tcard reveal">
+        <div class="tcard-dest"><span class="tflag">🇦🇪</span><span>UAE — Dubai</span></div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Ettisai Onsite handled everything — my trade test, visa, medical, and contract — in under 8 weeks. I'm now an HVAC Supervisor with a verified employer in Dubai. They explained every clause in Tamil before I signed. No surprises after landing.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">M</div>
+          <div><div class="tcard-name">Murugesan K.</div><div class="tcard-role">HVAC Supervisor — Dubai · Blue-Collar</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tcard-dest"><span class="tflag">🇶🇦</span><span>Qatar — Doha</span></div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">நான் ஒரு Staff Nurse ஆக Qatar-வில் பணிபுரிகிறேன். Ettisai Onsite என்னுடைய MOH license, dataflow, and visa எல்லாவற்றையும் manage செய்தார்கள். A true welfare-first placement firm from Tamil Nadu.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">P</div>
+          <div><div class="tcard-name">Priya S.</div><div class="tcard-role">Staff Nurse — Doha · Pink-Collar</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tcard-dest"><span class="tflag">🇸🇬</span><span>Singapore</span></div>
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Singapore placement was something I never thought possible for me. The Ettisai team identified the right MOM-compliant employer, handled my Work Permit application, and gave me a full cultural orientation. I'm now 2 years in with the same company.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">R</div>
+          <div><div class="tcard-name">Rajkumar T.</div><div class="tcard-role">Marine Welder — Singapore · Blue-Collar</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ENQUIRY / CTA ══ -->
+<section class="section cta-section" id="enquiry">
+  <div class="section-inner">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <div class="sec-tag" style="color:#93c5fd"><span style="background:#93c5fd"></span>Register Your Profile</div>
+        <h2 class="sec-title">Your Skills Deserve<br><em>Global Recognition</em></h2>
+        <p class="sec-desc">Submit your profile today. Ettisai Onsite's placement team will verify your qualifications, match you with active employer demand, and guide you through every stage — at no undisclosed cost.</p>
+        <div class="cta-facts">
+          <div class="cta-fact">Free profile registration — no commitment required</div>
+          <div class="cta-fact">Placements across Russia 🇷🇺 · UAE 🇦🇪 · Singapore 🇸🇬 · Qatar 🇶🇦</div>
+          <div class="cta-fact">All seven collar categories welcome</div>
+          <div class="cta-fact">Full documentation and visa support included</div>
+          <div class="cta-fact">Post-arrival welfare monitoring for 6 months</div>
+          <div class="cta-fact">Tamil-language support throughout the process</div>
+        </div>
+        <div style="margin-top:2rem;padding:1.4rem 1.6rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px">
+          <div style="font-family:'Noto Serif Tamil',serif;font-size:0.9rem;color:rgba(255,255,255,.5);line-height:1.75">
+            உங்கள் திறமைகளுக்கு உலக அரங்கில் இடம் உண்டு.<br>
+            <span style="color:rgba(255,255,255,.25);font-size:0.75rem">Your skills have a place on the world stage.</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="enquiry-card">
+          <h3>Register Your Profile</h3>
+          <p class="card-sub">Free registration · No obligation · Reviewed within 48 hours</p>
+          <div class="form-2col">
+            <div class="form-row">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your full name"/>
+            </div>
+            <div class="form-row">
+              <label>Mobile</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Current Occupation / Trade</label>
+            <input type="text" placeholder="e.g. Electrician, Staff Nurse, Welder"/>
+          </div>
+          <div class="form-2col">
+            <div class="form-row">
+              <label>Collar Category</label>
+              <select>
+                <option value="" disabled selected>Select collar...</option>
+                <option>🔵 Blue-Collar (Skilled Trades)</option>
+                <option>⚫ Black-Collar (Industrial/Hazmat)</option>
+                <option>🩷 Pink-Collar (Healthcare/Care)</option>
+                <option>⚪ White-Collar (Office/Corporate)</option>
+                <option>🟡 Gold-Collar (Specialist/Expert)</option>
+                <option>🪙 Silver-Collar (Advisory/Retired Pro)</option>
+                <option>🔴 Red-Collar (Govt./Compliance)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Preferred Destination</label>
+              <select>
+                <option value="" disabled selected>Select country...</option>
+                <option>🇷🇺 Russia</option>
+                <option>🇦🇪 UAE (Dubai / Abu Dhabi)</option>
+                <option>🇸🇬 Singapore</option>
+                <option>🇶🇦 Qatar</option>
+                <option>Open to All Destinations</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Years of Experience</label>
+            <select>
+              <option value="" disabled selected>Select experience...</option>
+              <option>Fresher / Under 1 Year</option>
+              <option>1–3 Years</option>
+              <option>3–7 Years</option>
+              <option>7–15 Years</option>
+              <option>15+ Years (Senior / Silver-Collar)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Qualifications / Certifications</label>
+            <textarea placeholder="e.g. ITI Electrician, BSc Nursing, CSWIP 3.1 Welding, B.Tech Mechanical..."></textarea>
+          </div>
+          <button class="btn-enquire" onclick="this.textContent='✓ Profile Submitted — We\'ll contact you within 48 hours'">Submit Profile for Placement →</button>
+          <p style="font-size:0.68rem;color:var(--text-muted);text-align:center;margin-top:0.7rem">🔒 Your information is private and will only be shared with verified employers upon your consent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-name">ETTISAI <span>ONSITE</span></div>
+      <div class="fb-sub">Global Workforce Placement · Chennai</div>
+      <p>
+        A division of ETTISAI ENTERPRISES PRIVATE LIMITED<br>
+        #3/520, M.M.D.A, Mogappair East<br>
+        Chennai – 600037, Tamil Nadu, India<br>
+        CIN: U82199TN2025PTC185731<br><br>
+        📧 onsite@ettisai.com<br>
+        📞 +91 90360 23533
+      </p>
+      <div class="footer-collar-bar">
+        <span class="fcb-dot" style="background:var(--blue-collar)" title="Blue-Collar"></span>
+        <span class="fcb-dot" style="background:#1c1917" title="Black-Collar"></span>
+        <span class="fcb-dot" style="background:var(--pink-collar)" title="Pink-Collar"></span>
+        <span class="fcb-dot" style="background:#9ca3af" title="White-Collar"></span>
+        <span class="fcb-dot" style="background:var(--gold-collar)" title="Gold-Collar"></span>
+        <span class="fcb-dot" style="background:var(--silver-collar)" title="Silver-Collar"></span>
+        <span class="fcb-dot" style="background:var(--red-collar)" title="Red-Collar"></span>
+        <span style="font-size:0.62rem;color:rgba(255,255,255,.2);margin-left:0.4rem;letter-spacing:0.1em">7 COLLAR CATEGORIES</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Placements</h5>
+      <a href="#collars">Collar System</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#sectors">Industry Sectors</a>
+      <a href="#process">Our Process</a>
+      <a href="#enquiry">Register Profile</a>
+    </div>
+    <div class="footer-col">
+      <h5>Destinations</h5>
+      <a href="#destinations">🇷🇺 Russia</a>
+      <a href="#destinations">🇦🇪 UAE</a>
+      <a href="#destinations">🇸🇬 Singapore</a>
+      <a href="#destinations">🇶🇦 Qatar</a>
+    </div>
+    <div class="footer-col">
+      <h5>ETTISAI Group</h5>
+      <a href="index.html">ETTISAI Home</a>
+      <a href="about.html">About Us</a>
+      <a href="eduserv.html">EduServ</a>
+      <a href="exports.html">Global IMPEX</a>
+      <a href="contact.html">Contact</a>
+      <a href="pay.html">Pay</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ETTISAI ENTERPRISES PRIVATE LIMITED. All rights reserved. Ettisai Onsite is a licensed international workforce placement division.</p>
+    <span class="footer-tagline">Built by Hand &amp; Mind — Placed Globally</span>
+  </div>
+</footer>
+
+<script>
+  /* SCROLL REVEAL */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('vis');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
+
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    const nav = document.querySelector('.nav-links');
+    if (nav.style.display === 'flex') {
+      nav.style.display = '';
+    } else {
+      Object.assign(nav.style, {
+        display: 'flex', flexDirection: 'column',
+        position: 'fixed', top: '66px', left: '0', right: '0',
+        background: '#fff', padding: '1.5rem 2rem',
+        borderBottom: '1px solid #dde4ef',
+        boxShadow: '0 8px 24px rgba(13,27,42,.12)', zIndex: '300'
+      });
+    }
+  });
+</script>
+</body>
+</html>
