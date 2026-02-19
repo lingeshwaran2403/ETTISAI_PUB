@@ -1,207 +1,1634 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduServ | ETTISAI — Overseas Education Consultancy</title>
-    <meta name="description"
-        content="ETTISAI EduServ: 360° overseas education consultancy covering 18+ countries. University admissions, visa processing, pre-departure orientation, and flight-inclusive packages.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
-</head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>EduServ | ETTISAI — Overseas Education Advisory | Chennai</title>
+  <meta name="description" content="ETTISAI EduServ — Tamil Nadu's premier overseas education advisory. Study in Russia, Germany, France, UK, Australia, Italy, South Korea. Expert visa & admission support from Chennai."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ═══════════════════════════════════════════
+       VARIABLES & RESET
+    ═══════════════════════════════════════════ */
+    :root {
+      --saffron: #FF9933;
+      --saffron-light: #FFB347;
+      --saffron-pale: #FFF3E0;
+      --india-white: #FFFFFF;
+      --india-green: #138808;
+      --india-green-light: #E8F5E9;
+      --india-green-dark: #0a5c05;
+      --ashoka-blue: #000080;
+      --ashoka-blue-light: #E8EAF6;
+      --kolam-gold: #C9873A;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a6a;
+      --text-light: #8585a8;
+      --border: #e8e4f0;
+      --card-bg: #FAFAFA;
+      --russia-red: #CC0000;
+      --russia-bg: #FFF5F5;
+      --shadow-sm: 0 2px 12px rgba(26,26,46,0.07);
+      --shadow-md: 0 8px 32px rgba(26,26,46,0.11);
+      --shadow-lg: 0 20px 60px rgba(26,26,46,0.14);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--text-dark);overflow-x:hidden;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%}
 
+    /* ═══════════════════════════════════════════
+       TRICOLOR TOP BAND
+    ═══════════════════════════════════════════ */
+    .tricolor-band{
+      height:5px;
+      background:linear-gradient(90deg, var(--saffron) 33.3%, #fff 33.3% 66.6%, var(--india-green) 66.6%);
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+    }
+
+    /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+    nav{
+      position:fixed;top:5px;left:0;right:0;z-index:999;
+      background:rgba(255,255,255,0.97);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      padding:0 3rem;
+      display:flex;align-items:center;justify-content:space-between;
+      height:68px;
+    }
+    .nav-logo{display:flex;align-items:center;gap:0.7rem}
+    .logo-mark{
+      width:40px;height:40px;
+      background:linear-gradient(135deg, var(--saffron), var(--kolam-gold));
+      border-radius:6px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Noto Serif Tamil',serif;
+      font-size:1.1rem;color:#fff;font-weight:700;
+      box-shadow: 0 2px 8px rgba(201,135,58,0.3);
+    }
+    .logo-text{line-height:1.15}
+    .logo-text .brand{font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700;color:var(--text-dark)}
+    .logo-text .subbrand{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light)}
+    .nav-links{display:flex;align-items:center;gap:0.3rem;list-style:none}
+    .nav-links a{
+      font-size:0.78rem;font-weight:600;letter-spacing:0.04em;
+      padding:0.45rem 0.85rem;border-radius:4px;
+      color:var(--text-mid);transition:all 0.18s;
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--saffron);background:var(--saffron-pale)}
+    .nav-cta{
+      background:linear-gradient(135deg, var(--saffron), #e8850a) !important;
+      color:#fff !important;
+      padding:0.5rem 1.4rem !important;
+      border-radius:6px !important;
+      font-weight:700 !important;
+      box-shadow:0 2px 10px rgba(255,153,51,0.35);
+    }
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,153,51,0.5) !important}
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero{
+      min-height:100vh;
+      padding-top:73px;
+      display:grid;grid-template-columns:1fr 400px;
+      align-items:center;gap:0;
+      background:#fff;
+      position:relative;overflow:hidden;
+    }
+    /* Kolam decorative SVG background */
+    .hero::before{
+      content:'';position:absolute;right:-80px;bottom:-80px;
+      width:500px;height:500px;
+      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='none' stroke='%23FF9933' stroke-width='0.4' opacity='0.15'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%23FF9933' stroke-width='0.4' opacity='0.12'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='%23138808' stroke-width='0.4' opacity='0.12'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%23138808' stroke-width='0.4' opacity='0.1'/%3E%3Cpath d='M100 10 L190 100 L100 190 L10 100 Z' fill='none' stroke='%23C9873A' stroke-width='0.4' opacity='0.1'/%3E%3Cpath d='M100 30 L170 100 L100 170 L30 100 Z' fill='none' stroke='%23C9873A' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E") center/contain no-repeat;
+      pointer-events:none;z-index:0;
+    }
+    .hero-left{padding:4rem 3rem 4rem 4rem;position:relative;z-index:1}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      background:var(--saffron-pale);border:1px solid rgba(255,153,51,0.3);
+      color:var(--saffron);font-size:0.72rem;font-weight:700;
+      letter-spacing:0.1em;text-transform:uppercase;
+      padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.5rem;
+    }
+    .hero-badge .dot{width:6px;height:6px;background:var(--saffron);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+
+    .hero-left h1{
+      font-family:'Libre Baskerville',serif;
+      font-size:clamp(2.4rem,4vw,3.6rem);
+      font-weight:700;line-height:1.12;
+      margin-bottom:1.4rem;
+    }
+    .hero-left h1 .highlight{
+      color:var(--saffron);font-style:italic;
+    }
+    .hero-left h1 .highlight-green{color:var(--india-green)}
+
+    .hero-sub{
+      font-size:1.05rem;color:var(--text-mid);line-height:1.75;
+      max-width:520px;margin-bottom:2rem;
+    }
+    .hero-tamil{
+      font-family:'Noto Serif Tamil',serif;
+      font-size:0.85rem;color:var(--text-light);
+      margin-bottom:2rem;
+      padding-left:1rem;
+      border-left:3px solid var(--saffron);
+    }
+    .hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--saffron), #e8850a);
+      color:#fff;padding:0.85rem 2rem;border-radius:8px;
+      font-size:0.85rem;font-weight:700;letter-spacing:0.03em;
+      display:inline-flex;align-items:center;gap:0.5rem;
+      transition:all 0.2s;box-shadow:0 4px 14px rgba(255,153,51,0.35);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,153,51,0.5)}
+    .btn-outline{
+      border:2px solid var(--india-green);color:var(--india-green);
+      padding:0.85rem 2rem;border-radius:8px;
+      font-size:0.85rem;font-weight:600;
+      display:inline-flex;align-items:center;gap:0.5rem;
+      transition:all 0.2s;
+    }
+    .btn-outline:hover{background:var(--india-green);color:#fff}
+    .hero-trust{display:flex;gap:2rem;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-mid)}
+    .trust-icon{font-size:1rem}
+
+    /* Hero Right — Enquiry Form */
+    .hero-right{
+      background:linear-gradient(160deg, var(--saffron-pale) 0%, #fff 100%);
+      height:100%;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      padding:2rem 2.5rem;
+      border-left:1px solid rgba(255,153,51,0.15);
+      position:relative;z-index:1;
+    }
+    .enquiry-card{
+      background:#fff;border-radius:16px;
+      padding:2rem 2rem;width:100%;
+      box-shadow:var(--shadow-md);
+      border:1px solid var(--border);
+    }
+    .enquiry-card h3{
+      font-family:'Libre Baskerville',serif;
+      font-size:1.25rem;font-weight:700;margin-bottom:0.3rem;
+    }
+    .enquiry-card .card-sub{font-size:0.8rem;color:var(--text-light);margin-bottom:1.5rem}
+    .form-row{margin-bottom:1rem}
+    .form-row label{display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);margin-bottom:0.35rem}
+    .form-row input,.form-row select{
+      width:100%;padding:0.7rem 0.9rem;
+      border:1px solid var(--border);border-radius:6px;
+      font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;
+      color:var(--text-dark);background:#fff;
+      transition:border-color 0.18s;outline:none;
+      appearance:none;
+    }
+    .form-row input:focus,.form-row select:focus{border-color:var(--saffron);box-shadow:0 0 0 3px rgba(255,153,51,0.12)}
+    .form-submit{
+      width:100%;padding:0.85rem;
+      background:linear-gradient(135deg, var(--saffron), #e8850a);
+      color:#fff;border:none;border-radius:8px;
+      font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:700;
+      cursor:pointer;transition:all 0.2s;
+      box-shadow:0 4px 14px rgba(255,153,51,0.35);
+    }
+    .form-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,153,51,0.5)}
+    .form-note{font-size:0.7rem;color:var(--text-light);text-align:center;margin-top:0.7rem}
+    .urgent-tag{
+      background:#FFF3CD;border:1px solid #FFD700;
+      color:#856404;font-size:0.7rem;font-weight:700;
+      padding:0.35rem 0.8rem;border-radius:4px;
+      text-align:center;margin-bottom:1rem;letter-spacing:0.04em;
+    }
+
+    /* ═══════════════════════════════════════════
+       STATS BAR
+    ═══════════════════════════════════════════ */
+    .stats-bar{
+      background:linear-gradient(135deg, var(--text-dark) 0%, #2a2a4e 100%);
+      padding:1.8rem 4rem;
+      display:flex;align-items:center;justify-content:center;gap:0;
+    }
+    .stat-item{
+      flex:1;text-align:center;
+      padding:0.8rem 1.5rem;
+      border-right:1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child{border-right:none}
+    .stat-num{
+      font-family:'Libre Baskerville',serif;
+      font-size:2rem;font-weight:700;
+      color:var(--saffron);display:block;
+    }
+    .stat-label{font-size:0.72rem;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase}
+
+    /* ═══════════════════════════════════════════
+       SECTION COMMONS
+    ═══════════════════════════════════════════ */
+    .section{padding:5rem 4rem;position:relative}
+    .section-white{background:#fff}
+    .section-offwhite{background:#FAFAFA}
+    .section-saffron{background:var(--saffron-pale)}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-tag{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      font-size:0.68rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;
+      color:var(--saffron);margin-bottom:0.75rem;
+    }
+    .section-tag .line{width:24px;height:2px;background:var(--saffron);border-radius:2px}
+    h2.section-title{
+      font-family:'Libre Baskerville',serif;
+      font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;
+      line-height:1.2;margin-bottom:0.8rem;
+    }
+    h2.section-title em{font-style:italic;color:var(--saffron)}
+    h2.section-title .green{color:var(--india-green)}
+    .section-desc{color:var(--text-mid);font-size:0.95rem;line-height:1.75;max-width:580px}
+
+    /* ═══════════════════════════════════════════
+       KOLAM DIVIDER
+    ═══════════════════════════════════════════ */
+    .kolam-divider{
+      text-align:center;padding:1.5rem 0;
+      color:var(--saffron);font-size:1.4rem;letter-spacing:0.5rem;
+      opacity:0.4;
+    }
+
+    /* ═══════════════════════════════════════════
+       DESTINATIONS — FEATURED 7
+    ═══════════════════════════════════════════ */
+    .destinations-grid{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:0;
+      border:1px solid var(--border);
+      border-radius:12px;overflow:hidden;
+      box-shadow:var(--shadow-sm);
+    }
+    .dest-tab{
+      padding:1.8rem 0.8rem 1.6rem;
+      text-align:center;cursor:pointer;
+      background:#fff;
+      border-right:1px solid var(--border);
+      transition:all 0.22s;position:relative;
+      border-bottom:3px solid transparent;
+    }
+    .dest-tab:last-child{border-right:none}
+    .dest-tab:hover,.dest-tab.active{background:var(--saffron-pale);border-bottom-color:var(--saffron)}
+    .dest-tab.russia{background:var(--russia-bg)}
+    .dest-tab.russia:hover,.dest-tab.russia.active{background:#FFE0E0;border-bottom-color:var(--russia-red)}
+    .dest-tab .flag{font-size:2.2rem;display:block;margin-bottom:0.5rem}
+    .dest-tab .dname{font-size:0.75rem;font-weight:700;letter-spacing:0.02em}
+    .dest-tab .dtag{font-size:0.6rem;color:var(--text-light);margin-top:0.2rem}
+    .dest-tab.russia .dtag{color:var(--russia-red);font-weight:700}
+    .hot-badge{
+      position:absolute;top:6px;right:6px;
+      background:var(--russia-red);color:#fff;
+      font-size:0.5rem;font-weight:800;letter-spacing:0.1em;
+      padding:2px 5px;border-radius:3px;text-transform:uppercase;
+    }
+    .popular-badge{
+      position:absolute;top:6px;right:6px;
+      background:var(--india-green);color:#fff;
+      font-size:0.5rem;font-weight:800;letter-spacing:0.1em;
+      padding:2px 5px;border-radius:3px;text-transform:uppercase;
+    }
+
+    /* Country Detail Panels */
+    .country-panels{margin-top:2.5rem}
+    .country-panel{display:none}
+    .country-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .panel-left{}
+    .panel-flag-header{
+      display:flex;align-items:center;gap:1.2rem;
+      margin-bottom:1.5rem;padding:1.5rem;
+      border-radius:12px;border:1px solid var(--border);
+      background:var(--card-bg);
+    }
+    .panel-flag{font-size:3.5rem;line-height:1}
+    .panel-title{font-family:'Libre Baskerville',serif;font-size:1.5rem;font-weight:700}
+    .panel-tagline{font-size:0.8rem;color:var(--text-light);margin-top:0.2rem}
+    .panel-body{font-size:0.88rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.2rem}
+    .panel-highlights{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1.5rem}
+    .ph-item{
+      display:flex;align-items:flex-start;gap:0.6rem;
+      padding:0.9rem;background:#fff;border:1px solid var(--border);border-radius:8px;
+      font-size:0.78rem;font-weight:500;
+    }
+    .ph-icon{font-size:1.1rem;flex-shrink:0}
+    .panel-unis h4{font-size:0.8rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.75rem}
+    .uni-list{display:flex;flex-direction:column;gap:0.5rem}
+    .uni-item{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0.7rem 1rem;background:#fff;
+      border:1px solid var(--border);border-radius:6px;
+      font-size:0.8rem;font-weight:600;
+      border-left:3px solid var(--saffron);
+    }
+    .uni-item.russia-uni{border-left-color:var(--russia-red)}
+    .uni-rank{font-size:0.65rem;color:var(--text-light);font-weight:400}
+    .panel-cta{
+      display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.2rem;
+      background:linear-gradient(135deg, var(--saffron), #e8850a);
+      color:#fff;padding:0.8rem 1.8rem;border-radius:8px;
+      font-size:0.82rem;font-weight:700;
+      box-shadow:0 4px 14px rgba(255,153,51,0.3);transition:all 0.2s;
+    }
+    .panel-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,153,51,0.45)}
+    /* Russia panel special */
+    .russia-panel-banner{
+      background:linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+      border:2px solid rgba(204,0,0,0.15);border-radius:12px;
+      padding:1.5rem;margin-bottom:1.2rem;
+    }
+    .russia-panel-banner h4{color:var(--russia-red);font-family:'Libre Baskerville',serif;font-size:1rem;font-weight:700;margin-bottom:0.4rem}
+    .russia-panel-banner p{font-size:0.82rem;color:var(--text-mid);line-height:1.7}
+
+    /* ═══════════════════════════════════════════
+       WHY RUSSIA — DECOY SECTION
+    ═══════════════════════════════════════════ */
+    .russia-section{
+      background:linear-gradient(135deg, #fff8f8 0%, #fff 100%);
+      border-top:4px solid var(--russia-red);
+      position:relative;overflow:hidden;
+    }
+    .russia-section::after{
+      content:'';position:absolute;top:-50px;right:-50px;
+      width:400px;height:400px;border-radius:50%;
+      background:radial-gradient(circle, rgba(204,0,0,0.04) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .russia-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .russia-left{}
+    .russia-badge{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      background:#FFE0E0;border:1px solid rgba(204,0,0,0.2);
+      color:var(--russia-red);font-size:0.68rem;font-weight:800;
+      letter-spacing:0.12em;text-transform:uppercase;
+      padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1rem;
+    }
+    .russia-why-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem}
+    .rw-item{
+      display:flex;gap:1rem;align-items:flex-start;
+      padding:1rem 1.2rem;background:#fff;
+      border:1px solid rgba(204,0,0,0.1);border-radius:10px;
+      box-shadow:0 2px 8px rgba(204,0,0,0.05);
+      transition:box-shadow 0.2s;
+    }
+    .rw-item:hover{box-shadow:0 4px 16px rgba(204,0,0,0.1)}
+    .rw-num{
+      font-family:'Libre Baskerville',serif;
+      font-size:1.6rem;font-weight:700;color:rgba(204,0,0,0.2);
+      line-height:1;min-width:2.2rem;
+    }
+    .rw-content h4{font-size:0.88rem;font-weight:700;margin-bottom:0.3rem}
+    .rw-content p{font-size:0.8rem;color:var(--text-mid);line-height:1.6}
+    .russia-right{}
+    .russia-cost-card{
+      background:#fff;border:1px solid rgba(204,0,0,0.15);border-radius:14px;
+      padding:2rem;box-shadow:var(--shadow-md);overflow:hidden;position:relative;
+    }
+    .russia-cost-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg, var(--russia-red), #FF6B6B);
+    }
+    .cost-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+    .cost-flag{font-size:2.5rem}
+    .cost-title{font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700}
+    .cost-sub{font-size:0.75rem;color:var(--text-light)}
+    .cost-rows{display:flex;flex-direction:column;gap:0.8rem}
+    .cost-row{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0.75rem 1rem;background:#FAFAFA;border-radius:6px;
+      font-size:0.82rem;
+    }
+    .cost-label{color:var(--text-mid);font-weight:500}
+    .cost-value{font-weight:700;color:var(--text-dark)}
+    .cost-value.highlight{color:var(--india-green);font-size:0.9rem}
+    .russia-cta-box{
+      margin-top:1.5rem;background:#FFF5F5;border-radius:10px;
+      padding:1.2rem;text-align:center;border:1px dashed rgba(204,0,0,0.25);
+    }
+    .russia-cta-box p{font-size:0.78rem;color:var(--text-mid);margin-bottom:0.7rem}
+    .btn-russia{
+      background:linear-gradient(135deg, var(--russia-red), #a00);
+      color:#fff;padding:0.75rem 2rem;border-radius:8px;
+      font-size:0.82rem;font-weight:700;
+      display:inline-block;transition:all 0.2s;
+      box-shadow:0 4px 12px rgba(204,0,0,0.3);
+    }
+    .btn-russia:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(204,0,0,0.4)}
+    .seats-warning{
+      background:#FFF3CD;border:1px solid #FFD700;border-radius:6px;
+      padding:0.6rem 1rem;text-align:center;
+      font-size:0.72rem;font-weight:700;color:#856404;
+      margin-top:0.8rem;letter-spacing:0.03em;
+    }
+
+    /* ═══════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════ */
+    .services-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:1.2rem;margin-top:0.5rem;
+    }
+    .service-card{
+      background:#fff;border:1px solid var(--border);border-radius:12px;
+      padding:1.6rem 1.4rem;
+      transition:all 0.22s;cursor:default;position:relative;overflow:hidden;
+    }
+    .service-card::before{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg, var(--saffron), var(--kolam-gold));
+      transform:scaleX(0);transform-origin:left;transition:transform 0.3s;
+    }
+    .service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-icon{
+      width:44px;height:44px;border-radius:10px;
+      background:var(--saffron-pale);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.3rem;margin-bottom:1rem;
+    }
+    .service-card h4{font-size:0.88rem;font-weight:700;margin-bottom:0.5rem}
+    .service-card p{font-size:0.78rem;color:var(--text-mid);line-height:1.6}
+    .service-step{
+      position:absolute;top:1rem;right:1rem;
+      font-size:0.6rem;font-weight:800;letter-spacing:0.1em;
+      color:var(--border);text-transform:uppercase;
+    }
+
+    /* ═══════════════════════════════════════════
+       PROCESS TIMELINE
+    ═══════════════════════════════════════════ */
+    .process-steps{
+      display:grid;grid-template-columns:repeat(6,1fr);
+      gap:0;position:relative;margin-top:1rem;
+    }
+    .process-steps::before{
+      content:'';position:absolute;
+      top:28px;left:10%;right:10%;height:2px;
+      background:linear-gradient(90deg, var(--saffron), var(--india-green));
+      z-index:0;
+    }
+    .pstep{
+      text-align:center;padding:0 0.8rem;position:relative;z-index:1;
+    }
+    .pstep-num{
+      width:56px;height:56px;border-radius:50%;
+      background:linear-gradient(135deg, var(--saffron), var(--kolam-gold));
+      color:#fff;font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 1rem;
+      box-shadow:0 4px 12px rgba(255,153,51,0.3);
+      border:3px solid #fff;
+    }
+    .pstep h5{font-size:0.78rem;font-weight:700;margin-bottom:0.3rem}
+    .pstep p{font-size:0.7rem;color:var(--text-light);line-height:1.5}
+
+    /* ═══════════════════════════════════════════
+       SOCIAL PROOF / TESTIMONIALS
+    ═══════════════════════════════════════════ */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .tcard{
+      background:#fff;border:1px solid var(--border);border-radius:12px;
+      padding:1.8rem;position:relative;overflow:hidden;
+    }
+    .tcard::before{
+      content:'"';position:absolute;top:-10px;left:1rem;
+      font-size:6rem;font-family:'Libre Baskerville',serif;
+      color:var(--saffron);opacity:0.1;line-height:1;
+    }
+    .tcard-stars{color:#FFB347;font-size:0.9rem;margin-bottom:0.8rem}
+    .tcard-text{font-size:0.83rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem;position:relative;z-index:1}
+    .tcard-person{display:flex;align-items:center;gap:0.75rem}
+    .tcard-avatar{
+      width:40px;height:40px;border-radius:50%;
+      background:linear-gradient(135deg, var(--saffron-pale), var(--india-green-light));
+      display:flex;align-items:center;justify-content:center;
+      font-size:1rem;font-weight:700;color:var(--saffron);
+      border:2px solid var(--saffron);
+    }
+    .tcard-name{font-size:0.82rem;font-weight:700}
+    .tcard-detail{font-size:0.7rem;color:var(--text-light)}
+
+    /* ═══════════════════════════════════════════
+       TEST PREP
+    ═══════════════════════════════════════════ */
+    .test-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+    .test-card{
+      background:#fff;border:1px solid var(--border);border-radius:10px;
+      padding:1.2rem;text-align:center;
+      transition:all 0.2s;cursor:pointer;
+    }
+    .test-card:hover{border-color:var(--saffron);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+    .test-icon{font-size:1.8rem;margin-bottom:0.5rem}
+    .test-name{font-size:0.82rem;font-weight:700;margin-bottom:0.2rem}
+    .test-desc{font-size:0.68rem;color:var(--text-light)}
+
+    /* ═══════════════════════════════════════════
+       SCHOLARSHIP / LOAN
+    ═══════════════════════════════════════════ */
+    .fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .fin-card{
+      background:#fff;border:1px solid var(--border);border-radius:14px;
+      padding:2rem;overflow:hidden;position:relative;
+    }
+    .fin-card.green-card{border-top:4px solid var(--india-green)}
+    .fin-card.saffron-card{border-top:4px solid var(--saffron)}
+    .fin-card h4{font-family:'Libre Baskerville',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.8rem}
+    .fin-card p{font-size:0.85rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}
+    .fin-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+    .fin-list li{
+      display:flex;align-items:center;gap:0.6rem;
+      font-size:0.8rem;color:var(--text-mid);
+    }
+    .fin-list li::before{content:'✓';color:var(--india-green);font-weight:800}
+
+    /* ═══════════════════════════════════════════
+       URGENCY / SCARCITY BAND
+    ═══════════════════════════════════════════ */
+    .urgency-band{
+      background:linear-gradient(135deg, var(--text-dark) 0%, #1a1a4e 100%);
+      padding:1.4rem 4rem;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:2rem;flex-wrap:wrap;
+    }
+    .urgency-left{display:flex;align-items:center;gap:1rem}
+    .urgency-dot{
+      width:10px;height:10px;background:#FF6B6B;border-radius:50%;
+      animation:pulse 1.5s infinite;flex-shrink:0;
+    }
+    .urgency-text{color:#fff;font-size:0.85rem;font-weight:600}
+    .urgency-text span{color:var(--saffron-light)}
+    .urgency-cta{
+      background:linear-gradient(135deg, var(--saffron), #e8850a);
+      color:#fff;padding:0.65rem 1.8rem;border-radius:6px;
+      font-size:0.82rem;font-weight:700;white-space:nowrap;
+      box-shadow:0 2px 8px rgba(255,153,51,0.4);
+      transition:all 0.2s;
+    }
+    .urgency-cta:hover{transform:translateY(-1px)}
+
+    /* ═══════════════════════════════════════════
+       PARTNERS
+    ═══════════════════════════════════════════ */
+    .partners-scroll{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+      background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;
+    }
+    .partner-item{
+      background:#fff;padding:1.5rem 1.2rem;
+      display:flex;align-items:center;gap:0.8rem;
+      transition:background 0.18s;
+    }
+    .partner-item:hover{background:var(--saffron-pale)}
+    .partner-flag{font-size:1.6rem}
+    .partner-info .pname{font-size:0.82rem;font-weight:700}
+    .partner-info .pcountry{font-size:0.68rem;color:var(--text-light)}
+    .partner-item.russia-partner{background:#FFF5F5}
+    .partner-item.russia-partner:hover{background:#FFE0E0}
+
+    /* ═══════════════════════════════════════════
+       CTA FINAL
+    ═══════════════════════════════════════════ */
+    .cta-final{
+      background:linear-gradient(135deg, var(--text-dark) 0%, #2a1a4e 50%, var(--text-dark) 100%);
+      position:relative;overflow:hidden;
+    }
+    .cta-final::before{
+      content:'';position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='180' fill='none' stroke='%23FF9933' stroke-width='0.5' opacity='0.12'/%3E%3Ccircle cx='200' cy='200' r='140' fill='none' stroke='%23FF9933' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='200' cy='200' r='100' fill='none' stroke='%23138808' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E") center/contain no-repeat;
+      pointer-events:none;opacity:0.3;
+    }
+    .cta-inner{
+      max-width:700px;margin:0 auto;
+      text-align:center;padding:6rem 2rem;position:relative;z-index:1;
+    }
+    .cta-tamil{
+      font-family:'Noto Serif Tamil',serif;
+      font-size:1rem;color:rgba(255,153,51,0.6);margin-bottom:0.5rem;
+    }
+    .cta-inner h2{
+      font-family:'Libre Baskerville',serif;
+      font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;
+      color:#fff;margin-bottom:1rem;line-height:1.2;
+    }
+    .cta-inner h2 em{color:var(--saffron);font-style:italic}
+    .cta-inner p{color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.7;margin-bottom:2.2rem}
+    .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-white{
+      background:#fff;color:var(--text-dark);
+      padding:0.9rem 2.2rem;border-radius:8px;
+      font-size:0.88rem;font-weight:700;
+      transition:all 0.2s;box-shadow:0 4px 16px rgba(0,0,0,0.2);
+    }
+    .btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
+    .btn-ghost-white{
+      border:2px solid rgba(255,255,255,0.3);color:#fff;
+      padding:0.9rem 2.2rem;border-radius:8px;
+      font-size:0.88rem;font-weight:600;transition:all 0.2s;
+    }
+    .btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer{background:var(--text-dark);padding:4rem 4rem 2rem}
+    .footer-inner{
+      max-width:1200px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+      padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .fb-logo{
+      font-family:'Libre Baskerville',serif;
+      font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:0.2rem;
+    }
+    .footer-brand .fb-sub{
+      font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+      color:rgba(255,255,255,0.3);margin-bottom:1rem;
+    }
+    .footer-brand p{font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.7}
+    .footer-brand .tricolor-mini{
+      height:3px;width:60px;margin-top:1rem;
+      background:linear-gradient(90deg, var(--saffron) 33%, #fff 33% 66%, var(--india-green) 66%);
+      border-radius:2px;
+    }
+    .footer-col h5{
+      font-size:0.65rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;
+      color:rgba(255,255,255,0.4);margin-bottom:1.2rem;
+    }
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+    .footer-col ul li a{
+      font-size:0.8rem;color:rgba(255,255,255,0.55);transition:color 0.18s;
+    }
+    .footer-col ul li a:hover{color:var(--saffron)}
+    .footer-bottom{
+      max-width:1200px;margin:1.5rem auto 0;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    }
+    .footer-bottom p{font-size:0.72rem;color:rgba(255,255,255,0.3)}
+    .footer-tagline{
+      font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+      color:rgba(255,153,51,0.4);
+    }
+    .footer-tamil{
+      font-family:'Noto Serif Tamil',serif;
+      font-size:0.75rem;color:rgba(255,153,51,0.35);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media(max-width:1100px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{display:none}
+      .destinations-grid{grid-template-columns:repeat(4,1fr)}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-steps{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+      .process-steps::before{display:none}
+      .country-panel.active{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      nav{padding:0 1.2rem}.nav-links{display:none}
+      .section{padding:3rem 1.5rem}
+      .stats-bar{padding:1.5rem}
+      .stat-num{font-size:1.5rem}
+      .destinations-grid{grid-template-columns:repeat(3,1fr)}
+      .russia-grid{grid-template-columns:1fr}
+      .fin-grid{grid-template-columns:1fr}
+      .testimonials-grid{grid-template-columns:1fr}
+      .test-grid{grid-template-columns:repeat(3,1fr)}
+      .partners-scroll{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+      .urgency-band{padding:1.2rem 1.5rem}
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .hero-left > *{animation:fadeUp 0.6s ease both}
+    .hero-left > *:nth-child(1){animation-delay:0.1s}
+    .hero-left > *:nth-child(2){animation-delay:0.2s}
+    .hero-left > *:nth-child(3){animation-delay:0.3s}
+    .hero-left > *:nth-child(4){animation-delay:0.4s}
+    .hero-left > *:nth-child(5){animation-delay:0.5s}
+    .hero-left > *:nth-child(6){animation-delay:0.6s}
+  </style>
+</head>
 <body>
 
-    <!-- Ambient Effects -->
-    <canvas id="noise-canvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
+<!-- TRICOLOR TOP BAND -->
+<div class="tricolor-band"></div>
 
-    <!-- ═══ HEADER ═══ -->
-    <header class="site-header">
-        <a href="index.html" class="logo-link">
-            <span class="logo-eng">ETTISAI</span>
-            <span class="logo-tamil">எத்திசை</span>
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li class="nav-dropdown">
-                    <a href="#">Services</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="eduserv.html">EduServ</a>
-                        <a href="exports.html">Global IMPEX</a>
-                    </div>
-                </li>
-                <li><a href="pay.html">Pay</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="eduserv.html">EduServ</a>
-        <a href="exports.html">Global IMPEX</a>
-        <a href="pay.html">Pay</a>
-        <a href="contact.html">Contact</a>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">எ</div>
+    <div class="logo-text">
+      <div class="brand">ETTISAI EduServ</div>
+      <div class="subbrand">Overseas Education Advisory · Chennai</div>
     </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="eduserv.html" class="active">EduServ</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="exports.html">Global IMPEX</a></li>
+    <li><a href="contact.html" class="nav-cta">Free Counselling →</a></li>
+  </ul>
+</nav>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="page-hero">
-        <div class="container">
-            <span class="label reveal">ETTISAI EduServ</span>
-            <h1 class="reveal" style="animation-delay: 0.1s;">Overseas Education<br>Consultancy</h1>
-            <p class="hero-sub reveal" style="animation-delay: 0.2s;">
-                360° guidance from university selection to airport departure — across 18+ countries.
-            </p>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="dot"></span>Now Enrolling — Jan · May · Sep 2026 Intakes Open</div>
+    <h1>Your Dream University.<br><span class="highlight">Internationally.</span><br>Guided from <span class="highlight-green">Chennai.</span></h1>
+    <p class="hero-sub">ETTISAI EduServ is Tamil Nadu's trusted overseas education advisory — delivering 360° end-to-end enrolment support across 18+ countries. From psychometric profiling to visa clearance and campus arrival, every step is precision-managed.</p>
+    <p class="hero-tamil">உங்கள் கனவு பல்கலைக்கழகம் — உலகின் எந்த மூலையிலும். நாங்கள் உங்களுடன் இருக்கிறோம்.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">📞 Book Free Session</a>
+      <a href="#destinations" class="btn-outline">🌍 Explore Destinations</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">🎓</span> 1,200+ Students Placed</div>
+      <div class="trust-item"><span class="trust-icon">🌍</span> 18+ Countries</div>
+      <div class="trust-item"><span class="trust-icon">✅</span> 98% Visa Success Rate</div>
+      <div class="trust-item"><span class="trust-icon">🏛️</span> Direct Institutional Tie-ups</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="enquiry-card">
+      <div class="urgent-tag">🔥 Limited Intake Seats — Register Before 28 Feb 2026</div>
+      <h3>Get Free Counselling</h3>
+      <p class="card-sub">One consultation. Full clarity. Zero obligation.</p>
+      <div class="form-row">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your name"/>
+      </div>
+      <div class="form-row">
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+      <div class="form-row">
+        <label>Preferred Country</label>
+        <select>
+          <option>Select your top choice...</option>
+          <option>🇷🇺 Russia — Direct Admission</option>
+          <option>🇩🇪 Germany — Tuition Free</option>
+          <option>🇫🇷 France</option>
+          <option>🇬🇧 United Kingdom</option>
+          <option>🇦🇺 Australia</option>
+          <option>🇮🇹 Italy</option>
+          <option>🇰🇷 South Korea</option>
+          <option>Other Country</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Course Interest</label>
+        <select>
+          <option>Select your field...</option>
+          <option>Medicine / MBBS</option>
+          <option>Engineering & Technology</option>
+          <option>Business & Management</option>
+          <option>Arts & Design</option>
+          <option>Health Sciences</option>
+          <option>Sciences & Research</option>
+          <option>Hospitality & Tourism</option>
+          <option>Law</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Education Level</label>
+        <select>
+          <option>Select level...</option>
+          <option>Undergraduate (UG)</option>
+          <option>Postgraduate (PG)</option>
+          <option>PG Diploma</option>
+          <option>Diploma</option>
+          <option>PhD / Research</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! Our advisor will call you within 24 hours.')">Submit — Get Free Advisory →</button>
+      <p class="form-note">🔒 Your details are private and secure. No spam.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ═══ FLAG STRIP ═══ -->
-    <section class="section section-dark section-border-top" id="destinations">
-        <div class="container">
-            <span class="label reveal">Destinations</span>
-            <h2 class="reveal">18+ Countries. One Consultancy.</h2>
-            <div class="flag-strip-container reveal" style="animation-delay: 0.1s;">
-                <div class="flag-item"><span class="flag-emoji">🇺🇸</span> USA</div>
-                <div class="flag-item"><span class="flag-emoji">🇬🇧</span> UK</div>
-                <div class="flag-item"><span class="flag-emoji">🇨🇦</span> Canada</div>
-                <div class="flag-item"><span class="flag-emoji">🇦🇺</span> Australia</div>
-                <div class="flag-item"><span class="flag-emoji">🇳🇿</span> New Zealand</div>
-                <div class="flag-item"><span class="flag-emoji">🇩🇪</span> Germany</div>
-                <div class="flag-item"><span class="flag-emoji">🇫🇷</span> France</div>
-                <div class="flag-item"><span class="flag-emoji">🇮🇪</span> Ireland</div>
-                <div class="flag-item"><span class="flag-emoji">🇸🇬</span> Singapore</div>
-                <div class="flag-item"><span class="flag-emoji">🇲🇾</span> Malaysia</div>
-                <div class="flag-item"><span class="flag-emoji">🇯🇵</span> Japan</div>
-                <div class="flag-item"><span class="flag-emoji">🇰🇷</span> South Korea</div>
-                <div class="flag-item"><span class="flag-emoji">🇮🇹</span> Italy</div>
-                <div class="flag-item"><span class="flag-emoji">🇪🇸</span> Spain</div>
-                <div class="flag-item"><span class="flag-emoji">🇳🇱</span> Netherlands</div>
-                <div class="flag-item"><span class="flag-emoji">🇸🇪</span> Sweden</div>
-                <div class="flag-item"><span class="flag-emoji">🇵🇱</span> Poland</div>
-                <div class="flag-item"><span class="flag-emoji">🇷🇺</span> Russia</div>
-            </div>
-        </div>
-    </section>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">1,200+</span><span class="stat-label">Students Placed</span></div>
+  <div class="stat-item"><span class="stat-num">18+</span><span class="stat-label">Destinations</span></div>
+  <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">Visa Approval</span></div>
+  <div class="stat-item"><span class="stat-num">50+</span><span class="stat-label">Partner Universities</span></div>
+  <div class="stat-item"><span class="stat-num">12+</span><span class="stat-label">Years of Excellence</span></div>
+  <div class="stat-item"><span class="stat-num">360°</span><span class="stat-label">Service Coverage</span></div>
+</div>
 
-    <!-- ═══ 360° SERVICES ═══ -->
-    <section class="section section-border-top" id="services">
-        <div class="container">
-            <span class="label reveal">360° Coverage</span>
-            <h2 class="reveal">Full-Stack Education Services</h2>
-            <p class="reveal" style="animation-delay: 0.1s; color: var(--text-secondary); margin-bottom: 2rem;">
-                From counselling to campus arrival — every stage is engineered.
-            </p>
-            <div class="service-grid-edu">
-                <div class="service-item-edu reveal"><span class="service-icon">🎯</span> Career Counselling</div>
-                <div class="service-item-edu reveal"><span class="service-icon">🎓</span> University Shortlisting</div>
-                <div class="service-item-edu reveal"><span class="service-icon">📋</span> Application Processing</div>
-                <div class="service-item-edu reveal"><span class="service-icon">📝</span> SOP & Essay Guidance</div>
-                <div class="service-item-edu reveal"><span class="service-icon">📄</span> Visa Documentation</div>
-                <div class="service-item-edu reveal"><span class="service-icon">🏦</span> Education Loan Assistance
-                </div>
-                <div class="service-item-edu reveal"><span class="service-icon">✈️</span> Travel & Forex</div>
-                <div class="service-item-edu reveal"><span class="service-icon">🏠</span> Accommodation Support</div>
-                <div class="service-item-edu reveal"><span class="service-icon">🧭</span> Pre-Departure Briefing</div>
-                <div class="service-item-edu reveal"><span class="service-icon">📊</span> Scholarship Sourcing</div>
-                <div class="service-item-edu reveal"><span class="service-icon">📚</span> Test Prep (IELTS/TOEFL/GRE)
-                </div>
-                <div class="service-item-edu service-highlight reveal"><span class="service-icon">🛫</span>
-                    Flight-Inclusive Packages</div>
-            </div>
-        </div>
-    </section>
+<!-- URGENCY BAND -->
+<div class="urgency-band">
+  <div class="urgency-left">
+    <div class="urgency-dot"></div>
+    <div class="urgency-text">⚡ <span>September 2026 Intake</span> applications are now open — Early applicants receive priority processing &amp; scholarship screening. <span>Seats filling fast.</span></div>
+  </div>
+  <a href="contact.html" class="urgency-cta">Apply Now — It's Free →</a>
+</div>
 
-    <!-- ═══ UNIVERSITY PARTNERS ═══ -->
-    <section class="section section-dark section-border-top" id="partners">
-        <div class="container">
-            <span class="label reveal">Partner Network</span>
-            <h2 class="reveal">University & Institute Partners</h2>
-            <p class="reveal" style="animation-delay: 0.1s; color: var(--text-secondary); margin-bottom: 1rem;">
-                Tie-ups with accredited institutions across United Kingdom, Australia, Canada, Germany, and more.
-            </p>
-            <div class="uni-partners reveal" style="animation-delay: 0.2s;">
-                <span class="uni-chip">University of Greenwich</span>
-                <span class="uni-chip">Coventry University</span>
-                <span class="uni-chip">University of Hertfordshire</span>
-                <span class="uni-chip">Deakin University</span>
-                <span class="uni-chip">University of Wollongong</span>
-                <span class="uni-chip">Conestoga College</span>
-                <span class="uni-chip">Hochschule Furtwangen</span>
-                <span class="uni-chip">PSB Academy (Singapore)</span>
-            </div>
-            <div style="margin-top: 2rem;" class="reveal" style="animation-delay: 0.3s;">
-                <span class="intake-badge">Jan · May · Sep Intakes</span>
-            </div>
-        </div>
-    </section>
+<!-- DESTINATIONS -->
+<section class="section section-white" id="destinations">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Our Featured Destinations</div>
+    <h2 class="section-title">Study Abroad With <em>Confidence</em></h2>
+    <p class="section-desc">ETTISAI EduServ provides direct, structured admission pathways to seven flagship study destinations — each carefully curated for Indian students from Tamil Nadu and across India.</p>
 
-    <!-- ═══ CTA ═══ -->
-    <section class="cta-section section-border-top reveal">
-        <div class="container" style="position: relative; z-index: 2;">
-            <span class="label" style="display: block; margin-bottom: 1rem;">Begin</span>
-            <h2 style="margin-bottom: 1.5rem;">Start Your Education Journey</h2>
-            <p
-                style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                One consultation. Full clarity. No obligation.
-            </p>
-            <a href="contact.html" class="btn-primary">
-                ⬡ Book Consultation
-            </a>
+    <div style="margin-top:2.5rem">
+      <div class="destinations-grid" id="dest-tabs">
+        <div class="dest-tab russia active" onclick="showCountry('russia',this)">
+          <span class="hot-badge">Direct</span>
+          <span class="flag">🇷🇺</span>
+          <div class="dname">Russia</div>
+          <div class="dtag">Direct Admission</div>
         </div>
-    </section>
+        <div class="dest-tab" onclick="showCountry('germany',this)">
+          <span class="popular-badge">Free</span>
+          <span class="flag">🇩🇪</span>
+          <div class="dname">Germany</div>
+          <div class="dtag">Tuition-Free</div>
+        </div>
+        <div class="dest-tab" onclick="showCountry('france',this)">
+          <span class="flag">🇫🇷</span>
+          <div class="dname">France</div>
+          <div class="dtag">Grandes Écoles</div>
+        </div>
+        <div class="dest-tab" onclick="showCountry('uk',this)">
+          <span class="flag">🇬🇧</span>
+          <div class="dname">UK</div>
+          <div class="dtag">Russell Group</div>
+        </div>
+        <div class="dest-tab" onclick="showCountry('australia',this)">
+          <span class="flag">🇦🇺</span>
+          <div class="dname">Australia</div>
+          <div class="dtag">Group of Eight</div>
+        </div>
+        <div class="dest-tab" onclick="showCountry('italy',this)">
+          <span class="flag">🇮🇹</span>
+          <div class="dname">Italy</div>
+          <div class="dtag">Design & Medicine</div>
+        </div>
+        <div class="dest-tab" onclick="showCountry('korea',this)">
+          <span class="flag">🇰🇷</span>
+          <div class="dname">South Korea</div>
+          <div class="dtag">STEM & Innovation</div>
+        </div>
+      </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <footer class="site-footer">
-        <div class="footer-main">
-            <div class="footer-brand">
-                <span class="logo-eng">ETTISAI</span>
-                <span class="logo-tamil">எத்திசை</span>
-                <p class="footer-desc">
-                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
-                    Critical Operations | Business Intelligence | Core Engineering
-                </p>
-                <p class="footer-address">
-                    #3/520, M.M.D.A, Mogappair East<br>
-                    Chennai - 600037, Tamil Nadu, India
-                </p>
-            </div>
-            <div class="footer-col">
-                <h5>Navigation</h5>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="eduserv.html">EduServ</a>
-                <a href="exports.html">Global IMPEX</a>
-                <a href="pay.html">Pay</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h5>Connect</h5>
-                <a href="mailto:info@ettisai.com">info@ettisai.com</a>
-                <a href="tel:+919036023533">+91 90360 23533</a>
-                <p class="mono" style="margin-top: 0.75rem; font-size: 0.85rem;">CIN: U82199TN2025PTC185731</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
-            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
-        </div>
-    </footer>
+      <div class="country-panels">
 
-    <script src="main.js"></script>
+        <!-- RUSSIA -->
+        <div class="country-panel active" id="panel-russia">
+          <div class="panel-left">
+            <div class="panel-flag-header" style="border-top:3px solid var(--russia-red)">
+              <div class="panel-flag">🇷🇺</div>
+              <div>
+                <div class="panel-title">Study in Russia</div>
+                <div class="panel-tagline">Direct admission via ETTISAI's institutional mandate — no third-party fees</div>
+              </div>
+            </div>
+            <div class="russia-panel-banner">
+              <h4>🎯 Why Russia Is Our #1 Recommended Destination</h4>
+              <p>ETTISAI EduServ holds direct institutional agreements with leading Russian universities — enabling students to bypass intermediary channels, eliminate hidden costs, and receive offers faster. Russian degrees in Medicine, Engineering and Sciences carry global WHO/MCI recognition and are among the most cost-accessible internationally accredited qualifications available to Indian students today.</p>
+            </div>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🏥</span>MBBS — WHO & MCI/NMC Listed</div>
+              <div class="ph-item"><span class="ph-icon">💰</span>₹2–5L Annual Tuition Only</div>
+              <div class="ph-item"><span class="ph-icon">📝</span>No NEET/Entrance Required</div>
+              <div class="ph-item"><span class="ph-icon">🇬🇧</span>English-Medium Programmes</div>
+              <div class="ph-item"><span class="ph-icon">🏛️</span>Government Scholarships Available</div>
+              <div class="ph-item"><span class="ph-icon">⚡</span>Fast-Track Admission in 4 Weeks</div>
+            </div>
+            <a href="contact.html" class="panel-cta" style="background:linear-gradient(135deg,var(--russia-red),#a00);box-shadow:0 4px 14px rgba(204,0,0,0.3)">Apply for Russia →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Direct Partner Universities — Russia</h4>
+              <div class="uni-list">
+                <div class="uni-item russia-uni"><span>Peoples' Friendship University (RUDN)</span><span class="uni-rank">Moscow • QS Ranked</span></div>
+                <div class="uni-item russia-uni"><span>Kazan Federal University</span><span class="uni-rank">Kazan • Top 10 Russia</span></div>
+                <div class="uni-item russia-uni"><span>Volgograd State Medical University</span><span class="uni-rank">Volgograd • MCI Listed</span></div>
+                <div class="uni-item russia-uni"><span>Saint Petersburg State University</span><span class="uni-rank">St. Petersburg • QS Ranked</span></div>
+                <div class="uni-item russia-uni"><span>Ural Federal University</span><span class="uni-rank">Yekaterinburg • Project 5-100</span></div>
+                <div class="uni-item russia-uni"><span>First Moscow State Medical University</span><span class="uni-rank">Moscow • Top Medical</span></div>
+                <div class="uni-item russia-uni"><span>Bashkir State Medical University</span><span class="uni-rank">Ufa • MBBS Programme</span></div>
+              </div>
+            </div>
+            <div class="seats-warning" style="margin-top:1.2rem">⚠️ September 2026 Russia Intake — Only 12 Seats Remaining. Register today to secure your place.</div>
+          </div>
+        </div>
+
+        <!-- GERMANY -->
+        <div class="country-panel" id="panel-germany">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇩🇪</div>
+              <div>
+                <div class="panel-title">Study in Germany</div>
+                <div class="panel-tagline">World-class engineering education — largely tuition-free at public universities</div>
+              </div>
+            </div>
+            <p class="panel-body">Germany is one of the world's top destinations for Indian students, particularly in Engineering, Technology, and Business programmes. Most public universities charge zero tuition fees — only a modest semester contribution of €150–350. Germany's Mittelstand industrial ecosystem means graduates enter one of the strongest job markets globally, with Post-Study Work Visa options of up to 18 months after graduation.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">💸</span>No Tuition Fees at Public Universities</div>
+              <div class="ph-item"><span class="ph-icon">🔬</span>World-leading STEM Research</div>
+              <div class="ph-item"><span class="ph-icon">💼</span>18-Month Post-Study Work Visa</div>
+              <div class="ph-item"><span class="ph-icon">🏆</span>QS Top-100 Institutions</div>
+              <div class="ph-item"><span class="ph-icon">🇬🇧</span>English-Taught Master's Degrees</div>
+              <div class="ph-item"><span class="ph-icon">🏦</span>DAAD Scholarships Available</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for Germany →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — Germany</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>Hochschule Furtwangen University (HFU)</span><span class="uni-rank">Engineering, IT</span></div>
+                <div class="uni-item"><span>TU Munich (Technical University)</span><span class="uni-rank">QS #37 Global</span></div>
+                <div class="uni-item"><span>RWTH Aachen University</span><span class="uni-rank">Engineering Hub</span></div>
+                <div class="uni-item"><span>Heidelberg University</span><span class="uni-rank">Sciences, Medicine</span></div>
+                <div class="uni-item"><span>University of Stuttgart</span><span class="uni-rank">Automotive, Aerospace</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRANCE -->
+        <div class="country-panel" id="panel-france">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇫🇷</div>
+              <div>
+                <div class="panel-title">Study in France</div>
+                <div class="panel-tagline">Prestigious Grandes Écoles &amp; affordable public universities in the heart of Europe</div>
+              </div>
+            </div>
+            <p class="panel-body">France offers a unique combination of elite academic prestige through its Grandes Écoles system and genuinely affordable tuition at public universities — as low as €170 per year for UG programmes. With a strong culture of innovation in fashion, hospitality, international business, and the arts, France is an exceptional destination for students seeking both academic rigour and cultural immersion. France is also increasingly offering English-taught programmes at the Master's level.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🏰</span>Grandes Écoles — Elite Network</div>
+              <div class="ph-item"><span class="ph-icon">💶</span>From €170/yr Public Universities</div>
+              <div class="ph-item"><span class="ph-icon">🎨</span>Arts, Fashion, Hospitality Hubs</div>
+              <div class="ph-item"><span class="ph-icon">🌍</span>EU Work Rights Post-Graduation</div>
+              <div class="ph-item"><span class="ph-icon">📋</span>Campus France Streamlined Visa</div>
+              <div class="ph-item"><span class="ph-icon">🤝</span>Eiffel &amp; Emile Scholarships</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for France →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — France</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>Sciences Po Paris</span><span class="uni-rank">Social Sciences, Politics</span></div>
+                <div class="uni-item"><span>ESSEC Business School</span><span class="uni-rank">Management, Finance</span></div>
+                <div class="uni-item"><span>Sorbonne University</span><span class="uni-rank">Humanities, Sciences</span></div>
+                <div class="uni-item"><span>École Polytechnique</span><span class="uni-rank">Engineering & Tech</span></div>
+                <div class="uni-item"><span>INSEAD</span><span class="uni-rank">Global MBA Rankings</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UK -->
+        <div class="country-panel" id="panel-uk">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇬🇧</div>
+              <div>
+                <div class="panel-title">Study in United Kingdom</div>
+                <div class="panel-tagline">Russell Group prestige, 3-year undergraduate degrees, 2-year Graduate Route visa</div>
+              </div>
+            </div>
+            <p class="panel-body">The United Kingdom remains one of the most prestigious and Indian-student-friendly study destinations globally. Undergraduate degrees are completed in just 3 years, and Master's programmes in 1 year — reducing overall cost. The Graduate Route visa allows graduates to work in the UK for 2 years (3 years for PhD graduates) without a job offer. With ETTISAI's established UK university partnerships, students benefit from application support, scholarship guidance, and CAS facilitation.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🏛️</span>Russell Group Universities</div>
+              <div class="ph-item"><span class="ph-icon">⏱️</span>3-Year UG / 1-Year Master's</div>
+              <div class="ph-item"><span class="ph-icon">💼</span>2-Year Graduate Route Visa</div>
+              <div class="ph-item"><span class="ph-icon">🎓</span>Chevening Scholarships</div>
+              <div class="ph-item"><span class="ph-icon">🗣️</span>English-Language Environment</div>
+              <div class="ph-item"><span class="ph-icon">🤝</span>Established Indian Diaspora</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for UK →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — UK</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>University of Greenwich</span><span class="uni-rank">London • Business, Engineering</span></div>
+                <div class="uni-item"><span>Coventry University</span><span class="uni-rank">Coventry • Tech, Design</span></div>
+                <div class="uni-item"><span>University of Hertfordshire</span><span class="uni-rank">Hertfordshire • Sciences</span></div>
+                <div class="uni-item"><span>University of Manchester</span><span class="uni-rank">Russell Group • QS Top-50</span></div>
+                <div class="uni-item"><span>University of Edinburgh</span><span class="uni-rank">Russell Group • QS Top-25</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUSTRALIA -->
+        <div class="country-panel" id="panel-australia">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇦🇺</div>
+              <div>
+                <div class="panel-title">Study in Australia</div>
+                <div class="panel-tagline">Group of Eight excellence with pathways to permanent residency</div>
+              </div>
+            </div>
+            <p class="panel-body">Australia is home to seven of the world's top-100 universities and offers a high quality of life, diverse cultural environment, and one of the most transparent student visa systems. Post-study work visas range from 2 to 4 years depending on qualification level and study location. Australia's Skilled Migration Programme continues to offer clear PR pathways for graduates in high-demand occupations — making it both an excellent academic and long-term career destination.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🦘</span>7 of World's Top-100 Unis</div>
+              <div class="ph-item"><span class="ph-icon">📋</span>Transparent Visa System</div>
+              <div class="ph-item"><span class="ph-icon">🛂</span>2–4 Year Post-Study Work Visa</div>
+              <div class="ph-item"><span class="ph-icon">🏠</span>Clear PR Migration Pathways</div>
+              <div class="ph-item"><span class="ph-icon">🌏</span>Largest Indian Student Community</div>
+              <div class="ph-item"><span class="ph-icon">💡</span>Research Fellowships Available</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for Australia →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — Australia</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>Deakin University</span><span class="uni-rank">IT, Health Sciences</span></div>
+                <div class="uni-item"><span>University of Wollongong</span><span class="uni-rank">Engineering, Commerce</span></div>
+                <div class="uni-item"><span>University of Melbourne</span><span class="uni-rank">QS #14 Global</span></div>
+                <div class="uni-item"><span>University of Sydney</span><span class="uni-rank">Russell equiv. Group of Eight</span></div>
+                <div class="uni-item"><span>RMIT University</span><span class="uni-rank">Design, Technology</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITALY -->
+        <div class="country-panel" id="panel-italy">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇮🇹</div>
+              <div>
+                <div class="panel-title">Study in Italy</div>
+                <div class="panel-tagline">Renaissance of opportunity — design, medicine, and engineering at EU affordable rates</div>
+              </div>
+            </div>
+            <p class="panel-body">Italy combines a centuries-old academic legacy with affordable, globally recognised degrees. Public university fees in Italy are income-based and often range from €0 to €3,000 per year for international students, with many scholarships available. Italy is globally pre-eminent in Architecture, Fashion & Design, Fine Arts, Medicine, and Engineering — through institutions like Politecnico di Milano and Bologna. The Italy Student Visa process is well-structured and ETTISAI provides full documentation support.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🏛️</span>Oldest Universities in the World</div>
+              <div class="ph-item"><span class="ph-icon">💶</span>€0–3,000 Income-Based Fees</div>
+              <div class="ph-item"><span class="ph-icon">🎨</span>Architecture, Fashion, Design</div>
+              <div class="ph-item"><span class="ph-icon">🏥</span>Medicine — English-Medium (IMAT)</div>
+              <div class="ph-item"><span class="ph-icon">🤝</span>DSU & Government Scholarships</div>
+              <div class="ph-item"><span class="ph-icon">🌍</span>EU Work Permit Post-Study</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for Italy →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — Italy</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>Politecnico di Milano</span><span class="uni-rank">Engineering & Design QS Top-150</span></div>
+                <div class="uni-item"><span>University of Bologna</span><span class="uni-rank">Oldest University in the World</span></div>
+                <div class="uni-item"><span>Sapienza University of Rome</span><span class="uni-rank">Medicine, Sciences</span></div>
+                <div class="uni-item"><span>University of Milan</span><span class="uni-rank">Law, Economics</span></div>
+                <div class="uni-item"><span>Pavia University</span><span class="uni-rank">Engineering, Medicine</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOUTH KOREA -->
+        <div class="country-panel" id="panel-korea">
+          <div class="panel-left">
+            <div class="panel-flag-header">
+              <div class="panel-flag">🇰🇷</div>
+              <div>
+                <div class="panel-title">Study in South Korea</div>
+                <div class="panel-tagline">Asia's Silicon Valley — STEM excellence, GKS scholarships, cutting-edge research</div>
+              </div>
+            </div>
+            <p class="panel-body">South Korea has rapidly emerged as a top study destination for Indian students — combining world-class STEM institutions, generous government scholarships (Global Korea Scholarship — GKS covers full tuition, living allowance, and airfare), and a dynamic cultural environment. Korean universities have risen sharply in global rankings, with KAIST, POSTECH and Seoul National University consistently placed in the global top-100. With Korea's growing ties with India, graduates also benefit from expanding bilateral employment opportunities.</p>
+            <div class="panel-highlights">
+              <div class="ph-item"><span class="ph-icon">🤖</span>Semiconductor & AI Research Hubs</div>
+              <div class="ph-item"><span class="ph-icon">🎓</span>GKS Full Scholarship Available</div>
+              <div class="ph-item"><span class="ph-icon">🏆</span>KAIST, POSTECH in Global Top-100</div>
+              <div class="ph-item"><span class="ph-icon">🌍</span>English-Medium Programmes</div>
+              <div class="ph-item"><span class="ph-icon">💼</span>Growing India-Korea Bilateral Jobs</span></div>
+              <div class="ph-item"><span class="ph-icon">💰</span>Low Living Costs vs. Western Peers</div>
+            </div>
+            <a href="contact.html" class="panel-cta">Apply for South Korea →</a>
+          </div>
+          <div>
+            <div class="panel-unis">
+              <h4>Partner Institutions — South Korea</h4>
+              <div class="uni-list">
+                <div class="uni-item"><span>KAIST (Korea Advanced Institute of Science & Technology)</span><span class="uni-rank">QS Top-42 Global</span></div>
+                <div class="uni-item"><span>Seoul National University</span><span class="uni-rank">QS Top-32 Global</span></div>
+                <div class="uni-item"><span>Yonsei University</span><span class="uni-rank">SKY University Group</span></div>
+                <div class="uni-item"><span>POSTECH</span><span class="uni-rank">Engineering & Sciences</span></div>
+                <div class="uni-item"><span>Korea University</span><span class="uni-rank">Business, Law</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /country-panels -->
+    </div>
+  </div>
+</section>
+
+<div class="kolam-divider">✦ ✦ ✦ ✦ ✦</div>
+
+<!-- RUSSIA DEEP DIVE — WHY RUSSIA -->
+<section class="section russia-section" id="russia">
+  <div class="section-inner">
+    <div class="russia-grid">
+      <div class="russia-left">
+        <div class="russia-badge">🇷🇺 Direct Enrolment — ETTISAI's Flagship Destination</div>
+        <h2 class="section-title">Why <em style="color:var(--russia-red)">Russia</em> Is the Smartest Choice for Medical &amp; Engineering Students</h2>
+        <p class="section-desc">No other destination offers the combination of globally recognised degrees, minimal tuition costs, English-medium instruction, and direct institutional access that Russia does — particularly for Medicine and Engineering students from India.</p>
+        <div class="russia-why-list">
+          <div class="rw-item">
+            <div class="rw-num">01</div>
+            <div class="rw-content">
+              <h4>WHO &amp; MCI/NMC-Listed Medical Degrees</h4>
+              <p>Russian medical universities appear on the WHO and MCI/NMC recognition lists — meaning MBBS graduates can sit Indian licensing exams and practise medicine in India and across 100+ countries after completing FMGE/MCI screening.</p>
+            </div>
+          </div>
+          <div class="rw-item">
+            <div class="rw-num">02</div>
+            <div class="rw-content">
+              <h4>Extraordinary Cost-to-Quality Ratio</h4>
+              <p>Annual tuition for MBBS in Russia ranges from ₹2–5 lakhs — compared to ₹50–90 lakhs at private Indian medical colleges. Six-year total programme cost (including hostel and living) typically stays under ₹25 lakhs.</p>
+            </div>
+          </div>
+          <div class="rw-item">
+            <div class="rw-num">03</div>
+            <div class="rw-content">
+              <h4>No NEET Cutoff or Entrance Exam</h4>
+              <p>Russian universities admit Indian students based on 12th-grade marks in Science — eliminating the NEET cutoff barrier that blocks thousands of deserving students every year from pursuing Medicine in India.</p>
+            </div>
+          </div>
+          <div class="rw-item">
+            <div class="rw-num">04</div>
+            <div class="rw-content">
+              <h4>English-Medium Degree Programmes</h4>
+              <p>All major Russian medical and engineering universities offer complete degree programmes in English — allowing students to focus fully on academic excellence rather than language acquisition from day one.</p>
+            </div>
+          </div>
+          <div class="rw-item">
+            <div class="rw-num">05</div>
+            <div class="rw-content">
+              <h4>ETTISAI Direct Admission — No Extra Fees</h4>
+              <p>ETTISAI EduServ holds direct institutional agreements with top Russian universities. This means zero intermediary markups, faster offer letters (within 2–4 weeks), and personalised university matching tailored to each applicant's profile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="russia-right">
+        <div class="russia-cost-card">
+          <div class="cost-header">
+            <div class="cost-flag">🇷🇺</div>
+            <div>
+              <div class="cost-title">Russia — MBBS Cost Breakdown</div>
+              <div class="cost-sub">Approximate for Indian students (per year)</div>
+            </div>
+          </div>
+          <div class="cost-rows">
+            <div class="cost-row"><span class="cost-label">Annual Tuition Fee</span><span class="cost-value highlight">₹2.5 – 4.5 Lakhs</span></div>
+            <div class="cost-row"><span class="cost-label">University Hostel</span><span class="cost-value">₹40,000 – ₹80,000</span></div>
+            <div class="cost-row"><span class="cost-label">Monthly Living Costs</span><span class="cost-value">₹15,000 – ₹25,000/mo</span></div>
+            <div class="cost-row"><span class="cost-label">Programme Duration</span><span class="cost-value">6 Years (MBBS)</span></div>
+            <div class="cost-row"><span class="cost-label">Visa &amp; Documentation</span><span class="cost-value">₹20,000 – ₹35,000</span></div>
+            <div class="cost-row" style="background:#E8F5E9"><span class="cost-label" style="font-weight:700">Est. Total 6-Year Cost</span><span class="cost-value highlight">₹20 – 28 Lakhs</span></div>
+          </div>
+          <div class="russia-cta-box">
+            <p>Compare this to ₹60–90 Lakhs at a private Indian medical college — for the same degree recognised by MCI.</p>
+            <a href="contact.html" class="btn-russia">🎯 Apply to Russia — Direct Admission</a>
+            <div class="seats-warning">⚠️ September 2026: Only 12 seats remain. Register today.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-offwhite" id="services">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Full-Spectrum Services</div>
+    <h2 class="section-title">Every Step. <em>Managed.</em></h2>
+    <p class="section-desc">From your very first counselling session to the day you settle into campus life — ETTISAI EduServ provides comprehensive, stage-by-stage support across every critical milestone of your overseas education journey.</p>
+    <div class="services-grid" style="margin-top:2.5rem">
+      <div class="service-card">
+        <div class="service-step">01</div>
+        <div class="service-icon">🎯</div>
+        <h4>Psychometric Profiling &amp; Career Mapping</h4>
+        <p>Structured psychometric assessments and career aptitude analysis to identify the most aligned academic disciplines and degree pathways for your unique strengths and ambitions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">02</div>
+        <div class="service-icon">🏛️</div>
+        <h4>Institution Selection &amp; Programme Matching</h4>
+        <p>Curated university shortlisting calibrated to ranking, recognition, programme quality, scholarship availability, and cost structure — tailored precisely to your academic profile.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">03</div>
+        <div class="service-icon">📋</div>
+        <h4>Application Management &amp; Submission</h4>
+        <p>End-to-end coordination of all application materials — transcripts, recommendation letters, academic documents, and portal submissions — with rigorous quality checks before each submission.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">04</div>
+        <div class="service-icon">📝</div>
+        <h4>SOP, LOR &amp; Personal Narrative Development</h4>
+        <p>Expert crafting of compelling Statements of Purpose, coordination of Letters of Recommendation, and personal essays that authentically present your academic story and future aspirations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">05</div>
+        <div class="service-icon">📚</div>
+        <h4>Test Preparation Guidance</h4>
+        <p>Strategic preparation roadmaps for IELTS, TOEFL, GRE, GMAT, SAT, and USMLE — aligned to the minimum entry requirements of your target institutions across all featured destinations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">06</div>
+        <div class="service-icon">💰</div>
+        <h4>Scholarship &amp; Financial Aid Sourcing</h4>
+        <p>Systematic identification and application support for merit-based, need-based, and government-funded scholarships — maximising your financial accessibility and reducing overall study costs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">07</div>
+        <div class="service-icon">🏦</div>
+        <h4>Education Loan Facilitation</h4>
+        <p>Expert guidance through the education loan process — bank liaison, documentation preparation, collateral requirements, and disbursement coordination — ensuring you are financially prepared for departure.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">08</div>
+        <div class="service-icon">🛂</div>
+        <h4>Visa Documentation &amp; Compliance</h4>
+        <p>Comprehensive student visa support — country-specific documentation checklists, embassy interview preparation, financial proof compilation, and real-time application status tracking.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">09</div>
+        <div class="service-icon">🏠</div>
+        <h4>Accommodation Coordination</h4>
+        <p>Facilitation of on-campus housing applications and vetted off-campus accommodation shortlisting — ensuring a safe, verified, and suitable residential arrangement before you depart.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">10</div>
+        <div class="service-icon">✈️</div>
+        <h4>Travel, Forex &amp; Flight Packages</h4>
+        <p>International travel coordination, forex card procurement, baggage guidance, and optionally bundled flight packages — making your departure seamless and stress-free.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">11</div>
+        <div class="service-icon">🧭</div>
+        <h4>Pre-Departure Orientation Briefing</h4>
+        <p>Structured orientation sessions covering cultural acclimatisation, local regulations, campus life, banking setup, health insurance, and emergency preparedness — so you arrive confident and ready.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-step">12</div>
+        <div class="service-icon">📞</div>
+        <h4>Post-Arrival Support Network</h4>
+        <p>Continued advisory access after landing — institution registration assistance, SIM and banking setup, campus navigation, and settling-in support through your critical first semester abroad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-saffron" id="process">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Our Proven Methodology</div>
+    <h2 class="section-title">Your Journey in <em>6 Steps</em></h2>
+    <p class="section-desc">A disciplined, stage-gated advisory process — ensuring no detail is overlooked, no deadline is missed, and every student feels fully supported from day one to campus arrival.</p>
+    <div class="process-steps" style="margin-top:3rem">
+      <div class="pstep">
+        <div class="pstep-num">01</div>
+        <h5>Free Consultation</h5>
+        <p>45-minute structured session — academic background, goals, budget, destination preference. Zero obligation.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">02</div>
+        <h5>Academic Profiling</h5>
+        <p>Psychometric testing, grade analysis, and candidacy evaluation to define your strongest application profile.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">03</div>
+        <h5>University Shortlist</h5>
+        <p>5–8 curated institution recommendations across ambition and certainty tiers, with full fee and ranking breakdowns.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">04</div>
+        <h5>Application &amp; Documents</h5>
+        <p>All application materials prepared, reviewed, and submitted with precision — SOP, transcripts, LOR, portals.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">05</div>
+        <h5>Visa &amp; Finance</h5>
+        <p>Visa documentation, education loan, forex, scholarship applications — all managed in parallel to meet your intake deadline.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">06</div>
+        <h5>Depart &amp; Arrive</h5>
+        <p>Pre-departure briefing, travel coordination, and post-arrival support through your first semester abroad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEST PREP -->
+<section class="section section-white" id="testprep">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Test Preparation Support</div>
+    <h2 class="section-title">Ace Your <em>Entrance Tests</em></h2>
+    <p class="section-desc">ETTISAI EduServ provides strategic preparation roadmaps and partner resources for all major international language and aptitude tests required by our destination universities.</p>
+    <div class="test-grid" style="margin-top:2.5rem">
+      <div class="test-card">
+        <div class="test-icon">🎧</div>
+        <div class="test-name">IELTS</div>
+        <div class="test-desc">UK, Australia, Canada, Europe</div>
+      </div>
+      <div class="test-card">
+        <div class="test-icon">📖</div>
+        <div class="test-name">TOEFL</div>
+        <div class="test-desc">USA, Europe, Global</div>
+      </div>
+      <div class="test-card">
+        <div class="test-icon">📐</div>
+        <div class="test-name">GRE</div>
+        <div class="test-desc">Graduate / Research Degrees</div>
+      </div>
+      <div class="test-card">
+        <div class="test-icon">💼</div>
+        <div class="test-name">GMAT</div>
+        <div class="test-desc">MBA & Management Programmes</div>
+      </div>
+      <div class="test-card">
+        <div class="test-icon">🔬</div>
+        <div class="test-name">USMLE</div>
+        <div class="test-desc">US Medical Licensing</div>
+      </div>
+      <div class="test-card">
+        <div class="test-icon">🧮</div>
+        <div class="test-name">SAT</div>
+        <div class="test-desc">Undergraduate USA / Global</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOLARSHIPS & LOANS -->
+<section class="section section-offwhite" id="funding">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Financial Empowerment</div>
+    <h2 class="section-title">Scholarships &amp; <em>Education Loans</em></h2>
+    <p class="section-desc">Financial constraints should never be the reason a deserving student misses their international dream. ETTISAI EduServ actively identifies and applies for scholarships on your behalf, and facilitates education loans through trusted banking partners.</p>
+    <div class="fin-grid" style="margin-top:2.5rem">
+      <div class="fin-card saffron-card">
+        <h4>🏆 Scholarship Sourcing</h4>
+        <p>Our scholarship team maintains an updated database of merit-based, need-based, and government-funded awards across all 18+ destinations — and applies proactively on your behalf from the moment your profile is finalised.</p>
+        <ul class="fin-list">
+          <li>DAAD Scholarship — Germany (up to full tuition + €934/month stipend)</li>
+          <li>Global Korea Scholarship (GKS) — Full tuition, airfare, living allowance</li>
+          <li>Eiffel Excellence Scholarship — France</li>
+          <li>Chevening Scholarship — UK</li>
+          <li>Russian Government Scholarship — Up to full tuition coverage</li>
+          <li>Australia Awards &amp; Endeavour Scholarships</li>
+          <li>Italian Government DSU Scholarships</li>
+        </ul>
+      </div>
+      <div class="fin-card green-card">
+        <h4>🏦 Education Loan Facilitation</h4>
+        <p>ETTISAI EduServ works with accredited banking partners to guide students through the education loan process — from eligibility assessment and documentation to disbursement timelines aligned to intake deadlines.</p>
+        <ul class="fin-list">
+          <li>Collateral and non-collateral loan options</li>
+          <li>Tax benefit under Section 80E of Income Tax Act</li>
+          <li>Up to ₹1.5 Crore for approved foreign institutions</li>
+          <li>Moratorium period during study + 1 year after</li>
+          <li>SBI, Axis, HDFC Credila, Avanse, ICICI Bank</li>
+          <li>NBFC options for non-collateral cases</li>
+          <li>Full documentation support &amp; bank liaison</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-white" id="testimonials">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Student Stories</div>
+    <h2 class="section-title">Voices of Our <em>Alumni</em></h2>
+    <p class="section-desc">Over 1,200 students from Tamil Nadu and across India have trusted ETTISAI EduServ with their overseas education journey. Here is what some of them say.</p>
+    <div class="testimonials-grid" style="margin-top:2.5rem">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">ETTISAI made the entire Russia MBBS process straightforward and genuinely transparent. From offer letter to visa clearance — the team managed everything in 6 weeks. I'm now in my third year at Kazan Federal University and couldn't be happier.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">P</div>
+          <div>
+            <div class="tcard-name">Pavithra R.</div>
+            <div class="tcard-detail">MBBS Year 3 — Kazan Federal University, Russia 🇷🇺</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">I was confused between Germany and Australia. The ETTISAI team did a thorough profile analysis and recommended Germany's tuition-free master's route — which saved my family nearly ₹30 lakhs. The SOP they helped craft got me into Hochschule Furtwangen directly.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">A</div>
+          <div>
+            <div class="tcard-name">Aravind S.</div>
+            <div class="tcard-detail">M.Sc. Computer Science — HFU, Germany 🇩🇪</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">I had tried two other firms before ETTISAI and kept getting vague responses. ETTISAI's team was specific, honest, and deadline-driven. Got my UK CAS letter in 5 weeks and my visa in 3 weeks after. The pre-departure briefing was exceptionally thorough.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">M</div>
+          <div>
+            <div class="tcard-name">Meenakshi V.</div>
+            <div class="tcard-detail">MSc Finance — University of Greenwich, UK 🇬🇧</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">நான் ETTISAI மூலம் South Korea-வில் GKS scholarship பெற்றேன். முழு கல்விச் செலவும் free — KAIST-ல் என் கனவு நனவாயிற்று. Tamil Nadu-வில் உள்ள மாணவர்களுக்கு ETTISAI மிகவும் நம்பகமான கூட்டாளர்.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">K</div>
+          <div>
+            <div class="tcard-name">Karthikeyan N.</div>
+            <div class="tcard-detail">B.S. Electrical Engineering — KAIST, South Korea 🇰🇷</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Italy for Architecture was my dream and everyone said it was complicated. ETTISAI handled the IMAT guidance, Politecnico di Milano application, and the visa with zero stress on my end. I'm now studying in Milan and it's extraordinary.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">D</div>
+          <div>
+            <div class="tcard-name">Dharshini M.</div>
+            <div class="tcard-detail">B.Arch — Politecnico di Milano, Italy 🇮🇹</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">Australia was my first choice because of the PR pathway. ETTISAI mapped my options clearly — I got into Deakin University's IT programme, secured a student loan at 9.5%, and had accommodation sorted before I even landed. Professional at every step.</p>
+        <div class="tcard-person">
+          <div class="tcard-avatar">V</div>
+          <div>
+            <div class="tcard-name">Vishal T.</div>
+            <div class="tcard-detail">B.IT — Deakin University, Australia 🇦🇺</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section section-offwhite" id="partners">
+  <div class="section-inner">
+    <div class="section-tag"><span class="line"></span>Institutional Network</div>
+    <h2 class="section-title">Our <em>Partner Institutions</em></h2>
+    <p class="section-desc">Formal academic partnerships with globally accredited universities — giving students verified, credible admission pathways without intermediary markups.</p>
+    <div class="partners-scroll" style="margin-top:2.5rem">
+      <div class="partner-item russia-partner"><div class="partner-flag">🇷🇺</div><div class="partner-info"><div class="pname">RUDN University</div><div class="pcountry">Russia · Direct</div></div></div>
+      <div class="partner-item russia-partner"><div class="partner-flag">🇷🇺</div><div class="partner-info"><div class="pname">Kazan Federal University</div><div class="pcountry">Russia · Direct</div></div></div>
+      <div class="partner-item russia-partner"><div class="partner-flag">🇷🇺</div><div class="partner-info"><div class="pname">Volgograd State Medical Uni</div><div class="pcountry">Russia · Direct · MCI</div></div></div>
+      <div class="partner-item russia-partner"><div class="partner-flag">🇷🇺</div><div class="partner-info"><div class="pname">St. Petersburg State Uni</div><div class="pcountry">Russia · Direct</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇬🇧</div><div class="partner-info"><div class="pname">University of Greenwich</div><div class="pcountry">United Kingdom</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇬🇧</div><div class="partner-info"><div class="pname">Coventry University</div><div class="pcountry">United Kingdom</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇬🇧</div><div class="partner-info"><div class="pname">University of Hertfordshire</div><div class="pcountry">United Kingdom</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇦🇺</div><div class="partner-info"><div class="pname">Deakin University</div><div class="pcountry">Australia</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇦🇺</div><div class="partner-info"><div class="pname">University of Wollongong</div><div class="pcountry">Australia</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇩🇪</div><div class="partner-info"><div class="pname">Hochschule Furtwangen (HFU)</div><div class="pcountry">Germany</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇫🇷</div><div class="partner-info"><div class="pname">ESSEC Business School</div><div class="pcountry">France</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇮🇹</div><div class="partner-info"><div class="pname">Politecnico di Milano</div><div class="pcountry">Italy</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇮🇹</div><div class="partner-info"><div class="pname">University of Bologna</div><div class="pcountry">Italy</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇸🇬</div><div class="partner-info"><div class="pname">PSB Academy</div><div class="pcountry">Singapore</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇰🇷</div><div class="partner-info"><div class="pname">Yonsei University</div><div class="pcountry">South Korea</div></div></div>
+      <div class="partner-item"><div class="partner-flag">🇨🇦</div><div class="partner-info"><div class="pname">Conestoga College</div><div class="pcountry">Canada</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta-final">
+  <div class="cta-inner">
+    <div class="cta-tamil">நம்பிக்கையுடன் — உலகை நோக்கி</div>
+    <h2>Begin Your Global Academic Journey.<br><em>Today.</em></h2>
+    <p>One free counselling session with an ETTISAI EduServ academic advisor gives you a structured, honest, and comprehensive roadmap — tailored to your profile, your budget, and your ambitions. No pressure. No obligation. Just clarity.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-white">📞 Book Free Counselling Session</a>
+      <a href="tel:+919036023533" class="btn-ghost-white">Call +91 90360 23533</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-logo">ETTISAI EduServ</div>
+      <div class="fb-sub">எத்திசை — Overseas Education Advisory</div>
+      <p>ETTISAI ENTERPRISES PRIVATE LIMITED<br>
+      #3/520, M.M.D.A, Mogappair East<br>
+      Chennai – 600037, Tamil Nadu, India<br>
+      CIN: U82199TN2025PTC185731<br>
+      <br>
+      📧 info@ettisai.com<br>
+      📞 +91 90360 23533</p>
+      <div class="tricolor-mini"></div>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About ETTISAI</a></li>
+        <li><a href="eduserv.html">EduServ</a></li>
+        <li><a href="exports.html">Global IMPEX</a></li>
+        <li><a href="pay.html">Pay Fees</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Destinations</h5>
+      <ul>
+        <li><a href="#russia">🇷🇺 Russia — Direct</a></li>
+        <li><a href="#germany">🇩🇪 Germany</a></li>
+        <li><a href="#france">🇫🇷 France</a></li>
+        <li><a href="#uk">🇬🇧 United Kingdom</a></li>
+        <li><a href="#australia">🇦🇺 Australia</a></li>
+        <li><a href="#italy">🇮🇹 Italy</a></li>
+        <li><a href="#korea">🇰🇷 South Korea</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Career Counselling</a></li>
+        <li><a href="#services">University Shortlisting</a></li>
+        <li><a href="#services">SOP & Essay Support</a></li>
+        <li><a href="#services">Visa Documentation</a></li>
+        <li><a href="#funding">Scholarships</a></li>
+        <li><a href="#funding">Education Loans</a></li>
+        <li><a href="#testprep">Test Preparation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ETTISAI ENTERPRISES PRIVATE LIMITED. All rights reserved.</p>
+    <p class="footer-tamil">கல்வியே வல்லமை · Education is Power</p>
+    <p class="footer-tagline">Institution-Grade Execution · Tamil Nadu's Trusted Advisory</p>
+  </div>
+</footer>
+
+<script>
+  function showCountry(id, el) {
+    // Update tab active states
+    document.querySelectorAll('.dest-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    // Update panel active states
+    document.querySelectorAll('.country-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+  }
+
+  // Smooth nav active on scroll
+  window.addEventListener('scroll', () => {
+    const sections = ['destinations','russia','services','process','funding','testimonials','partners'];
+    const links = document.querySelectorAll('.nav-links a');
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    links.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+</script>
 </body>
-
 </html>
