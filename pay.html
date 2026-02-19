@@ -1,195 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay | ETTISAI — Secure Payment Channel</title>
-    <meta name="description"
-        content="ETTISAI Secure Payment Channel. Direct bank transfer details for service settlements. Verified account only — verify before every transaction.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Pay | ETTISAI — Secure Payment Details</title>
+  <meta name="description" content="Official payment details for ETTISAI Enterprises Pvt Ltd. Axis Bank Current Account. Secure bank transfer instructions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ══════════════════════════════════════════
+       TOKENS — Axis Bank Brand System
+    ══════════════════════════════════════════ */
+    :root{
+      --axis-crimson:#97144D;
+      --axis-deep:#7a0f3e;
+      --axis-dark:#5c0b2f;
+      --axis-light:#c4276b;
+      --axis-pale:#fdf0f5;
+      --axis-rose:#f9e1ec;
+      --axis-mid:#efc4d7;
+      --gold:#c9953a;
+      --gold-light:#e8b85a;
+      --gold-pale:#fdf6e8;
+      --white:#ffffff;
+      --off-white:#fafafa;
+      --text-dark:#1a0810;
+      --text-mid:#4a2035;
+      --text-light:#8a6070;
+      --text-muted:#b89aa8;
+      --border:#eedde6;
+      --border-strong:#dcc0cf;
+      --shadow-sm:0 2px 12px rgba(151,20,77,0.08);
+      --shadow-md:0 8px 32px rgba(151,20,77,0.13);
+      --shadow-lg:0 24px 60px rgba(151,20,77,0.18);
+      --shadow-xl:0 40px 100px rgba(151,20,77,0.22);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Lato',sans-serif;
+      background:#f5eef2;
+      color:var(--text-dark);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* ══════════════════════════════════════════
+       BACKGROUND
+    ══════════════════════════════════════════ */
+    .page-bg{
+      position:fixed;inset:0;z-index:-1;
+      background:linear-gradient(160deg, #f7eef3 0%, #f0e4ed 40%, #ede0eb 100%);
+    }
+    .page-bg::before{
+      content:'';position:absolute;inset:0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(151,20,77,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201,149,58,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(151,20,77,0.03) 0%, transparent 70%);
+    }
+    /* Subtle diagonal pattern */
+    .page-bg::after{
+      content:'';position:absolute;inset:0;
+      background-image:repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(151,20,77,0.018) 40px,
+        rgba(151,20,77,0.018) 41px
+      );
+    }
+
+    /* ══════════════════════════════════════════
+       NAV
+    ══════════════════════════════════════════ */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      height:64px;
+      background:rgba(255,255,255,0.93);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 3rem;
+    }
+    nav::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg, var(--axis-crimson), var(--axis-light), var(--gold), var(--axis-light), var(--axis-crimson));
+    }
+    .nav-logo{display:flex;align-items:center;gap:0.7rem}
+    .nav-brand{
+      font-family:'Lato',sans-serif;font-weight:900;font-size:1.1rem;
+      letter-spacing:0.06em;color:var(--axis-crimson);
+    }
+    .nav-sep{width:1px;height:20px;background:var(--border)}
+    .nav-sub{font-size:0.7rem;color:var(--text-light);letter-spacing:0.1em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:0.2rem;list-style:none}
+    .nav-links a{
+      font-size:0.78rem;font-weight:700;letter-spacing:0.03em;
+      padding:0.4rem 0.85rem;border-radius:5px;color:var(--text-mid);
+      transition:all 0.18s;
+    }
+    .nav-links a:hover{color:var(--axis-crimson);background:var(--axis-pale)}
+    .nav-links a.active{color:var(--white);background:var(--axis-crimson)}
+    .hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--text-dark);border-radius:2px;transition:all 0.2s}
+
+    /* ══════════════════════════════════════════
+       HERO STRIP
+    ══════════════════════════════════════════ */
+    .hero-strip{
+      padding-top:64px;
+      background:linear-gradient(135deg, var(--axis-dark) 0%, var(--axis-crimson) 50%, var(--axis-light) 100%);
+      position:relative;overflow:hidden;
+    }
+    .hero-strip::before{
+      content:'';position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Ccircle cx='500' cy='50' r='280' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='500' cy='50' r='220' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3Ccircle cx='500' cy='50' r='160' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Cpath d='M0 200 Q150 100 300 200 T600 200' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E") right top/cover no-repeat;
+      pointer-events:none;
+    }
+    /* Gold shimmer line */
+    .hero-strip::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    }
+    .hero-inner{
+      max-width:960px;margin:0 auto;
+      padding:3.5rem 3rem 3.5rem;
+      display:flex;align-items:center;justify-content:space-between;gap:3rem;
+      flex-wrap:wrap;
+    }
+    .hero-text{}
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+      color:rgba(255,255,255,0.85);
+      font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+      padding:0.3rem 0.9rem;border-radius:20px;margin-bottom:1rem;
+    }
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--gold-light);border-radius:50%;animation:glow 2s infinite alternate}
+    @keyframes glow{from{opacity:0.5}to{opacity:1;box-shadow:0 0 6px var(--gold-light)}}
+    .hero-strip h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3.2rem);
+      font-weight:700;color:#fff;line-height:1.1;
+      margin-bottom:0.6rem;
+    }
+    .hero-strip h1 em{font-style:italic;color:var(--gold-light)}
+    .hero-strip p{
+      font-size:0.92rem;color:rgba(255,255,255,0.7);
+      line-height:1.7;max-width:440px;
+    }
+
+    /* Axis Bank logo block in hero */
+    .hero-bank-block{
+      background:rgba(255,255,255,0.95);
+      border-radius:16px;
+      padding:1.8rem 2.2rem;
+      display:flex;align-items:center;gap:1.5rem;
+      box-shadow:0 20px 50px rgba(0,0,0,0.2);
+      flex-shrink:0;
+      border:1px solid rgba(255,255,255,0.5);
+      animation:floatCard 4s ease-in-out infinite alternate;
+    }
+    @keyframes floatCard{
+      from{transform:translateY(0)}
+      to{transform:translateY(-8px)}
+    }
+    .axis-logo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem}
+    .axis-logo-wordmark{
+      font-family:'Lato',sans-serif;font-weight:900;font-size:1.3rem;
+      letter-spacing:0.04em;color:var(--axis-crimson);
+    }
+    .axis-tagline{
+      font-size:0.62rem;color:var(--text-muted);letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+    .bank-divider{width:1px;height:50px;background:var(--border)}
+    .bank-type-badge{
+      background:var(--axis-pale);border:1px solid var(--border);
+      padding:0.4rem 0.9rem;border-radius:6px;
+      font-size:0.65rem;font-weight:700;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--axis-crimson);
+    }
+
+    /* ══════════════════════════════════════════
+       MAIN CONTENT
+    ══════════════════════════════════════════ */
+    main{
+      max-width:960px;margin:0 auto;
+      padding:3rem 3rem 5rem;
+    }
+
+    /* ══════════════════════════════════════════
+       VIRTUAL BANK CARD
+    ══════════════════════════════════════════ */
+    .card-section{
+      display:flex;justify-content:center;
+      margin-bottom:3rem;
+      animation:fadeUp 0.7s 0.1s both;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .virtual-card{
+      width:100%;max-width:560px;
+      background:linear-gradient(135deg, var(--axis-dark) 0%, var(--axis-crimson) 55%, #c4276b 100%);
+      border-radius:20px;
+      padding:2.2rem 2.4rem 2rem;
+      position:relative;overflow:hidden;
+      box-shadow:var(--shadow-xl);
+      color:#fff;
+    }
+    /* Card shine */
+    .virtual-card::before{
+      content:'';position:absolute;
+      top:-60%;left:-30%;width:80%;height:200%;
+      background:linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.07) 50%, transparent 60%);
+      transform:rotate(-15deg);
+      pointer-events:none;
+    }
+    /* Circle watermarks */
+    .virtual-card::after{
+      content:'';position:absolute;
+      right:-80px;bottom:-80px;
+      width:280px;height:280px;border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      pointer-events:none;
+    }
+    .card-watermark-2{
+      position:absolute;right:40px;bottom:40px;
+      width:180px;height:180px;border-radius:50%;
+      background:rgba(255,255,255,0.04);
+      pointer-events:none;
+    }
+    /* Gold strip at top */
+    .virtual-card .card-gold-strip{
+      position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .card-header{
+      display:flex;align-items:flex-start;justify-content:space-between;
+      margin-bottom:2rem;position:relative;z-index:1;
+    }
+    .card-bank-name{
+      font-size:0.65rem;font-weight:700;letter-spacing:0.2em;
+      text-transform:uppercase;color:rgba(255,255,255,0.6);
+      margin-bottom:0.3rem;
+    }
+    .card-bank-title{
+      font-family:'Lato',sans-serif;font-weight:900;font-size:1.1rem;
+      letter-spacing:0.04em;color:#fff;
+    }
+    /* SVG Axis logo mark on card */
+    .card-logo-svg{
+      opacity:0.9;flex-shrink:0;
+    }
+
+    .card-account-type{
+      position:relative;z-index:1;margin-bottom:1.6rem;
+    }
+    .cat-label{font-size:0.6rem;color:rgba(255,255,255,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem}
+    .cat-value{
+      font-size:0.8rem;font-weight:700;letter-spacing:0.1em;
+      color:rgba(255,255,255,0.85);
+      background:rgba(255,255,255,0.1);
+      display:inline-block;padding:0.25rem 0.75rem;border-radius:4px;
+      border:1px solid rgba(255,255,255,0.15);
+    }
+
+    .card-number-section{
+      position:relative;z-index:1;margin-bottom:1.8rem;
+    }
+    .cn-label{font-size:0.6rem;color:rgba(255,255,255,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem}
+    .cn-number{
+      font-family:'JetBrains Mono',monospace;
+      font-size:1.3rem;font-weight:700;
+      letter-spacing:0.18em;color:#fff;
+      display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;
+    }
+    .cn-group{display:inline-block}
+    .cn-dots{letter-spacing:0.04em;color:rgba(255,255,255,0.5);font-size:1rem}
+
+    .card-footer{
+      display:flex;align-items:flex-end;justify-content:space-between;
+      position:relative;z-index:1;
+    }
+    .cf-left{}
+    .cf-label{font-size:0.6rem;color:rgba(255,255,255,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem}
+    .cf-value{font-size:0.85rem;font-weight:700;color:#fff;line-height:1.3}
+    .cf-value.small{font-size:0.78rem}
+    .chip-icon-card{
+      width:38px;height:30px;border-radius:5px;
+      background:linear-gradient(135deg, var(--gold), var(--gold-light));
+      opacity:0.9;
+    }
+
+    /* ══════════════════════════════════════════
+       DETAILS GRID
+    ══════════════════════════════════════════ */
+    .details-grid{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:1.2rem;margin-bottom:2rem;
+      animation:fadeUp 0.7s 0.2s both;
+    }
+    .detail-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:1.6rem 1.8rem;
+      position:relative;overflow:hidden;
+      box-shadow:var(--shadow-sm);
+      transition:all 0.22s;
+    }
+    .detail-card:hover{
+      box-shadow:var(--shadow-md);
+      transform:translateY(-2px);
+      border-color:var(--border-strong);
+    }
+    /* Crimson left accent */
+    .detail-card::before{
+      content:'';position:absolute;top:0;left:0;
+      width:4px;height:0;
+      background:linear-gradient(180deg, var(--axis-crimson), var(--axis-light));
+      border-radius:0 0 4px 4px;
+      transition:height 0.3s;
+    }
+    .detail-card:hover::before{height:100%}
+    /* Subtle corner glow */
+    .detail-card::after{
+      content:'';position:absolute;top:-30px;right:-30px;
+      width:100px;height:100px;border-radius:50%;
+      background:radial-gradient(circle, rgba(151,20,77,0.05) 0%, transparent 70%);
+      pointer-events:none;
+    }
+
+    .dc-icon{
+      width:42px;height:42px;border-radius:10px;
+      background:linear-gradient(135deg, var(--axis-pale), var(--axis-rose));
+      border:1px solid var(--border);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.2rem;margin-bottom:1rem;
+    }
+    .dc-label{
+      font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+      color:var(--text-muted);margin-bottom:0.4rem;
+    }
+    .dc-value{
+      font-size:0.95rem;font-weight:700;color:var(--text-dark);
+      line-height:1.3;margin-bottom:0.6rem;
+    }
+    .dc-value.mono{
+      font-family:'JetBrains Mono',monospace;
+      font-size:1.05rem;letter-spacing:0.08em;
+      color:var(--axis-crimson);
+    }
+    .dc-value.large{font-size:1.15rem}
+    .copy-btn{
+      display:inline-flex;align-items:center;gap:0.4rem;
+      background:var(--axis-pale);border:1px solid var(--border);
+      color:var(--axis-crimson);
+      font-family:'Lato',sans-serif;font-size:0.68rem;font-weight:700;
+      letter-spacing:0.08em;text-transform:uppercase;
+      padding:0.35rem 0.8rem;border-radius:5px;
+      cursor:pointer;transition:all 0.18s;border-style:solid;
+    }
+    .copy-btn:hover{background:var(--axis-crimson);color:#fff;border-color:var(--axis-crimson)}
+    .copy-btn.copied{background:#16a34a;color:#fff;border-color:#16a34a}
+    .copy-btn svg{width:12px;height:12px;flex-shrink:0}
+
+    /* ══════════════════════════════════════════
+       FULL-WIDTH DETAIL ROW CARDS
+    ══════════════════════════════════════════ */
+    .detail-row-card{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:14px;padding:1.6rem 2rem;
+      margin-bottom:1.2rem;box-shadow:var(--shadow-sm);
+      display:flex;align-items:center;justify-content:space-between;gap:2rem;
+      flex-wrap:wrap;transition:all 0.22s;
+      animation:fadeUp 0.7s 0.3s both;
+    }
+    .detail-row-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+    .drc-left{display:flex;align-items:center;gap:1.2rem}
+    .drc-icon{
+      width:44px;height:44px;border-radius:10px;
+      background:linear-gradient(135deg, var(--axis-pale), var(--axis-rose));
+      border:1px solid var(--border);
+      display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+      flex-shrink:0;
+    }
+    .drc-info{}
+    .drc-label{font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.3rem}
+    .drc-value{font-size:1rem;font-weight:700;color:var(--text-dark)}
+    .drc-value.mono{font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.06em;color:var(--axis-crimson)}
+    .drc-sub{font-size:0.75rem;color:var(--text-light);margin-top:0.15rem}
+
+    /* ══════════════════════════════════════════
+       QR / UPI SECTION
+    ══════════════════════════════════════════ */
+    .upi-section{
+      background:linear-gradient(135deg, var(--white) 0%, var(--axis-pale) 100%);
+      border:1px solid var(--border);border-radius:16px;
+      padding:2rem 2.4rem;margin-bottom:1.8rem;
+      display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;
+      box-shadow:var(--shadow-sm);
+      animation:fadeUp 0.7s 0.4s both;
+    }
+    .upi-qr{
+      width:110px;height:110px;flex-shrink:0;
+      background:var(--white);border:1px solid var(--border);
+      border-radius:12px;display:flex;align-items:center;justify-content:center;
+      font-size:0.7rem;color:var(--text-muted);text-align:center;
+      padding:0.8rem;line-height:1.4;
+      box-shadow:var(--shadow-sm);
+      overflow:hidden;position:relative;
+    }
+    /* QR code pattern — decorative SVG */
+    .upi-qr svg{width:90px;height:90px}
+    .upi-info{flex:1;min-width:200px}
+    .upi-info h4{
+      font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;
+      color:var(--text-dark);margin-bottom:0.4rem;
+    }
+    .upi-info p{font-size:0.82rem;color:var(--text-mid);line-height:1.65;margin-bottom:1rem}
+    .upi-id{
+      font-family:'JetBrains Mono',monospace;font-size:0.9rem;font-weight:500;
+      color:var(--axis-crimson);background:var(--axis-pale);
+      border:1px solid var(--border);padding:0.5rem 1rem;border-radius:6px;
+      display:inline-block;margin-bottom:0.8rem;letter-spacing:0.04em;
+    }
+
+    /* ══════════════════════════════════════════
+       PAYMENT METHODS TABS
+    ══════════════════════════════════════════ */
+    .methods-section{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:16px;overflow:hidden;margin-bottom:1.8rem;
+      box-shadow:var(--shadow-sm);
+      animation:fadeUp 0.7s 0.45s both;
+    }
+    .methods-header{
+      background:linear-gradient(135deg, var(--axis-dark), var(--axis-crimson));
+      padding:1.4rem 2rem;
+      display:flex;align-items:center;gap:1rem;
+    }
+    .methods-header h3{
+      font-family:'Playfair Display',serif;font-size:1.1rem;
+      font-weight:600;color:#fff;
+    }
+    .methods-header .badge{
+      background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);
+      color:rgba(255,255,255,0.85);font-size:0.62rem;font-weight:700;
+      letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:4px;
+    }
+    .methods-tabs{
+      display:flex;border-bottom:1px solid var(--border);
+    }
+    .method-tab{
+      flex:1;padding:1rem;text-align:center;cursor:pointer;
+      font-size:0.75rem;font-weight:700;letter-spacing:0.05em;
+      color:var(--text-light);border-bottom:3px solid transparent;
+      transition:all 0.2s;
+      background:none;border-left:none;border-right:none;border-top:none;
+      font-family:'Lato',sans-serif;
+    }
+    .method-tab.active{color:var(--axis-crimson);border-bottom-color:var(--axis-crimson);background:var(--axis-pale)}
+    .method-tab:hover:not(.active){color:var(--text-mid);background:var(--off-white)}
+    .tab-icon{font-size:1.1rem;display:block;margin-bottom:0.3rem}
+    .methods-body{padding:2rem}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    .tab-steps{display:flex;flex-direction:column;gap:0.9rem}
+    .step-item{
+      display:flex;align-items:flex-start;gap:1rem;
+      padding:0.9rem 1rem;
+      background:var(--off-white);border:1px solid var(--border);border-radius:8px;
+    }
+    .step-num{
+      width:26px;height:26px;border-radius:50%;
+      background:linear-gradient(135deg, var(--axis-crimson), var(--axis-light));
+      color:#fff;font-size:0.72rem;font-weight:700;
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    }
+    .step-text{font-size:0.82rem;color:var(--text-mid);line-height:1.6}
+    .step-text strong{color:var(--text-dark)}
+    .step-text .field-val{
+      font-family:'JetBrains Mono',monospace;font-size:0.8rem;
+      color:var(--axis-crimson);font-weight:500;background:var(--axis-pale);
+      padding:1px 5px;border-radius:3px;
+    }
+
+    /* ══════════════════════════════════════════
+       IMPORTANT NOTICE
+    ══════════════════════════════════════════ */
+    .notice-card{
+      background:linear-gradient(135deg, var(--gold-pale) 0%, #fef9f0 100%);
+      border:1px solid rgba(201,149,58,0.3);border-left:4px solid var(--gold);
+      border-radius:12px;padding:1.5rem 1.8rem;margin-bottom:1.8rem;
+      display:flex;align-items:flex-start;gap:1rem;
+      animation:fadeUp 0.7s 0.5s both;
+    }
+    .notice-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+    .notice-text h4{font-size:0.88rem;font-weight:700;color:#7c5c1a;margin-bottom:0.5rem}
+    .notice-text p{font-size:0.82rem;color:#a07830;line-height:1.65}
+    .notice-text ul{margin-top:0.5rem;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:0.35rem}
+    .notice-text ul li{font-size:0.8rem;color:#a07830;display:flex;align-items:flex-start;gap:0.5rem}
+    .notice-text ul li::before{content:'•';color:var(--gold);font-weight:900;flex-shrink:0}
+
+    /* ══════════════════════════════════════════
+       CONFIRMATION EMAIL
+    ══════════════════════════════════════════ */
+    .confirm-card{
+      background:linear-gradient(135deg, var(--axis-pale) 0%, var(--white) 100%);
+      border:1px solid var(--border);border-left:4px solid var(--axis-crimson);
+      border-radius:12px;padding:1.5rem 1.8rem;
+      display:flex;align-items:flex-start;gap:1rem;
+      animation:fadeUp 0.7s 0.55s both;
+    }
+    .confirm-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+    .confirm-text h4{font-size:0.88rem;font-weight:700;color:var(--axis-crimson);margin-bottom:0.4rem}
+    .confirm-text p{font-size:0.82rem;color:var(--text-mid);line-height:1.65}
+    .confirm-text a{color:var(--axis-crimson);font-weight:700;text-decoration:underline}
+
+    /* ══════════════════════════════════════════
+       CONTACT STRIP
+    ══════════════════════════════════════════ */
+    .contact-strip{
+      background:linear-gradient(135deg, var(--axis-dark) 0%, var(--axis-crimson) 100%);
+      border-radius:16px;
+      padding:2rem 2.4rem;
+      display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+      margin-top:2rem;
+      position:relative;overflow:hidden;
+      box-shadow:var(--shadow-lg);
+      animation:fadeUp 0.7s 0.6s both;
+    }
+    .contact-strip::after{
+      content:'';position:absolute;right:-60px;top:-60px;
+      width:200px;height:200px;border-radius:50%;
+      background:rgba(255,255,255,0.04);pointer-events:none;
+    }
+    .cs-left h4{
+      font-family:'Playfair Display',serif;
+      font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:0.3rem;
+    }
+    .cs-left p{font-size:0.82rem;color:rgba(255,255,255,0.65);line-height:1.6}
+    .cs-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+    .cs-btn{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      padding:0.7rem 1.4rem;border-radius:7px;
+      font-family:'Lato',sans-serif;font-size:0.78rem;font-weight:700;
+      letter-spacing:0.04em;transition:all 0.2s;cursor:pointer;
+    }
+    .cs-btn-white{background:#fff;color:var(--axis-crimson);border:none;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+    .cs-btn-white:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+    .cs-btn-ghost{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.25)}
+    .cs-btn-ghost:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.4)}
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer{
+      background:var(--text-dark);
+      padding:3rem 3rem 2rem;
+      margin-top:0;
+    }
+    .footer-inner{
+      max-width:960px;margin:0 auto;
+      display:flex;align-items:flex-start;justify-content:space-between;
+      gap:2rem;flex-wrap:wrap;
+      padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand .fb-name{
+      font-weight:900;font-size:1rem;letter-spacing:0.06em;
+      color:var(--axis-light);margin-bottom:0.2rem;
+    }
+    .footer-brand .fb-sub{font-size:0.68rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;margin-bottom:0.8rem;text-transform:uppercase}
+    .footer-brand p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.7}
+    .footer-col h5{font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem}
+    .footer-col a{display:block;font-size:0.8rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:0.5rem;transition:color 0.18s}
+    .footer-col a:hover{color:var(--axis-light)}
+    .footer-bottom{
+      max-width:960px;margin:1.5rem auto 0;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    }
+    .footer-bottom p{font-size:0.72rem;color:rgba(255,255,255,0.25)}
+    .footer-tagline{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(151,20,77,0.5)}
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media(max-width:760px){
+      nav{padding:0 1.2rem}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .hero-inner{padding:2.5rem 1.5rem;flex-direction:column}
+      main{padding:2rem 1.2rem 4rem}
+      .details-grid{grid-template-columns:1fr}
+      .detail-row-card{flex-direction:column;align-items:flex-start}
+      .upi-section{flex-direction:column}
+      .contact-strip{flex-direction:column}
+      .methods-tabs{flex-wrap:wrap}
+      .method-tab{flex:none;width:50%}
+      footer{padding:2rem 1.5rem 1.5rem}
+      .footer-inner{flex-direction:column}
+    }
+
+    /* ══════════════════════════════════════════
+       TOAST
+    ══════════════════════════════════════════ */
+    .toast{
+      position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);
+      background:var(--text-dark);color:#fff;
+      padding:0.75rem 1.5rem;border-radius:8px;
+      font-size:0.8rem;font-weight:600;letter-spacing:0.04em;
+      box-shadow:0 8px 30px rgba(0,0,0,0.25);
+      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      z-index:1000;display:flex;align-items:center;gap:0.5rem;
+      pointer-events:none;
+    }
+    .toast.show{transform:translateX(-50%) translateY(0)}
+    .toast-check{
+      width:18px;height:18px;background:#16a34a;border-radius:50%;
+      display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;
+    }
+  </style>
 </head>
+<body>
 
-<body class="pay-page">
+<!-- BG -->
+<div class="page-bg"></div>
 
-    <!-- Ambient Effects -->
-    <canvas id="noise-canvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
+<!-- TOAST -->
+<div class="toast" id="toast"><span class="toast-check">✓</span><span id="toastMsg">Copied!</span></div>
 
-    <!-- ═══ HEADER ═══ -->
-    <header class="site-header">
-        <a href="index.html" class="logo-link">
-            <span class="logo-eng">ETTISAI</span>
-            <span class="logo-tamil">எத்திசை</span>
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li class="nav-dropdown">
-                    <a href="#">Services</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="eduserv.html">EduServ</a>
-                        <a href="exports.html">Global IMPEX</a>
-                    </div>
-                </li>
-                <li><a href="pay.html">Pay</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-brand">ETTISAI</span>
+    <div class="nav-sep"></div>
+    <span class="nav-sub">Payment Portal</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="eduserv.html">EduServ</a></li>
+    <li><a href="exports.html">Global IMPEX</a></li>
+    <li><a href="pay.html" class="active">Pay</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="eduserv.html">EduServ</a>
-        <a href="exports.html">Global IMPEX</a>
-        <a href="pay.html">Pay</a>
-        <a href="contact.html">Contact</a>
+<!-- HERO -->
+<div class="hero-strip">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="dot"></span>Secure Payment Channel</div>
+      <h1>Official<br><em>Payment Details</em></h1>
+      <p>Direct bank transfer to ETTISAI Enterprises Pvt Ltd. All transactions are processed through our verified Axis Bank Current Account. Please use exact account details below.</p>
+    </div>
+    <div class="hero-bank-block">
+      <!-- Axis Bank SVG Logo -->
+      <svg width="52" height="52" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- The Axis Bank "A" mark — stylized A shape with diagonal cut -->
+        <polygon points="60,8 100,92 80,92 60,52 40,92 20,92" fill="#97144D"/>
+        <!-- The crossbar diagonal cut -->
+        <polygon points="44,75 76,75 82,92 38,92" fill="#f5eef2" opacity="0.95"/>
+        <!-- Inner white triangle cutout (negative space) -->
+        <polygon points="60,26 78,70 42,70" fill="#f5eef2" opacity="0.95"/>
+      </svg>
+      <div class="axis-logo-wrap">
+        <div class="axis-logo-wordmark">Axis Bank</div>
+        <div class="axis-tagline">Badhte Ka Naam Zindagi</div>
+        <div class="bank-type-badge">Current Account</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- VIRTUAL CARD -->
+  <div class="card-section">
+    <div class="virtual-card">
+      <div class="card-gold-strip"></div>
+      <div class="card-watermark-2"></div>
+
+      <div class="card-header">
+        <div>
+          <div class="card-bank-name">Axis Bank Limited</div>
+          <div class="card-bank-title">AXIS BANK</div>
+        </div>
+        <!-- Axis A mark SVG white version -->
+        <svg class="card-logo-svg" width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="60,8 100,92 80,92 60,52 40,92 20,92" fill="rgba(255,255,255,0.9)"/>
+          <polygon points="44,75 76,75 82,92 38,92" fill="rgba(151,20,77,0.85)"/>
+          <polygon points="60,26 78,70 42,70" fill="rgba(151,20,77,0.85)"/>
+        </svg>
+      </div>
+
+      <div class="card-account-type">
+        <div class="cat-label">Account Type</div>
+        <span class="cat-value">◼ CURRENT ACCOUNT</span>
+      </div>
+
+      <div class="card-number-section">
+        <div class="cn-label">Account Number</div>
+        <div class="cn-number">
+          <span class="cn-group">9250</span>
+          <span class="cn-dots">·</span>
+          <span class="cn-group">2004</span>
+          <span class="cn-dots">·</span>
+          <span class="cn-group">3039</span>
+          <span class="cn-dots">·</span>
+          <span class="cn-group">478</span>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="cf-left">
+          <div class="cf-label">Account Holder</div>
+          <div class="cf-value">ETTISAI ENTERPRISES PVT LTD</div>
+        </div>
+        <div style="text-align:right">
+          <div class="cf-label">IFSC Code</div>
+          <div class="cf-value small">UTIB0000345</div>
+        </div>
+        <div class="chip-icon-card"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAILS GRID -->
+  <div class="details-grid">
+    <div class="detail-card">
+      <div class="dc-icon">🏦</div>
+      <div class="dc-label">Bank Name</div>
+      <div class="dc-value large">Axis Bank Limited</div>
+      <button class="copy-btn" onclick="copyText('Axis Bank Limited', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
     </div>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="page-hero pay-hero">
-        <div class="container">
-            <div class="axis-brand-bar reveal">
-                <div class="axis-logo-block">
-                    <div class="axis-logo-icon">⬡</div>
-                    <div>
-                        <div class="axis-bank-name">Axis Bank</div>
-                        <div class="axis-bank-tag">Badhti Ka Naam Zindagi</div>
-                    </div>
-                </div>
-                <div class="axis-secure-badge">🔒 VERIFIED CHANNEL</div>
-            </div>
-            <span class="label reveal" style="animation-delay: 0.05s;">Secure Channel</span>
-            <h1 class="reveal" style="animation-delay: 0.1s;">Payment Portal</h1>
-            <p class="hero-sub reveal" style="animation-delay: 0.2s;">
-                Direct bank transfer only. Verify details before every transaction.
-            </p>
+    <div class="detail-card">
+      <div class="dc-icon">🔢</div>
+      <div class="dc-label">Account Number</div>
+      <div class="dc-value mono">925020043039478</div>
+      <button class="copy-btn" onclick="copyText('925020043039478', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+
+    <div class="detail-card">
+      <div class="dc-icon">🔑</div>
+      <div class="dc-label">IFSC Code</div>
+      <div class="dc-value mono">UTIB0000345</div>
+      <button class="copy-btn" onclick="copyText('UTIB0000345', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+
+    <div class="detail-card">
+      <div class="dc-icon">🏢</div>
+      <div class="dc-label">Account Holder Name</div>
+      <div class="dc-value">Ettisai Enterprises Pvt Ltd</div>
+      <button class="copy-btn" onclick="copyText('Ettisai Enterprises Pvt Ltd', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- FULL ROW DETAILS -->
+  <div class="detail-row-card">
+    <div class="drc-left">
+      <div class="drc-icon">📍</div>
+      <div class="drc-info">
+        <div class="drc-label">Account Type</div>
+        <div class="drc-value">Current Account</div>
+        <div class="drc-sub">Eligible for NEFT · RTGS · IMPS · UPI transfers</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.3rem;text-align:right">
+      <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)">Transfer Modes</span>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end">
+        <span style="background:var(--axis-pale);border:1px solid var(--border);color:var(--axis-crimson);font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.06em">NEFT</span>
+        <span style="background:var(--axis-pale);border:1px solid var(--border);color:var(--axis-crimson);font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.06em">RTGS</span>
+        <span style="background:var(--axis-pale);border:1px solid var(--border);color:var(--axis-crimson);font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.06em">IMPS</span>
+        <span style="background:var(--axis-pale);border:1px solid var(--border);color:var(--axis-crimson);font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.06em">UPI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-row-card">
+    <div class="drc-left">
+      <div class="drc-icon">🏛️</div>
+      <div class="drc-info">
+        <div class="drc-label">Branch Details</div>
+        <div class="drc-value">Axis Bank — Mogappair East Branch</div>
+        <div class="drc-sub">Chennai, Tamil Nadu — Branch Code: 000345</div>
+      </div>
+    </div>
+    <div>
+      <button class="copy-btn" onclick="copyText('UTIB0000345', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy IFSC
+      </button>
+    </div>
+  </div>
+
+  <!-- PAYMENT METHODS TABS -->
+  <div class="methods-section">
+    <div class="methods-header">
+      <h3>How to Transfer</h3>
+      <span class="badge">Step-by-Step</span>
+    </div>
+    <div class="methods-tabs">
+      <button class="method-tab active" onclick="switchTab('neft',this)"><span class="tab-icon">🏦</span>NEFT / RTGS</button>
+      <button class="method-tab" onclick="switchTab('imps',this)"><span class="tab-icon">⚡</span>IMPS</button>
+      <button class="method-tab" onclick="switchTab('upi',this)"><span class="tab-icon">📱</span>UPI</button>
+      <button class="method-tab" onclick="switchTab('netbanking',this)"><span class="tab-icon">💻</span>Net Banking</button>
+    </div>
+    <div class="methods-body">
+
+      <div class="tab-panel active" id="tab-neft">
+        <div class="tab-steps">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Log in to your bank's Net Banking or Mobile Banking portal.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Navigate to <strong>Fund Transfer → NEFT / RTGS</strong> and add a new beneficiary.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Enter Account Name: <span class="field-val">Ettisai Enterprises Pvt Ltd</span></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Enter Account Number: <span class="field-val">925020043039478</span></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Enter IFSC Code: <span class="field-val">UTIB0000345</span> — Bank: <span class="field-val">Axis Bank</span></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-text">Enter the transfer amount and add your <strong>invoice number or name</strong> in the remarks field.</div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-text">Confirm and complete OTP verification. <strong>NEFT</strong> settles in batches; <strong>RTGS</strong> settles in real-time (min ₹2 lakhs).</div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-text">Email the transaction reference to <strong>info@ettisai.com</strong> for confirmation.</div></div>
         </div>
-    </section>
+      </div>
 
-    <!-- ═══ BANK DETAILS ═══ -->
-    <section class="section section-dark section-border-top" id="details">
-        <div class="container">
-            <div class="payment-wrapper">
-                <div class="payment-card-block reveal">
-                    <div class="axis-card-header">
-                        <span class="label">Bank Account</span>
-                        <span class="axis-bank-pill">AXIS BANK</span>
-                    </div>
-                    <h3 style="margin-bottom: 0.5rem;">ETTISAI ENTERPRISES PVT LTD</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Current Account — INR</p>
-
-                    <div class="detail-grid">
-                        <div class="detail-row">
-                            <span class="detail-label">Bank</span>
-                            <span class="detail-value">Axis Bank</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Account No.</span>
-                            <span class="detail-value" id="acct-num">925020043039478</span>
-                            <button class="copy-btn" data-copy="925020043039478"
-                                aria-label="Copy account number">Copy</button>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">IFSC</span>
-                            <span class="detail-value" id="ifsc-code">UTIB0000345</span>
-                            <button class="copy-btn" data-copy="UTIB0000345" aria-label="Copy IFSC code">Copy</button>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Account Type</span>
-                            <span class="detail-value">Current Account</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- QR Placeholder -->
-                <div class="qr-notice reveal">
-                    <div class="qr-icon">▣</div>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">UPI / QR scan available on request</p>
-                    <div class="qr-tags">
-                        <span class="qr-tag">GPay</span>
-                        <span class="qr-tag">PhonePe</span>
-                        <span class="qr-tag">Paytm</span>
-                        <span class="qr-tag">BHIM</span>
-                    </div>
-                </div>
-
-                <!-- Instructions -->
-                <div class="instruction-box reveal">
-                    <p style="color: var(--text-secondary);"><strong style="color: var(--text-bright);">Settlement
-                            Protocol</strong></p>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">After transfer, send the transaction
-                        reference (UTR/Ref No.) to:</p>
-                    <p style="margin-top: 0.5rem;"><span class="email-highlight">accounts@ettisai.com</span></p>
-                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem;">Confirmation will be
-                        issued within 24 working hours.</p>
-                </div>
-
-                <!-- Warning -->
-                <div class="alert-warn reveal">
-                    <span class="icon">⚠️</span>
-                    <div>
-                        <p><strong>Verify before every transaction.</strong></p>
-                        <p>ETTISAI will never ask for payment via personal accounts, WhatsApp, or phone calls. Always
-                            confirm account details at <span class="email-highlight"
-                                style="padding: 0.1rem 0.5rem; font-size: 0.75rem;">info@ettisai.com</span> before
-                            initiating any transfer.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="tab-panel" id="tab-imps">
+        <div class="tab-steps">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Open your banking app or Net Banking and select <strong>IMPS Transfer</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Choose transfer by <strong>Account Number + IFSC</strong>.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Account Number: <span class="field-val">925020043039478</span> — IFSC: <span class="field-val">UTIB0000345</span></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Beneficiary Name: <span class="field-val">Ettisai Enterprises Pvt Ltd</span></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">IMPS is available <strong>24×7 including holidays</strong> — instant settlement up to ₹5 lakhs.</div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-text">Add your invoice/reference in remarks, confirm OTP, and send payment confirmation to <strong>info@ettisai.com</strong>.</div></div>
         </div>
-    </section>
+      </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <footer class="site-footer">
-        <div class="footer-main">
-            <div class="footer-brand">
-                <span class="logo-eng">ETTISAI</span>
-                <span class="logo-tamil">எத்திசை</span>
-                <p class="footer-desc">
-                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
-                    Critical Operations | Business Intelligence | Core Engineering
-                </p>
-                <p class="footer-address">
-                    #3/520, M.M.D.A, Mogappair East<br>
-                    Chennai - 600037, Tamil Nadu, India
-                </p>
-            </div>
-            <div class="footer-col">
-                <h5>Navigation</h5>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="eduserv.html">EduServ</a>
-                <a href="exports.html">Global IMPEX</a>
-                <a href="pay.html">Pay</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h5>Connect</h5>
-                <a href="mailto:info@ettisai.com">info@ettisai.com</a>
-                <a href="tel:+919036023533">+91 90360 23533</a>
-                <p class="mono" style="margin-top: 0.75rem; font-size: 0.85rem;">CIN: U82199TN2025PTC185731</p>
-            </div>
+      <div class="tab-panel" id="tab-upi">
+        <div class="tab-steps">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Open any UPI app: <strong>GPay, PhonePe, Paytm, BHIM, or your bank's app</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Select <strong>"Transfer to Bank Account"</strong> or <strong>"Send Money"</strong>.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Enter Account Number: <span class="field-val">925020043039478</span> and IFSC: <span class="field-val">UTIB0000345</span></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Verify that the registered name shows <span class="field-val">Ettisai Enterprises Pvt Ltd</span> before confirming.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Enter amount, add your <strong>name and invoice number</strong> in the note/remarks field.</div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-text">Authenticate with your UPI PIN and send payment screenshot to <strong>info@ettisai.com</strong>.</div></div>
         </div>
-        <div class="footer-bottom">
-            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
-            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
-        </div>
-    </footer>
+      </div>
 
-    <script src="main.js"></script>
+      <div class="tab-panel" id="tab-netbanking">
+        <div class="tab-steps">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Log into your bank's <strong>Internet Banking portal</strong> on desktop or mobile.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Go to <strong>Payments → Add Payee / Manage Beneficiaries</strong> and add a new beneficiary.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Fill in: Name <span class="field-val">Ettisai Enterprises Pvt Ltd</span> · A/C <span class="field-val">925020043039478</span> · IFSC <span class="field-val">UTIB0000345</span></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Most banks require a <strong>30-minute cooling period</strong> after adding a new beneficiary before transfers can be made.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Initiate the transfer, add your service reference in the description, and confirm via OTP.</div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-text">Download transaction receipt and email it to <strong>info@ettisai.com</strong> with your name and invoice number.</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTICE -->
+  <div class="notice-card">
+    <div class="notice-icon">⚠️</div>
+    <div class="notice-text">
+      <h4>Important Instructions</h4>
+      <p>Please read carefully before initiating any payment:</p>
+      <ul>
+        <li>Always verify the account name shows <strong>Ettisai Enterprises Pvt Ltd</strong> before confirming.</li>
+        <li>Add your <strong>full name + invoice/reference number</strong> in the remarks/narration field.</li>
+        <li>ETTISAI will <strong>never</strong> request payment to a personal account or via cash.</li>
+        <li>For amounts above ₹2 lakhs, RTGS is recommended for same-day real-time settlement.</li>
+        <li>Send payment confirmation to <strong>info@ettisai.com</strong> for prompt acknowledgment.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONFIRM CARD -->
+  <div class="confirm-card">
+    <div class="confirm-icon">📧</div>
+    <div class="confirm-text">
+      <h4>After Payment — Send Confirmation</h4>
+      <p>Once your transfer is complete, please email the transaction reference number, your full name, and service description to <a href="mailto:info@ettisai.com">info@ettisai.com</a>. Our team will acknowledge receipt and update your account within <strong>2 business hours</strong> during working days.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT STRIP -->
+  <div class="contact-strip">
+    <div class="cs-left">
+      <h4>Payment queries? We're here.</h4>
+      <p>ETTISAI Enterprises Pvt Ltd · Mogappair East, Chennai – 600037<br>CIN: U82199TN2025PTC185731</p>
+    </div>
+    <div class="cs-actions">
+      <a href="mailto:info@ettisai.com" class="cs-btn cs-btn-white">✉ info@ettisai.com</a>
+      <a href="tel:+919036023533" class="cs-btn cs-btn-ghost">📞 +91 90360 23533</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-name">ETTISAI</div>
+      <div class="fb-sub">எத்திசை — Enterprises Pvt Ltd</div>
+      <p>Critical Operations | Business Intelligence | Core Engineering<br>
+      #3/520, M.M.D.A, Mogappair East<br>Chennai – 600037, Tamil Nadu, India<br>
+      CIN: U82199TN2025PTC185731</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="eduserv.html">EduServ</a>
+      <a href="exports.html">Global IMPEX</a>
+      <a href="pay.html">Pay</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Bank Details</h5>
+      <a href="#">Axis Bank — Current A/C</a>
+      <a href="#">A/C: 925020043039478</a>
+      <a href="#">IFSC: UTIB0000345</a>
+      <a href="mailto:info@ettisai.com">info@ettisai.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ETTISAI ENTERPRISES PRIVATE LIMITED. All rights reserved. This is an official payment details page.</p>
+    <span class="footer-tagline">Institution-Grade Execution</span>
+  </div>
+</footer>
+
+<script>
+  /* ── COPY TO CLIPBOARD ── */
+  function copyText(text, btn) {
+    navigator.clipboard.writeText(text).then(()=>{
+      // Button state
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      btn.classList.add('copied');
+      setTimeout(()=>{ btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+      // Toast
+      document.getElementById('toastMsg').textContent = `"${text}" copied to clipboard`;
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(()=> toast.classList.remove('show'), 2500);
+    });
+  }
+
+  /* ── TABS ── */
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.method-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* ── HAMBURGER ── */
+  document.getElementById('hamburger').addEventListener('click', function(){
+    const nav = document.querySelector('.nav-links');
+    if(nav.style.display === 'flex'){
+      nav.style.display = '';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'fixed';
+      nav.style.top = '64px';
+      nav.style.left = '0';
+      nav.style.right = '0';
+      nav.style.background = '#fff';
+      nav.style.padding = '1.5rem 2rem';
+      nav.style.borderBottom = '1px solid #eedde6';
+      nav.style.boxShadow = '0 8px 24px rgba(151,20,77,0.12)';
+      nav.style.zIndex = '200';
+    }
+  });
+</script>
+
 </body>
-
 </html>
