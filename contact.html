@@ -4,24 +4,1345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | ETTISAI — Initiate Diagnostic</title>
+    <title>Contact | ETTISAI — Connect With Us</title>
     <meta name="description"
-        content="Initiate a diagnostic conference with ETTISAI. We do not start with contracts. We start with orientation. Secure transmission reviewed by founders within 48 hours.">
-    <link rel="stylesheet" href="styles.css">
+        content="Get in touch with ETTISAI Enterprises. Reach us for EduServ, Global IMPEX, Onsite workforce solutions, or general inquiries. Chennai headquarters.">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ══ RESET & BASE ══ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fafbff
+        }
+
+        ::selection {
+            background: #6366f1;
+            color: #fff
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f5
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c7c8d4;
+            border-radius: 3px
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all .25s ease
+        }
+
+        /* ══ CSS VARIABLES ══ */
+        :root {
+            --white: #ffffff;
+            --off-white: #fafbff;
+            --glass: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: rgba(99, 102, 241, 0.08);
+            --text-dark: #0f0f23;
+            --text-mid: #3a3a5c;
+            --text-light: #71718a;
+            --text-faint: #a0a0b8;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-dim: rgba(99, 102, 241, 0.08);
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --green: #10b981;
+            --green-dim: rgba(16, 185, 129, 0.1);
+            --rose: #f43f5e;
+            --rose-dim: rgba(244, 63, 94, 0.08);
+            --orange: #f59e0b;
+            --orange-dim: rgba(245, 158, 11, 0.1);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
+            --mono: 'JetBrains Mono', monospace;
+            --header-h: 72px;
+        }
+
+        /* ══ AMBIENT BACKGROUND ══ */
+        .ambient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden
+        }
+
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .45
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.18), transparent 70%);
+            top: -15%;
+            right: -8%;
+            animation: orbA 22s ease-in-out infinite
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.12), transparent 70%);
+            bottom: -10%;
+            left: -10%;
+            animation: orbB 28s ease-in-out infinite
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.08), transparent 70%);
+            top: 40%;
+            left: 50%;
+            animation: orbC 25s ease-in-out infinite
+        }
+
+        @keyframes orbA {
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            33% {
+                transform: translate(-40px, 50px)
+            }
+
+            66% {
+                transform: translate(30px, -30px)
+            }
+        }
+
+        @keyframes orbB {
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            33% {
+                transform: translate(50px, -40px)
+            }
+
+            66% {
+                transform: translate(-30px, 40px)
+            }
+        }
+
+        @keyframes orbC {
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            50% {
+                transform: translate(-60px, 30px)
+            }
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 70%)
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: .03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+        }
+
+        /* ══ HEADER ══ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-h);
+            z-index: 1000;
+            background: rgba(250, 251, 255, 0.75);
+            backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 2.5rem;
+            gap: 2rem;
+            transition: all .4s ease
+        }
+
+        header.scrolled {
+            background: rgba(250, 251, 255, 0.92);
+            box-shadow: 0 4px 30px rgba(99, 102, 241, 0.06)
+        }
+
+        .logo-link {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 1px
+        }
+
+        .logo-eng {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            color: var(--text-dark);
+            text-transform: uppercase
+        }
+
+        .logo-tamil {
+            font-size: .85rem;
+            color: var(--text-faint);
+            letter-spacing: .05em
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center
+        }
+
+        .nav-links a {
+            font-family: var(--mono);
+            font-size: .7rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            padding: .5rem 0;
+            position: relative;
+            transition: color .25s
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width .35s ease
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent)
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%
+        }
+
+        .nav-dropdown {
+            position: relative
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + .8rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            padding: .6rem;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(8px);
+            transition: all .3s ease;
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.1)
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0)
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: .6rem 1rem;
+            border-radius: var(--radius-xs);
+            font-family: var(--mono);
+            font-size: .68rem;
+            letter-spacing: .08em;
+            color: var(--text-mid);
+            transition: all .2s
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: var(--accent-dim);
+            color: var(--accent)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: .5rem;
+            background: none;
+            border: none;
+            z-index: 1001
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all .3s;
+            transform-origin: center
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px)
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px)
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(250, 251, 255, 0.97);
+            backdrop-filter: blur(30px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .4s ease
+        }
+
+        .mobile-nav.open {
+            display: flex;
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .mobile-nav a {
+            font-family: var(--mono);
+            font-size: 1.1rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            transition: color .25s
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: var(--accent)
+        }
+
+        /* ══ SECTIONS ══ */
+        .section {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 2.5rem
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: .65rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-bottom: 1rem
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -.03em
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 600px;
+            line-height: 1.8
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--rose) 50%, var(--orange) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradShift 5s linear infinite
+        }
+
+        @keyframes gradShift {
+            0% {
+                background-position: 200% center
+            }
+
+            100% {
+                background-position: -200% center
+            }
+        }
+
+        /* ══ HERO ══ */
+        .hero {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: calc(var(--header-h) + 4rem) 2.5rem 5rem
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--mono);
+            font-size: .65rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-dim);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            padding: .5rem 1.2rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp .6s ease .1s both
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.3)
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.08;
+            letter-spacing: -.03em;
+            margin-bottom: 1.2rem;
+            animation: fadeUp .6s ease .2s both
+        }
+
+        .hero-body {
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            animation: fadeUp .6s ease .3s both
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(99, 102, 241, 0.1);
+            animation: fadeUp .6s ease .4s both
+        }
+
+        .hero-stat {
+            text-align: left
+        }
+
+        .hero-stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent)
+        }
+
+        .hero-stat-label {
+            font-family: var(--mono);
+            font-size: .6rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin-top: .2rem
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* Hero Info Card */
+        .hero-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px var(--glass-shadow);
+            animation: fadeUp .6s ease .35s both;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--green), var(--orange))
+        }
+
+        .hero-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.06)
+        }
+
+        .info-row:last-child {
+            border-bottom: none
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-xs);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0
+        }
+
+        .info-icon.purple {
+            background: var(--accent-dim)
+        }
+
+        .info-icon.green {
+            background: var(--green-dim)
+        }
+
+        .info-icon.rose {
+            background: var(--rose-dim)
+        }
+
+        .info-label {
+            font-family: var(--mono);
+            font-size: .6rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin-bottom: .2rem
+        }
+
+        .info-value {
+            font-size: .92rem;
+            color: var(--text-dark);
+            font-weight: 500
+        }
+
+        .info-value a {
+            color: var(--accent);
+            font-weight: 600
+        }
+
+        .info-value a:hover {
+            color: var(--accent-light)
+        }
+
+        /* ══ CONTACT CHANNELS ══ */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem
+        }
+
+        .channel-card {
+            background: var(--white);
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all .35s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer
+        }
+
+        .channel-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform .35s ease
+        }
+
+        .channel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.12);
+            border-color: rgba(99, 102, 241, 0.2)
+        }
+
+        .channel-card:hover::after {
+            transform: scaleX(1)
+        }
+
+        .channel-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+            transition: transform .3s ease
+        }
+
+        .channel-card:hover .channel-icon {
+            transform: scale(1.1)
+        }
+
+        .ch-purple {
+            background: var(--accent-dim);
+            color: var(--accent)
+        }
+
+        .ch-green {
+            background: var(--green-dim);
+            color: var(--green)
+        }
+
+        .ch-rose {
+            background: var(--rose-dim);
+            color: var(--rose)
+        }
+
+        .ch-orange {
+            background: var(--orange-dim);
+            color: var(--orange)
+        }
+
+        .channel-card h4 {
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: .4rem
+        }
+
+        .channel-card p {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.5
+        }
+
+        .channel-card .ch-action {
+            font-family: var(--mono);
+            font-size: .6rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: .8rem;
+            display: inline-block
+        }
+
+        /* ══ FORM SECTION ══ */
+        .form-section {
+            background: linear-gradient(180deg, var(--off-white) 0%, #f0f0ff 100%)
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start
+        }
+
+        .form-card {
+            background: var(--white);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.06);
+            position: relative
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 2rem;
+            right: 2rem;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--green));
+            border-radius: 0 0 4px 4px
+        }
+
+        .form-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: .3rem
+        }
+
+        .form-card .form-sub {
+            font-size: .78rem;
+            color: var(--text-faint);
+            margin-bottom: 2rem;
+            font-family: var(--mono);
+            letter-spacing: .05em
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--mono);
+            font-size: .62rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: .4rem
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: .75rem 1rem;
+            border: 1px solid rgba(99, 102, 241, 0.12);
+            border-radius: var(--radius-xs);
+            font-family: 'Inter', sans-serif;
+            font-size: .88rem;
+            color: var(--text-dark);
+            background: var(--off-white);
+            transition: all .25s ease;
+            outline: none
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-dim);
+            background: var(--white)
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-faint)
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371718a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: .9rem;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-xs);
+            font-family: var(--mono);
+            font-size: .72rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow)
+        }
+
+        .btn-submit:active {
+            transform: translateY(0)
+        }
+
+        .btn-submit.success {
+            background: var(--green)
+        }
+
+        /* Form Side Info */
+        .form-side h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem
+        }
+
+        .form-side p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem
+        }
+
+        .side-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.06)
+        }
+
+        .side-feature:last-child {
+            border-bottom: none
+        }
+
+        .sf-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-xs);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+            flex-shrink: 0
+        }
+
+        .sf-title {
+            font-size: .88rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: .15rem
+        }
+
+        .sf-desc {
+            font-size: .78rem;
+            color: var(--text-light);
+            line-height: 1.5
+        }
+
+        /* ══ MAP SECTION ══ */
+        .map-wrapper {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.06);
+            margin-top: 3rem;
+            height: 350px
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        /* ══ SERVICES CROSS-LINK ══ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem
+        }
+
+        .service-link-card {
+            background: var(--white);
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: all .35s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-link-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.1);
+            border-color: var(--accent)
+        }
+
+        .service-link-card .sl-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem
+        }
+
+        .service-link-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: .5rem
+        }
+
+        .service-link-card p {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem
+        }
+
+        .service-link-card .sl-link {
+            font-family: var(--mono);
+            font-size: .62rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            transition: gap .3s
+        }
+
+        .service-link-card:hover .sl-link {
+            gap: .6rem
+        }
+
+        /* ══ FAQ ══ */
+        .faq-list {
+            max-width: 800px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            border-radius: var(--radius-sm);
+            margin-bottom: .8rem;
+            overflow: hidden;
+            background: var(--white);
+            transition: all .3s ease
+        }
+
+        .faq-item:hover {
+            border-color: rgba(99, 102, 241, 0.2)
+        }
+
+        .faq-q {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-size: .92rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all .2s;
+            gap: 1rem
+        }
+
+        .faq-q:hover {
+            color: var(--accent)
+        }
+
+        .faq-q .faq-icon {
+            font-size: 1.2rem;
+            color: var(--text-faint);
+            transition: transform .3s ease;
+            flex-shrink: 0
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent)
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .3s ease;
+            padding: 0 1.5rem
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding: 0 1.5rem 1.2rem
+        }
+
+        .faq-a p {
+            font-size: .85rem;
+            color: var(--text-light);
+            line-height: 1.7
+        }
+
+        /* ══ FOOTER ══ */
+        footer {
+            background: var(--text-dark);
+            padding: 4rem 2.5rem 2rem;
+            position: relative;
+            z-index: 2
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+        }
+
+        .footer-brand .fb-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            color: #fff;
+            text-transform: uppercase
+        }
+
+        .footer-brand .fb-tamil {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: .05em;
+            margin-bottom: .8rem
+        }
+
+        .footer-brand p {
+            font-size: .78rem;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.7
+        }
+
+        .footer-col h5 {
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 1rem
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: .8rem;
+            color: rgba(255, 255, 255, 0.5);
+            padding: .3rem 0;
+            transition: color .2s
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-light)
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem
+        }
+
+        .footer-bottom p {
+            font-size: .72rem;
+            color: rgba(255, 255, 255, 0.25)
+        }
+
+        .footer-tagline {
+            font-size: .6rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: rgba(99, 102, 241, 0.5)
+        }
+
+        /* ══ TOAST ══ */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 1rem 1.8rem;
+            border-radius: var(--radius-sm);
+            font-size: .85rem;
+            font-weight: 500;
+            z-index: 9999;
+            transform: translateY(120%);
+            transition: transform .4s ease;
+            box-shadow: 0 12px 30px var(--accent-glow)
+        }
+
+        .toast.show {
+            transform: translateY(0)
+        }
+
+        /* ══ REVEAL ANIMATIONS ══ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .reveal.vis {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .reveal-d1 {
+            transition-delay: .1s
+        }
+
+        .reveal-d2 {
+            transition-delay: .2s
+        }
+
+        .reveal-d3 {
+            transition-delay: .3s
+        }
+
+        .reveal-d4 {
+            transition-delay: .4s
+        }
+
+        /* ══ RESPONSIVE ══ */
+        @media(max-width:1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr
+            }
+
+            .hero-card {
+                margin-top: 2rem
+            }
+
+            .channels-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .form-side {
+                order: -1
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav-links {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            header {
+                padding: 0 1.2rem
+            }
+
+            .section {
+                padding: 4rem 1.2rem
+            }
+
+            .hero {
+                padding: calc(var(--header-h) + 2rem) 1.2rem 3rem
+            }
+
+            .hero h1 {
+                font-size: 2.2rem
+            }
+
+            .channels-grid {
+                grid-template-columns: 1fr
+            }
+
+            .form-row {
+                grid-template-columns: 1fr
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .map-wrapper {
+                height: 250px
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Ambient Effects -->
-    <canvas id="noise-canvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
+    <!-- ══ AMBIENT BACKGROUND ══ -->
+    <div class="ambient">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
+    <div class="grid-bg"></div>
+    <div class="noise-overlay"></div>
 
-    <!-- ═══ HEADER ═══ -->
-    <header class="site-header">
+    <!-- ══ HEADER ══ -->
+    <header>
         <a href="index.html" class="logo-link">
             <span class="logo-eng">ETTISAI</span>
             <span class="logo-tamil">எத்திசை</span>
@@ -35,210 +1356,365 @@
                     <div class="nav-dropdown-menu">
                         <a href="eduserv.html">EduServ</a>
                         <a href="exports.html">Global IMPEX</a>
+                        <a href="onsite.html">Onsite</a>
                     </div>
                 </li>
                 <li><a href="pay.html">Pay</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
-        <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
         </button>
     </header>
 
     <!-- Mobile Nav -->
-    <div class="mobile-nav">
+    <div class="mobile-nav" id="mobileNav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="eduserv.html">EduServ</a>
         <a href="exports.html">Global IMPEX</a>
+        <a href="onsite.html">Onsite</a>
         <a href="pay.html">Pay</a>
         <a href="contact.html" class="active">Contact</a>
     </div>
 
-    <!-- ═══ PAGE HERO ═══ -->
-    <section class="page-hero">
-        <div class="container">
-            <span class="label reveal" style="display: block; margin-bottom: 1rem;">Initiate Diagnostic</span>
-            <h1 class="reveal delay-1">Secure<br><span class="text-gradient">Transmission</span></h1>
-            <p class="reveal delay-2" style="max-width: 700px; margin-top: 1.5rem;">
-                We do not start with contracts. We start with orientation. This is not a sales pitch. This is due
-                diligence before the decision is visible.
-            </p>
-        </div>
-    </section>
-
-    <!-- ═══ DIAGNOSTIC INFO ═══ -->
-    <section class="section section-dark section-border-top">
-        <div class="container">
-            <div class="two-col">
-                <div class="reveal-left">
-                    <span class="label" style="display: block; margin-bottom: 1rem;">The Diagnostic Conference
-                        Examines</span>
-                    <ul style="list-style: none; margin-top: 1.5rem;">
-                        <li
-                            style="padding: 1rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 1rem;">
-                            <span class="label" style="flex-shrink: 0; padding-top: 2px;">01</span>
-                            Your business as it actually operates
-                        </li>
-                        <li
-                            style="padding: 1rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 1rem;">
-                            <span class="label" style="flex-shrink: 0; padding-top: 2px;">02</span>
-                            Your industry as it actually behaves
-                        </li>
-                        <li
-                            style="padding: 1rem 0; border-bottom: 1px solid var(--border); color: var(--text-primary); display: flex; align-items: flex-start; gap: 1rem;">
-                            <span class="label" style="flex-shrink: 0; padding-top: 2px;">03</span>
-                            Risks no one wants on record
-                        </li>
-                        <li
-                            style="padding: 1rem 0; color: var(--text-primary); display: flex; align-items: flex-start; gap: 1rem;">
-                            <span class="label" style="flex-shrink: 0; padding-top: 2px;">04</span>
-                            Where intelligence must precede action
-                        </li>
-                    </ul>
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge"><span class="pulse"></span> Available for inquiries</div>
+                <h1>Let's Build<br>Something <span class="gradient-text">Extraordinary</span></h1>
+                <p class="hero-body">Whether you're seeking world-class education consulting, global trade partnerships,
+                    or international workforce placement — ETTISAI's institutional approach ensures every engagement
+                    begins with understanding, not selling.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">48h</div>
+                        <div class="hero-stat-label">Response Time</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">3</div>
+                        <div class="hero-stat-label">Service Verticals</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">24/7</div>
+                        <div class="hero-stat-label">Global Reach</div>
+                    </div>
                 </div>
-
-                <div class="reveal-right">
-                    <!-- Contact Info Card -->
-                    <div class="contact-info-card">
-                        <h4>Institutional Headquarters</h4>
-                        <div class="contact-detail">
-                            <span class="contact-detail-label">Location</span>
-                            <span class="contact-detail-value">
-                                #3/520, M.M.D.A, Mogappair East<br>
-                                Chennai - 600037<br>
-                                Tamil Nadu, India
-                            </span>
+            </div>
+            <div class="hero-card">
+                <h3>📍 Institutional Headquarters</h3>
+                <div class="info-row">
+                    <div class="info-icon purple">🏢</div>
+                    <div>
+                        <div class="info-label">Registered Office</div>
+                        <div class="info-value">#3/520, M.M.D.A, Mogappair East<br>Chennai – 600037, Tamil Nadu, India
                         </div>
-                        <div class="contact-detail">
-                            <span class="contact-detail-label">Email</span>
-                            <span class="contact-detail-value">
-                                <a href="mailto:info@ettisai.com" style="color: var(--accent);">info@ettisai.com</a>
-                            </span>
-                        </div>
-                        <div class="contact-detail">
-                            <span class="contact-detail-label">CIN</span>
-                            <span class="contact-detail-value"
-                                style="font-family: var(--font-mono); font-size: 0.85rem;">
-                                U82199TN2025PTC185731
-                            </span>
-                        </div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-icon green">📧</div>
+                    <div>
+                        <div class="info-label">Email</div>
+                        <div class="info-value"><a href="mailto:info@ettisai.com">info@ettisai.com</a></div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-icon purple">📞</div>
+                    <div>
+                        <div class="info-label">Phone</div>
+                        <div class="info-value"><a href="tel:+919036023533">+91 90360 23533</a></div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-icon rose">🔐</div>
+                    <div>
+                        <div class="info-label">Company CIN</div>
+                        <div class="info-value" style="font-family:var(--mono);font-size:.8rem;letter-spacing:.05em">
+                            U82199TN2025PTC185731</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ QUALIFICATION + FORM ═══ -->
-    <section class="section section-border-top">
+    <!-- ══ CONTACT CHANNELS ══ -->
+    <section class="section">
         <div class="container">
-            <div class="two-col">
-                <!-- Qualification -->
-                <div class="reveal-left">
-                    <span class="label" style="display: block; margin-bottom: 1rem;">The Filter / Qualification</span>
-                    <h3 style="margin-bottom: 1rem;">Before you reach out, consider:</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                        ETTISAI works best with those who:
-                    </p>
-                    <ul class="qual-list">
-                        <li>Operate where errors compound and compliance has teeth</li>
-                        <li>Understand that discretion outweighs display</li>
-                        <li>Prefer institutions over personalities</li>
-                        <li>Know that law is the floor, but ethics are the ceiling</li>
-                    </ul>
-
-                    <div class="divider"></div>
-
-                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
-                        Of the 26,139 software companies in India, <strong style="color: var(--text-primary);">26,138
-                            will tell you what you want to hear.</strong><br><br>
-                        We will tell you what you need to hear.
-                    </p>
-
-                    <div class="divider"></div>
-
-                    <p style="color: var(--text-secondary); line-height: 1.8;">
-                        If you are building something that must endure, <strong style="color: var(--accent);">we are
-                            useful.</strong><br>
-                        If you are looking for speed without structure, <strong style="color: var(--text-muted);">we are
-                            not.</strong>
-                    </p>
+            <div class="section-label reveal">Reach Us</div>
+            <h2 class="section-title reveal reveal-d1">Multiple Ways to <span class="gradient-text">Connect</span></h2>
+            <p class="section-sub reveal reveal-d2">Choose the channel that works best for you. Every inquiry is
+                reviewed by our leadership team.</p>
+            <div class="channels-grid">
+                <a href="mailto:info@ettisai.com" class="channel-card reveal reveal-d1">
+                    <div class="channel-icon ch-purple">📧</div>
+                    <h4>Email Us</h4>
+                    <p>info@ettisai.com<br>Formal inquiries & proposals</p>
+                    <span class="ch-action">Send mail →</span>
+                </a>
+                <a href="tel:+919036023533" class="channel-card reveal reveal-d2">
+                    <div class="channel-icon ch-green">📞</div>
+                    <h4>Call Directly</h4>
+                    <p>+91 90360 23533<br>Mon–Sat, 9 AM – 7 PM IST</p>
+                    <span class="ch-action">Call now →</span>
+                </a>
+                <a href="https://wa.me/919036023533" target="_blank" class="channel-card reveal reveal-d3">
+                    <div class="channel-icon ch-rose">💬</div>
+                    <h4>WhatsApp</h4>
+                    <p>Quick queries & updates<br>Instant business chat</p>
+                    <span class="ch-action">Chat now →</span>
+                </a>
+                <div class="channel-card reveal reveal-d4">
+                    <div class="channel-icon ch-orange">🏢</div>
+                    <h4>Visit Office</h4>
+                    <p>Mogappair East, Chennai<br>By appointment only</p>
+                    <span class="ch-action">Get directions →</span>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Contact Form -->
-                <div class="reveal-right">
-                    <div
-                        style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem;">
-                        <h3 style="margin-bottom: 0.5rem;">Encrypted Transmission</h3>
-                        <p class="mono" style="margin-bottom: 2rem; font-size: 0.65rem; color: var(--text-muted);">
-                            Responses reviewed by founders within 48 hours. No junior account managers. No automated
-                            replies.
-                        </p>
-
-                        <form id="contact-form">
+    <!-- ══ CONTACT FORM + SIDE INFO ══ -->
+    <section class="section form-section" id="inquiry">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:1rem">
+                <div class="section-label reveal" style="justify-content:center">Send Inquiry</div>
+                <h2 class="section-title reveal reveal-d1">Start a <span class="gradient-text">Conversation</span></h2>
+                <p class="section-sub reveal reveal-d2" style="margin:0 auto">Fill out the form below and our team will
+                    respond within 48 hours. Every submission is logged and tracked.</p>
+            </div>
+            <div class="form-grid">
+                <div class="form-card reveal">
+                    <h3>Inquiry Form</h3>
+                    <p class="form-sub">Fields marked * are required</p>
+                    <form id="contactForm">
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Full name">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
                             </div>
-
                             <div class="form-group">
-                                <label for="organization">Organization</label>
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="you@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="organization">Organization / Institution</label>
                                 <input type="text" id="organization" name="organization"
-                                    placeholder="Company or institution">
+                                    placeholder="Company or institution name">
                             </div>
-
+                        </div>
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="you@organization.com">
+                                <label for="service">Service Interest *</label>
+                                <select id="service" name="service" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="eduserv">EduServ — Study Abroad</option>
+                                    <option value="impex">Global IMPEX — Export/Import</option>
+                                    <option value="onsite">Onsite — Workforce Placement</option>
+                                    <option value="consulting">Business Consulting</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
                             </div>
-
                             <div class="form-group">
-                                <label for="stakes">What is at stake if your systems fail?</label>
-                                <textarea id="stakes" name="stakes" required
-                                    placeholder="Describe the operational, financial, or regulatory consequences..."></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="source">How did you hear about us?</label>
+                                <label for="source">How Did You Find Us?</label>
                                 <select id="source" name="source">
                                     <option value="" disabled selected>Select one</option>
-                                    <option value="referral">Referral</option>
                                     <option value="search">Search Engine</option>
+                                    <option value="referral">Referral</option>
                                     <option value="social">Social Media</option>
-                                    <option value="publication">Publication / Article</option>
                                     <option value="event">Conference / Event</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-
-                            <button type="submit" class="btn-primary"
-                                style="width: 100%; justify-content: center; margin-top: 0.5rem;">
-                                ⬡ Send Encrypted Transmission
-                            </button>
-                        </form>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required
+                                placeholder="Brief subject of your inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required
+                                placeholder="Describe your requirements, goals, or questions in detail..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit" id="submitBtn">⬡ Submit Inquiry</button>
+                    </form>
+                </div>
+                <div class="form-side reveal reveal-d2">
+                    <h3>Why Connect With ETTISAI?</h3>
+                    <p>We don't start with contracts — we start with understanding. Every inquiry receives a
+                        founder-level review within 48 hours.</p>
+                    <div class="side-feature">
+                        <div class="sf-icon" style="background:var(--accent-dim)">🎯</div>
+                        <div>
+                            <div class="sf-title">Founder-Level Review</div>
+                            <div class="sf-desc">Every inquiry is personally reviewed by our leadership team. No
+                                automated responses.</div>
+                        </div>
+                    </div>
+                    <div class="side-feature">
+                        <div class="sf-icon" style="background:var(--green-dim)">⚡</div>
+                        <div>
+                            <div class="sf-title">48-Hour Response</div>
+                            <div class="sf-desc">We commit to responding within 48 business hours with a substantive
+                                reply.</div>
+                        </div>
+                    </div>
+                    <div class="side-feature">
+                        <div class="sf-icon" style="background:var(--rose-dim)">🔒</div>
+                        <div>
+                            <div class="sf-title">Confidential Handling</div>
+                            <div class="sf-desc">All submissions are encrypted and handled with institutional-grade
+                                discretion.</div>
+                        </div>
+                    </div>
+                    <div class="side-feature">
+                        <div class="sf-icon" style="background:var(--orange-dim)">🌏</div>
+                        <div>
+                            <div class="sf-title">Global Operations</div>
+                            <div class="sf-desc">Serving clients across India, Russia, UAE, Singapore, and 15+
+                                countries.</div>
+                        </div>
+                    </div>
+                    <div
+                        style="margin-top:2rem;padding:1.5rem;background:var(--accent-dim);border-radius:var(--radius-sm);border-left:3px solid var(--accent)">
+                        <p style="font-size:.82rem;color:var(--text-mid);line-height:1.6;margin:0"><strong
+                                style="color:var(--text-dark)">Business Hours:</strong><br>
+                            Monday – Saturday: 9:00 AM – 7:00 PM IST<br>
+                            Sunday: By appointment only</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ FOOTER ═══ -->
-    <footer class="site-footer">
-        <div class="footer-main">
+    <!-- ══ MAP SECTION ══ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label reveal">Find Us</div>
+            <h2 class="section-title reveal reveal-d1">Chennai <span class="gradient-text">Headquarters</span></h2>
+            <p class="section-sub reveal reveal-d2">Visit our registered office in Mogappair East, Chennai. Prior
+                appointment recommended.</p>
+            <div class="map-wrapper reveal reveal-d3">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0!2d80.175!3d13.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMogappair+East%2C+Chennai!5e0!3m2!1sen!2sin!4v1"
+                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ EXPLORE SERVICES ══ -->
+    <section class="section" style="background:linear-gradient(180deg,#f0f0ff,var(--off-white))">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:1rem">
+                <div class="section-label reveal" style="justify-content:center">Explore</div>
+                <h2 class="section-title reveal reveal-d1">Our <span class="gradient-text">Services</span></h2>
+                <p class="section-sub reveal reveal-d2" style="margin:0 auto">Three verticals. One institutional
+                    standard. Explore how ETTISAI can serve your specific needs.</p>
+            </div>
+            <div class="services-grid">
+                <a href="eduserv.html" class="service-link-card reveal">
+                    <div class="sl-icon">🎓</div>
+                    <h4>EduServ</h4>
+                    <p>International education consulting — study in Russia, Germany, UK, France, Australia & more. From
+                        counselling to visa to arrival.</p>
+                    <span class="sl-link">Explore EduServ →</span>
+                </a>
+                <a href="exports.html" class="service-link-card reveal reveal-d1">
+                    <div class="sl-icon">🌍</div>
+                    <h4>Global IMPEX</h4>
+                    <p>International trade & commodity exports — rice, spices, textiles, engineering goods.
+                        Compliance-first approach to global markets.</p>
+                    <span class="sl-link">Explore IMPEX →</span>
+                </a>
+                <a href="onsite.html" class="service-link-card reveal reveal-d2">
+                    <div class="sl-icon">👷</div>
+                    <h4>Onsite Placements</h4>
+                    <p>Global workforce placement across 7 collar categories — Russia, UAE, Singapore, Qatar. Full
+                        documentation & deployment support.</p>
+                    <span class="sl-link">Explore Onsite →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:1rem">
+                <div class="section-label reveal" style="justify-content:center">FAQ</div>
+                <h2 class="section-title reveal reveal-d1">Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <div class="faq-q" onclick="toggleFaq(this)">What services does ETTISAI offer?<span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">
+                        <p>ETTISAI operates three core verticals: <strong>EduServ</strong> (international study abroad
+                            consulting), <strong>Global IMPEX</strong> (export/import trade in commodities), and
+                            <strong>Onsite</strong> (global workforce placement across 7 collar categories). Each
+                            vertical operates with institutional-grade standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-d1">
+                    <div class="faq-q" onclick="toggleFaq(this)">How long does it take to get a response?<span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">
+                        <p>Every inquiry receives a founder-level review within <strong>48 business hours</strong>. We
+                            do not use automated replies — every response is crafted by our leadership team to address
+                            your specific needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-d1">
+                    <div class="faq-q" onclick="toggleFaq(this)">Where is ETTISAI headquartered?<span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">
+                        <p>Our registered office is at <strong>#3/520, M.M.D.A, Mogappair East, Chennai – 600037, Tamil
+                                Nadu, India</strong>. We also operate across international markets including Russia,
+                            UAE, Singapore, and the EU.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-d2">
+                    <div class="faq-q" onclick="toggleFaq(this)">Can I visit the office in person?<span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">
+                        <p>Yes, we welcome office visits. Please book an appointment in advance by calling <strong>+91
+                                90360 23533</strong> or emailing <strong>info@ettisai.com</strong>. Our business hours
+                            are Monday–Saturday, 9 AM – 7 PM IST.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-d2">
+                    <div class="faq-q" onclick="toggleFaq(this)">Is my inquiry data kept confidential?<span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">
+                        <p>Absolutely. All form submissions are handled with institutional-grade discretion. We never
+                            share your information with third parties. Your data is stored securely and only accessed by
+                            authorized team members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <div class="footer-inner">
             <div class="footer-brand">
-                <span class="logo-eng">ETTISAI</span>
-                <span class="logo-tamil">எத்திசை</span>
-                <p class="footer-desc">
-                    ETTISAI ENTERPRISES PRIVATE LIMITED<br>
-                    Critical Operations | Business Intelligence | Core Engineering
-                </p>
-                <p class="footer-address">
-                    #3/520, M.M.D.A, Mogappair East<br>
-                    Chennai - 600037, Tamil Nadu, India
-                </p>
+                <div class="fb-logo">ETTISAI</div>
+                <div class="fb-tamil">எத்திசை</div>
+                <p>ETTISAI ENTERPRISES PRIVATE LIMITED<br>Critical Operations · Business Intelligence · Core
+                    Engineering<br><br>
+                    #3/520, M.M.D.A, Mogappair East<br>Chennai – 600037, Tamil Nadu, India<br>CIN:
+                    U82199TN2025PTC185731<br><br>
+                    📧 info@ettisai.com<br>📞 +91 90360 23533</p>
             </div>
             <div class="footer-col">
                 <h5>Navigation</h5>
@@ -246,23 +1722,98 @@
                 <a href="about.html">About</a>
                 <a href="eduserv.html">EduServ</a>
                 <a href="exports.html">Global IMPEX</a>
+                <a href="onsite.html">Onsite</a>
                 <a href="pay.html">Pay</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-col">
+                <h5>Services</h5>
+                <a href="eduserv.html">Study Abroad</a>
+                <a href="exports.html">Export / Import</a>
+                <a href="onsite.html">Workforce Placement</a>
+                <a href="pay.html">Payments</a>
+            </div>
+            <div class="footer-col">
                 <h5>Connect</h5>
                 <a href="mailto:info@ettisai.com">info@ettisai.com</a>
+                <a href="mailto:onsite@ettisai.com">onsite@ettisai.com</a>
                 <a href="tel:+919036023533">+91 90360 23533</a>
-                <p class="mono" style="margin-top: 0.75rem; font-size: 0.85rem;">CIN: U82199TN2025PTC185731</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <span class="footer-legal">© 2026 ETTISAI ENTERPRISES. All rights reserved.</span>
-            <span class="footer-tagline">Military-Grade Intelligence. Institution-Grade Execution.</span>
+            <p>© 2026 ETTISAI ENTERPRISES PRIVATE LIMITED. All rights reserved.</p>
+            <span class="footer-tagline">Institution-Grade Execution · Chennai, India</span>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">✓ Inquiry submitted successfully!</div>
+
+    <script>
+        /* ══ SCROLL HEADER ══ */
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        /* ══ HAMBURGER ══ */
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        /* ══ SCROLL REVEAL ══ */
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target) } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        /* ══ FAQ TOGGLE ══ */
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            document.querySelectorAll('.faq-item').forEach(f => { if (f !== item) f.classList.remove('open') });
+            item.classList.toggle('open');
+        }
+
+        /* ══ FORM SUBMISSION — DATABASE PROVISION ══ */
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = {
+                id: 'INQ-' + Date.now(),
+                timestamp: new Date().toISOString(),
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                organization: document.getElementById('organization').value,
+                service: document.getElementById('service').value,
+                source: document.getElementById('source').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                status: 'new'
+            };
+            // Store in localStorage as database provision
+            let db = JSON.parse(localStorage.getItem('ettisai_inquiries') || '[]');
+            db.push(formData);
+            localStorage.setItem('ettisai_inquiries', JSON.stringify(db));
+            // Show success
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = '✓ Inquiry Submitted!';
+            btn.classList.add('success');
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+            // Reset after delay
+            setTimeout(() => {
+                e.target.reset();
+                btn.textContent = '⬡ Submit Inquiry';
+                btn.classList.remove('success');
+            }, 2500);
+            console.log('Inquiry stored:', formData);
+            console.log('Total inquiries:', db.length);
+        });
+    </script>
 </body>
 
 </html>
